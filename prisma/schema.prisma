@@ -1,0 +1,238 @@
+generator client {
+  provider        = "prisma-client-js"
+  previewFeatures = ["postgresqlExtensions"]
+}
+
+datasource db {
+  provider   = "postgresql"
+  url        = env("DATABASE_URL")
+  extensions = [postgis]
+}
+
+// ─── Enums ────────────────────────────────────────────────────────────────────
+
+enum UserRole {
+  ADMIN
+  FIELD_VERIFIER
+  PUBLIC_VIEWER
+}
+
+enum SiteStatus {
+  UNVERIFIED
+  ACTIVE
+  INACTIVE
+  REMEDIATED
+}
+
+enum WasteType {
+  MUNICIPAL
+  INDUSTRIAL
+  MEDICAL
+  ELECTRONIC
+  CONSTRUCTION
+  MIXED
+  UNKNOWN
+}
+
+enum ConfidenceTier {
+  LOW
+  MEDIUM
+  HIGH
+}
+
+enum ReportSourceType {
+  NEWS_SCRAPE
+  TWITTER_SCRAPE
+  WHATSAPP_CITIZEN
+  MANUAL_ENTRY
+}
+
+enum GeocodeStatus {
+  PENDING
+  RESOLVED_GAZETTEER
+  RESOLVED_NOMINATIM
+  UNRESOLVED
+}
+
+enum VerificationStatus {
+  UNVERIFIED
+  CORROBORATED
+  FIELD_VERIFIED
+  REJECTED
+}
+
+enum JobStatus {
+  PENDING
+  RUNNING
+  DONE
+  FAILED
+}
+
+// ─── Models ───────────────────────────────────────────────────────────────────
+
+model User {
+  id           String   @id @default(uuid()) @db.Uuid
+  email        String   @unique
+  passwordHash String   @map("password_hash")
+  displayName  String?  @map("display_name")
+  role         UserRole @default(PUBLIC_VIEWER)
+  isActive     Boolean  @default(true) @map("is_active")
+  createdAt    DateTime @default(now()) @map("created_at")
+  updatedAt    DateTime @updatedAt @map("updated_at")
+
+  verifications Verification[]
+
+  @@map("users")
+}
+
+model DumpSite {
+  id String @id @default(uuid()) @db.Uuid
+
+  // PostGIS geography column — Prisma marks it Unsupported; use $queryRaw/$executeRaw for any
+  // operation that touches this column. The denormalized latitude/longitude below are kept in
+  // sync by the application on every write and are readable by the Prisma ORM normally.
+  location  Unsupported("geography(Point, 4326)")?
+  latitude  Float?
+  longitude Float?
+
+  status         SiteStatus     @default(UNVERIFIED)
+  wasteType      WasteType      @default(UNKNOWN)  @map("waste_type")
+  confidenceTier ConfidenceTier @default(LOW)      @map("confidence_tier")
+
+  sourceReportIds String[] @default([]) @map("source_report_ids") @db.Uuid
+
+  communityName String?  @map("community_name")
+  ward          String?
+  lga           String?
+  description   String?
+  imageUrls     String[] @default([]) @map("image_urls")
+
+  firstSeenAt     DateTime  @default(now()) @map("first_seen_at")
+  lastConfirmedAt DateTime? @map("last_confirmed_at")
+  createdAt       DateTime  @default(now()) @map("created_at")
+  updatedAt       DateTime  @updatedAt @map("updated_at")
+
+  reports       Report[]
+  verifications Verification[]
+
+  @@index([lga])
+  @@index([ward])
+  @@index([confidenceTier])
+  @@map("dump_sites")
+}
+
+model CollectionPoint {
+  id String @id @default(uuid()) @db.Uuid
+
+  location  Unsupported("geography(Point, 4326)")?
+  latitude  Float?
+  longitude Float?
+
+  name            String
+  operator        String?
+  ward            String?
+  lga             String?
+  isActive        Boolean @default(true) @map("is_active")
+  coverageRadiusM Float?  @map("coverage_radius_m")
+
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  @@index([lga])
+  @@map("collection_points")
+}
+
+model Report {
+  id String @id @default(uuid()) @db.Uuid
+
+  rawText    String          @map("raw_text")
+  sourceUrl  String?         @map("source_url")
+  sourceType ReportSourceType @map("source_type")
+
+  extractedLocationText String?   @map("extracted_location_text")
+  extractedWasteType    WasteType? @map("extracted_waste_type")
+  extractedSeverity     String?   @map("extracted_severity")
+  extractedUrgency      String?   @map("extracted_urgency")
+
+  geocodeStatus     GeocodeStatus @default(PENDING) @map("geocode_status")
+  geocodedLatitude  Float?        @map("geocoded_latitude")
+  geocodedLongitude Float?        @map("geocoded_longitude")
+  geocodeSource     String?       @map("geocode_source")
+
+  // 0.0–1.0 composite: source credibility × geocode certainty × corroboration count
+  confidenceScore Float? @map("confidence_score")
+
+  verificationStatus VerificationStatus @default(UNVERIFIED) @map("verification_status")
+  linkedSiteId       String?            @map("linked_site_id") @db.Uuid
+
+  publishedAt DateTime? @map("published_at")
+  scrapedAt   DateTime  @default(now()) @map("scraped_at")
+  createdAt   DateTime  @default(now()) @map("created_at")
+  updatedAt   DateTime  @updatedAt @map("updated_at")
+
+  linkedSite    DumpSite?      @relation(fields: [linkedSiteId], references: [id])
+  verifications Verification[]
+
+  @@index([geocodeStatus])
+  @@index([verificationStatus])
+  @@index([sourceType])
+  @@index([linkedSiteId])
+  @@map("reports")
+}
+
+model Verification {
+  id         String             @id @default(uuid()) @db.Uuid
+  reportId   String?            @map("report_id") @db.Uuid
+  siteId     String?            @map("site_id") @db.Uuid
+  verifierId String             @map("verifier_id") @db.Uuid
+  fromStatus VerificationStatus @map("from_status")
+  toStatus   VerificationStatus @map("to_status")
+  notes      String?
+  createdAt  DateTime           @default(now()) @map("created_at")
+
+  report   Report?   @relation(fields: [reportId], references: [id])
+  site     DumpSite? @relation(fields: [siteId], references: [id])
+  verifier User      @relation(fields: [verifierId], references: [id])
+
+  @@map("verifications")
+}
+
+model Gazetteer {
+  id            String @id @default(uuid()) @db.Uuid
+  communityName String @map("community_name")
+  ward          String
+  lga           String
+
+  centroid    Unsupported("geography(Point, 4326)")?
+  centroidLat Float?  @map("centroid_lat")
+  centroidLng Float?  @map("centroid_lng")
+
+  // Ward/community boundary polygon for containment queries
+  boundary Unsupported("geography(Polygon, 4326)")?
+
+  aliases String[] @default([])
+
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  @@unique([communityName, ward, lga])
+  @@index([lga])
+  @@index([ward])
+  @@map("gazetteer")
+}
+
+// Simple polling queue — no Redis/Celery for MVP.
+// Scraper claims PENDING rows, marks RUNNING, then DONE or FAILED.
+model ScrapeJob {
+  id          String    @id @default(uuid()) @db.Uuid
+  jobType     String    @map("job_type")
+  status      JobStatus @default(PENDING)
+  startedAt   DateTime? @map("started_at")
+  completedAt DateTime? @map("completed_at")
+  errorMsg    String?   @map("error_msg")
+  metadata    Json?
+  createdAt   DateTime  @default(now()) @map("created_at")
+
+  @@index([status])
+  @@map("scrape_jobs")
+}

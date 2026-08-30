@@ -1,0 +1,21 @@
+services:
+  db:
+    # postgis/postgis image ships with PostGIS pre-compiled.
+    # Tag format: <postgres-version>-<postgis-version>
+    image: postgis/postgis:16-3.4
+    environment:
+      POSTGRES_DB: wastewatch_dev
+      POSTGRES_USER: wastewatch
+      POSTGRES_PASSWORD: localdev
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U wastewatch -d wastewatch_dev"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  pgdata:
