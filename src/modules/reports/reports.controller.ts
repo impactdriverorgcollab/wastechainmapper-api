@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Patch, Delete, Body, Param, Query, UseGuards } from '@nestjs/common';
+import { Controller, Get, Post, Patch, Delete, Body, Param, Query, UseGuards, ParseIntPipe, DefaultValuePipe } from '@nestjs/common';
 import { ApiTags, ApiBearerAuth } from '@nestjs/swagger';
 import { ReportsService } from './reports.service';
 import { CreateReportDto } from './dto/create-report.dto';
@@ -32,7 +32,7 @@ export class ReportsController {
   @UseGuards(JwtAuthGuard, RolesGuard)
   @Roles(UserRole.ADMIN, UserRole.FIELD_VERIFIER)
   @ApiBearerAuth()
-  queue(@Query('limit') @Type(() => Number) limit?: number) {
+  queue(@Query('limit', new DefaultValuePipe(50), ParseIntPipe) limit: number) {
     return this.reports.findVerificationQueue(limit);
   }
 
