@@ -203,7 +203,7 @@ CREATE TRIGGER trg_users_updated_at
   FOR EACH ROW EXECUTE FUNCTION set_updated_at();
 
 -- ============================================================================
--- DeltaFlow Atlas extension — waste flow tracking, water monitoring,
+-- WasteChainMapper extension — waste flow tracking, water monitoring,
 -- geospatial layers, and API key management.
 --
 -- Patch WasteType for databases that already have the base schema applied.
@@ -213,7 +213,7 @@ CREATE TRIGGER trg_users_updated_at
 DO $$ BEGIN ALTER TYPE "WasteType" ADD VALUE 'ORGANIC'; EXCEPTION WHEN duplicate_object THEN NULL; END $$;
 DO $$ BEGIN ALTER TYPE "WasteType" ADD VALUE 'PLASTIC'; EXCEPTION WHEN duplicate_object THEN NULL; END $$;
 
--- 4. DeltaFlow Atlas enums
+-- 4. WasteChainMapper enums
 
 CREATE TYPE "FlowStatus"       AS ENUM ('PENDING', 'COLLECTED', 'IN_TRANSIT', 'DELIVERED', 'PROCESSED');
 CREATE TYPE "FacilityType"     AS ENUM ('COLLECTION_POINT', 'TRANSFER_STATION', 'RECYCLING', 'LANDFILL', 'INCINERATION');
@@ -222,7 +222,7 @@ CREATE TYPE "WaterAnomalyType" AS ENUM ('LEAK', 'ILLEGAL_EXTRACTION', 'CONTAMINA
 CREATE TYPE "FloodRiskLevel"   AS ENUM ('LOW', 'MEDIUM', 'HIGH');
 CREATE TYPE "ApiKeyTier"       AS ENUM ('FREE', 'PROFESSIONAL', 'ENTERPRISE');
 
--- 5. DeltaFlow Atlas tables
+-- 5. WasteChainMapper tables
 
 CREATE TABLE "facilities" (
   "id"            UUID             NOT NULL DEFAULT gen_random_uuid(),

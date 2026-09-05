@@ -18,7 +18,7 @@ async function bootstrap() {
   });
 
   const swagger = new DocumentBuilder()
-    .setTitle('DeltaFlow Atlas API')
+    .setTitle('WasteChainMapper API')
     .setDescription('Geospatial intelligence platform — waste flows, water monitoring, and flood risk across Rivers State and the Niger Delta')
     .setVersion('2.0.0')
     .addBearerAuth()

@@ -266,7 +266,7 @@ model Gazetteer {
   @@map("gazetteer")
 }
 
-// ─── DeltaFlow Atlas extensions ───────────────────────────────────────────────
+// ─── WasteChainMapper extensions ───────────────────────────────────────────────
 
 model Facility {
   id           String       @id @default(uuid()) @db.Uuid

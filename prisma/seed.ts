@@ -1,5 +1,5 @@
 /**
- * DeltaFlow Atlas — reference seed for Rivers State
+ * WasteChainMapper — reference seed for Rivers State
  * Run: npx prisma db seed  (after migration + generate)
  */
 import { PrismaClient } from '@prisma/client';
@@ -9,7 +9,7 @@ const prisma = new PrismaClient();
 const db = () => prisma as any;
 
 async function main() {
-  console.log('🌱 Seeding DeltaFlow Atlas database…');
+  console.log('🌱 Seeding WasteChainMapper database…');
 
   // ── Admin user ────────────────────────────────────────────────────────────────
   const adminPw = await argon2.hash('admin-deltaflow-2026');
@@ -37,20 +37,20 @@ async function main() {
 
   // ── Gazetteer (Rivers State communities) ──────────────────────────────────────
   const gazetteers = [
-    { community: 'Rumuola',        ward: 'Rumuola',        lga: 'Port Harcourt', lat: 4.8401, lng: 7.0201, aliases: ['Rumuola Road', 'Rumuola junction'] },
-    { community: 'GRA Phase 2',    ward: 'GRA Phase 2',    lga: 'Port Harcourt', lat: 4.8156, lng: 7.0134, aliases: ['Government Residential Area', 'GRA PH'] },
-    { community: 'Trans Amadi',    ward: 'Trans Amadi',    lga: 'Port Harcourt', lat: 4.8093, lng: 7.0299, aliases: ['Trans-Amadi', 'Trans Amadi Industrial Layout', 'Amadi Creek'] },
-    { community: 'Diobu',          ward: 'Diobu',          lga: 'Port Harcourt', lat: 4.7831, lng: 6.9984, aliases: ['Mile 1 Diobu', 'Fimie', 'Old GRA'] },
-    { community: 'Woji',           ward: 'Woji',           lga: 'Obio-Akpor',   lat: 4.8156, lng: 7.0412, aliases: ['Woji Creek', 'Peter Odili Road'] },
-    { community: 'Rumuigbo',       ward: 'Rumuigbo',       lga: 'Obio-Akpor',   lat: 4.8234, lng: 7.0045, aliases: ['Rumuigbo', 'Elelenwo Road'] },
-    { community: 'Eliozu',         ward: 'Eliozu',         lga: 'Obio-Akpor',   lat: 4.8712, lng: 7.0564, aliases: ['Eliozu', 'Airport Road South'] },
-    { community: 'Choba',          ward: 'Choba',          lga: 'Obio-Akpor',   lat: 4.9012, lng: 7.0234, aliases: ['Choba', 'UNIPORT Road', 'University of Port Harcourt'] },
-    { community: 'Elelenwo',       ward: 'Elelenwo',       lga: 'Obio-Akpor',   lat: 4.8601, lng: 7.0401, aliases: ['Elelenwo', 'Rumuibekwe', 'Stadium Road South'] },
-    { community: 'Ogale',          ward: 'Ogale',          lga: 'Eleme',         lat: 4.7654, lng: 7.1123, aliases: ['Eleme', 'Ogale', 'Refinery Road', 'PHRC'] },
-    { community: 'Okrika Town',    ward: 'Okrika Town',    lga: 'Okrika',        lat: 4.7391, lng: 7.0892, aliases: ['Okrika', 'Waterfront Okrika'] },
-    { community: 'Bonny Island',   ward: 'Bonny Island',   lga: 'Bonny',         lat: 4.4412, lng: 7.1521, aliases: ['Bonny', 'Bonny Island', 'LNG Base'] },
-    { community: 'Rumuosi',        ward: 'Rumuosi',        lga: 'Obio-Akpor',   lat: 4.8634, lng: 7.0456, aliases: ['Rumuosi', 'Obio-Akpor junction'] },
-    { community: 'Eagle Island',   ward: 'Eagle Island',   lga: 'Port Harcourt', lat: 4.7900, lng: 7.0050, aliases: ['Eagle Island', 'Egbelu', 'Creek side PH'] },
+    { community: 'Rumuola', ward: 'Rumuola', lga: 'Port Harcourt', lat: 4.8401, lng: 7.0201, aliases: ['Rumuola Road', 'Rumuola junction'] },
+    { community: 'GRA Phase 2', ward: 'GRA Phase 2', lga: 'Port Harcourt', lat: 4.8156, lng: 7.0134, aliases: ['Government Residential Area', 'GRA PH'] },
+    { community: 'Trans Amadi', ward: 'Trans Amadi', lga: 'Port Harcourt', lat: 4.8093, lng: 7.0299, aliases: ['Trans-Amadi', 'Trans Amadi Industrial Layout', 'Amadi Creek'] },
+    { community: 'Diobu', ward: 'Diobu', lga: 'Port Harcourt', lat: 4.7831, lng: 6.9984, aliases: ['Mile 1 Diobu', 'Fimie', 'Old GRA'] },
+    { community: 'Woji', ward: 'Woji', lga: 'Obio-Akpor', lat: 4.8156, lng: 7.0412, aliases: ['Woji Creek', 'Peter Odili Road'] },
+    { community: 'Rumuigbo', ward: 'Rumuigbo', lga: 'Obio-Akpor', lat: 4.8234, lng: 7.0045, aliases: ['Rumuigbo', 'Elelenwo Road'] },
+    { community: 'Eliozu', ward: 'Eliozu', lga: 'Obio-Akpor', lat: 4.8712, lng: 7.0564, aliases: ['Eliozu', 'Airport Road South'] },
+    { community: 'Choba', ward: 'Choba', lga: 'Obio-Akpor', lat: 4.9012, lng: 7.0234, aliases: ['Choba', 'UNIPORT Road', 'University of Port Harcourt'] },
+    { community: 'Elelenwo', ward: 'Elelenwo', lga: 'Obio-Akpor', lat: 4.8601, lng: 7.0401, aliases: ['Elelenwo', 'Rumuibekwe', 'Stadium Road South'] },
+    { community: 'Ogale', ward: 'Ogale', lga: 'Eleme', lat: 4.7654, lng: 7.1123, aliases: ['Eleme', 'Ogale', 'Refinery Road', 'PHRC'] },
+    { community: 'Okrika Town', ward: 'Okrika Town', lga: 'Okrika', lat: 4.7391, lng: 7.0892, aliases: ['Okrika', 'Waterfront Okrika'] },
+    { community: 'Bonny Island', ward: 'Bonny Island', lga: 'Bonny', lat: 4.4412, lng: 7.1521, aliases: ['Bonny', 'Bonny Island', 'LNG Base'] },
+    { community: 'Rumuosi', ward: 'Rumuosi', lga: 'Obio-Akpor', lat: 4.8634, lng: 7.0456, aliases: ['Rumuosi', 'Obio-Akpor junction'] },
+    { community: 'Eagle Island', ward: 'Eagle Island', lga: 'Port Harcourt', lat: 4.7900, lng: 7.0050, aliases: ['Eagle Island', 'Egbelu', 'Creek side PH'] },
   ];
 
   for (const g of gazetteers) {
@@ -70,16 +70,16 @@ async function main() {
 
   // ── Collection points ─────────────────────────────────────────────────────────
   const collectionPoints = [
-    { name: 'GRA Phase 2 Waste Collection',       operator: 'Rivers State MoE',               ward: 'GRA Phase 2',  lga: 'Port Harcourt', lat: 4.8156, lng: 7.0134, coverage: 800  },
-    { name: 'Rumuola Market Waste Point',          operator: 'PHED Contractors',               ward: 'Rumuola',      lga: 'Port Harcourt', lat: 4.8401, lng: 7.0201, coverage: 600  },
-    { name: 'Trans Amadi Collection Hub',          operator: 'Trans Amadi Industries Ltd',     ward: 'Trans Amadi',  lga: 'Port Harcourt', lat: 4.8093, lng: 7.0299, coverage: 1200 },
-    { name: 'Diobu Community Waste Point',         operator: 'Rivers Waste Management',        ward: 'Diobu',        lga: 'Port Harcourt', lat: 4.7831, lng: 6.9984, coverage: 700  },
-    { name: 'Eliozu Neighbourhood Collection',     operator: 'Obio-Akpor LGA',                ward: 'Eliozu',       lga: 'Obio-Akpor',   lat: 4.8712, lng: 7.0564, coverage: 900  },
-    { name: 'Rumuigbo Residential Collection',     operator: 'Rivers State Env. Sanitation',  ward: 'Rumuigbo',     lga: 'Obio-Akpor',   lat: 4.8234, lng: 7.0045, coverage: 650  },
-    { name: 'Mile 3 Market Collection Point',      operator: 'PHWSA',                          ward: 'Rumuola',      lga: 'Port Harcourt', lat: 4.8001, lng: 6.9987, coverage: 500  },
-    { name: 'Agip Estate Waste Hub',               operator: 'Private (NLNG Partners)',        ward: 'D-line',       lga: 'Port Harcourt', lat: 4.8289, lng: 7.0112, coverage: 400  },
-    { name: 'Woji Creek Collection Point',         operator: 'Obio-Akpor LGA Sanitation',     ward: 'Woji',         lga: 'Obio-Akpor',   lat: 4.8156, lng: 7.0412, coverage: 550  },
-    { name: 'Choba University Waste Station',      operator: 'UNIPORT Facilities',            ward: 'Choba',        lga: 'Obio-Akpor',   lat: 4.9012, lng: 7.0234, coverage: 700  },
+    { name: 'GRA Phase 2 Waste Collection', operator: 'Rivers State MoE', ward: 'GRA Phase 2', lga: 'Port Harcourt', lat: 4.8156, lng: 7.0134, coverage: 800 },
+    { name: 'Rumuola Market Waste Point', operator: 'PHED Contractors', ward: 'Rumuola', lga: 'Port Harcourt', lat: 4.8401, lng: 7.0201, coverage: 600 },
+    { name: 'Trans Amadi Collection Hub', operator: 'Trans Amadi Industries Ltd', ward: 'Trans Amadi', lga: 'Port Harcourt', lat: 4.8093, lng: 7.0299, coverage: 1200 },
+    { name: 'Diobu Community Waste Point', operator: 'Rivers Waste Management', ward: 'Diobu', lga: 'Port Harcourt', lat: 4.7831, lng: 6.9984, coverage: 700 },
+    { name: 'Eliozu Neighbourhood Collection', operator: 'Obio-Akpor LGA', ward: 'Eliozu', lga: 'Obio-Akpor', lat: 4.8712, lng: 7.0564, coverage: 900 },
+    { name: 'Rumuigbo Residential Collection', operator: 'Rivers State Env. Sanitation', ward: 'Rumuigbo', lga: 'Obio-Akpor', lat: 4.8234, lng: 7.0045, coverage: 650 },
+    { name: 'Mile 3 Market Collection Point', operator: 'PHWSA', ward: 'Rumuola', lga: 'Port Harcourt', lat: 4.8001, lng: 6.9987, coverage: 500 },
+    { name: 'Agip Estate Waste Hub', operator: 'Private (NLNG Partners)', ward: 'D-line', lga: 'Port Harcourt', lat: 4.8289, lng: 7.0112, coverage: 400 },
+    { name: 'Woji Creek Collection Point', operator: 'Obio-Akpor LGA Sanitation', ward: 'Woji', lga: 'Obio-Akpor', lat: 4.8156, lng: 7.0412, coverage: 550 },
+    { name: 'Choba University Waste Station', operator: 'UNIPORT Facilities', ward: 'Choba', lga: 'Obio-Akpor', lat: 4.9012, lng: 7.0234, coverage: 700 },
   ];
 
   for (const cp of collectionPoints) {
@@ -318,13 +318,13 @@ async function main() {
     { plate: 'PHC-WM-001', operator: 'Rivers State Waste Management Authority', capacity: 8.0 },
     { plate: 'PHC-WM-002', operator: 'Rivers State Waste Management Authority', capacity: 10.0 },
     { plate: 'PHC-WM-003', operator: 'Rivers State Waste Management Authority', capacity: 8.0 },
-    { plate: 'OA-ENV-001',  operator: 'Obio-Akpor LGA Sanitation Dept',         capacity: 6.0 },
-    { plate: 'OA-ENV-002',  operator: 'Obio-Akpor LGA Sanitation Dept',         capacity: 6.0 },
-    { plate: 'ELM-TC-001',  operator: 'Eleme Town Council',                      capacity: 5.0 },
-    { plate: 'IKW-LGA-001', operator: 'Ikwerre LGA Council',                     capacity: 7.0 },
-    { plate: 'PHC-PRV-001', operator: 'Dumpsite Solutions Nig. Ltd',             capacity: 12.0 },
-    { plate: 'PHC-PRV-002', operator: 'Dumpsite Solutions Nig. Ltd',             capacity: 12.0 },
-    { plate: 'OKR-001',     operator: 'Okrika Waterways Sanitation',              capacity: 3.5 },
+    { plate: 'OA-ENV-001', operator: 'Obio-Akpor LGA Sanitation Dept', capacity: 6.0 },
+    { plate: 'OA-ENV-002', operator: 'Obio-Akpor LGA Sanitation Dept', capacity: 6.0 },
+    { plate: 'ELM-TC-001', operator: 'Eleme Town Council', capacity: 5.0 },
+    { plate: 'IKW-LGA-001', operator: 'Ikwerre LGA Council', capacity: 7.0 },
+    { plate: 'PHC-PRV-001', operator: 'Dumpsite Solutions Nig. Ltd', capacity: 12.0 },
+    { plate: 'PHC-PRV-002', operator: 'Dumpsite Solutions Nig. Ltd', capacity: 12.0 },
+    { plate: 'OKR-001', operator: 'Okrika Waterways Sanitation', capacity: 3.5 },
   ];
 
   for (const v of vehicles) {
@@ -341,18 +341,18 @@ async function main() {
   const flowCount = await db().wasteFlow.count();
   if (flowCount === 0) {
     const recyclingFacility = await db().facility.findFirst({ where: { facilityType: 'RECYCLING', lga: 'Port Harcourt' } });
-    const transferStation  = await db().facility.findFirst({ where: { facilityType: 'TRANSFER_STATION' } });
-    const landfill         = await db().facility.findFirst({ where: { facilityType: 'LANDFILL' } });
+    const transferStation = await db().facility.findFirst({ where: { facilityType: 'TRANSFER_STATION' } });
+    const landfill = await db().facility.findFirst({ where: { facilityType: 'LANDFILL' } });
 
     const sampleFlows = [
-      { wasteType: 'MUNICIPAL',     status: 'PROCESSED',   tonnage: 12.4, originLat: 4.8401, originLng: 7.0201, lga: 'Port Harcourt', ward: 'Rumuola',    destId: transferStation?.id, processedAt: new Date('2026-09-01T10:00:00Z'), collectedAt: new Date('2026-09-01T06:00:00Z') },
-      { wasteType: 'PLASTIC',       status: 'DELIVERED',   tonnage: 4.8,  originLat: 4.8093, originLng: 7.0299, lga: 'Port Harcourt', ward: 'Trans Amadi', destId: recyclingFacility?.id, collectedAt: new Date('2026-09-01T07:30:00Z') },
-      { wasteType: 'ORGANIC',       status: 'IN_TRANSIT',  tonnage: 8.1,  originLat: 4.8712, originLng: 7.0564, lga: 'Obio-Akpor',   ward: 'Eliozu',     destId: transferStation?.id,  collectedAt: new Date('2026-09-02T08:00:00Z') },
-      { wasteType: 'MUNICIPAL',     status: 'COLLECTED',   tonnage: 6.0,  originLat: 4.7831, originLng: 6.9984, lga: 'Port Harcourt', ward: 'Diobu',      destId: landfill?.id,         collectedAt: new Date('2026-09-02T09:15:00Z') },
-      { wasteType: 'CONSTRUCTION',  status: 'PENDING',     tonnage: 22.0, originLat: 4.8234, originLng: 7.0045, lga: 'Obio-Akpor',   ward: 'Rumuigbo',   destId: landfill?.id },
-      { wasteType: 'INDUSTRIAL',    status: 'PROCESSED',   tonnage: 9.7,  originLat: 4.7654, originLng: 7.1123, lga: 'Eleme',         ward: 'Ogale',      destId: recyclingFacility?.id, processedAt: new Date('2026-08-31T16:00:00Z'), collectedAt: new Date('2026-08-31T10:00:00Z') },
-      { wasteType: 'PLASTIC',       status: 'PROCESSED',   tonnage: 3.3,  originLat: 4.9012, originLng: 7.0234, lga: 'Obio-Akpor',   ward: 'Choba',      destId: recyclingFacility?.id, processedAt: new Date('2026-08-30T14:00:00Z'), collectedAt: new Date('2026-08-30T09:00:00Z') },
-      { wasteType: 'MIXED',         status: 'IN_TRANSIT',  tonnage: 15.6, originLat: 4.8156, originLng: 7.0134, lga: 'Port Harcourt', ward: 'GRA Phase 2', destId: landfill?.id,        collectedAt: new Date('2026-09-02T11:00:00Z') },
+      { wasteType: 'MUNICIPAL', status: 'PROCESSED', tonnage: 12.4, originLat: 4.8401, originLng: 7.0201, lga: 'Port Harcourt', ward: 'Rumuola', destId: transferStation?.id, processedAt: new Date('2026-09-01T10:00:00Z'), collectedAt: new Date('2026-09-01T06:00:00Z') },
+      { wasteType: 'PLASTIC', status: 'DELIVERED', tonnage: 4.8, originLat: 4.8093, originLng: 7.0299, lga: 'Port Harcourt', ward: 'Trans Amadi', destId: recyclingFacility?.id, collectedAt: new Date('2026-09-01T07:30:00Z') },
+      { wasteType: 'ORGANIC', status: 'IN_TRANSIT', tonnage: 8.1, originLat: 4.8712, originLng: 7.0564, lga: 'Obio-Akpor', ward: 'Eliozu', destId: transferStation?.id, collectedAt: new Date('2026-09-02T08:00:00Z') },
+      { wasteType: 'MUNICIPAL', status: 'COLLECTED', tonnage: 6.0, originLat: 4.7831, originLng: 6.9984, lga: 'Port Harcourt', ward: 'Diobu', destId: landfill?.id, collectedAt: new Date('2026-09-02T09:15:00Z') },
+      { wasteType: 'CONSTRUCTION', status: 'PENDING', tonnage: 22.0, originLat: 4.8234, originLng: 7.0045, lga: 'Obio-Akpor', ward: 'Rumuigbo', destId: landfill?.id },
+      { wasteType: 'INDUSTRIAL', status: 'PROCESSED', tonnage: 9.7, originLat: 4.7654, originLng: 7.1123, lga: 'Eleme', ward: 'Ogale', destId: recyclingFacility?.id, processedAt: new Date('2026-08-31T16:00:00Z'), collectedAt: new Date('2026-08-31T10:00:00Z') },
+      { wasteType: 'PLASTIC', status: 'PROCESSED', tonnage: 3.3, originLat: 4.9012, originLng: 7.0234, lga: 'Obio-Akpor', ward: 'Choba', destId: recyclingFacility?.id, processedAt: new Date('2026-08-30T14:00:00Z'), collectedAt: new Date('2026-08-30T09:00:00Z') },
+      { wasteType: 'MIXED', status: 'IN_TRANSIT', tonnage: 15.6, originLat: 4.8156, originLng: 7.0134, lga: 'Port Harcourt', ward: 'GRA Phase 2', destId: landfill?.id, collectedAt: new Date('2026-09-02T11:00:00Z') },
     ];
 
     for (const flow of sampleFlows) {
@@ -376,7 +376,7 @@ async function main() {
     console.log('✓ Sample waste flows seeded');
   }
 
-  console.log('\n✅ DeltaFlow Atlas seed complete.');
+  console.log('\n✅ WasteChainMapper seed complete.');
   console.log('   Admin login: admin@deltaflow.ng / admin-deltaflow-2026');
 }
 

@@ -1,5 +1,5 @@
 -- ============================================================================
--- DeltaFlow Atlas — Phase 2 schema migration
+-- WasteChainMapper — Phase 2 schema migration
 -- Adds: waste flow tracking, facilities, GPS vehicle tracking,
 --       water-use monitoring, flood zones, ORGANIC/PLASTIC waste types.
 --

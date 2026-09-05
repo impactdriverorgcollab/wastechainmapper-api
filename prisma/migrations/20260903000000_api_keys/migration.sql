@@ -1,4 +1,4 @@
--- DeltaFlow Atlas: API key management for private-sector licensing
+-- WasteChainMapper: API key management for private-sector licensing
 -- Revenue model: tiered API access (Free / Professional / Enterprise)
 
 CREATE TYPE "ApiKeyTier" AS ENUM ('FREE', 'PROFESSIONAL', 'ENTERPRISE');
