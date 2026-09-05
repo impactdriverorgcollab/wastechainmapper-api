@@ -1,11 +1,12 @@
 generator client {
   provider        = "prisma-client-js"
-  previewFeatures = ["postgresqlExtensions"]
+  previewFeatures = ["postgresqlExtensions", "driverAdapters"]
 }
 
 datasource db {
   provider   = "postgresql"
   url        = env("DATABASE_URL")
+  directUrl  = env("DIRECT_URL")
   extensions = [postgis]
 }
 
@@ -26,6 +27,8 @@ enum SiteStatus {
 
 enum WasteType {
   MUNICIPAL
+  ORGANIC
+  PLASTIC
   INDUSTRIAL
   MEDICAL
   ELECTRONIC
@@ -66,6 +69,47 @@ enum JobStatus {
   RUNNING
   DONE
   FAILED
+}
+
+enum FlowStatus {
+  PENDING
+  COLLECTED
+  IN_TRANSIT
+  DELIVERED
+  PROCESSED
+}
+
+enum FacilityType {
+  COLLECTION_POINT
+  TRANSFER_STATION
+  RECYCLING
+  LANDFILL
+  INCINERATION
+}
+
+enum WaterSourceType {
+  EXTRACTION
+  DISTRIBUTION
+  CONSUMPTION
+  WASTEWATER
+}
+
+enum WaterAnomalyType {
+  LEAK
+  ILLEGAL_EXTRACTION
+  CONTAMINATION
+}
+
+enum FloodRiskLevel {
+  LOW
+  MEDIUM
+  HIGH
+}
+
+enum ApiKeyTier {
+  FREE
+  PROFESSIONAL
+  ENTERPRISE
 }
 
 // ─── Models ───────────────────────────────────────────────────────────────────
@@ -114,6 +158,7 @@ model DumpSite {
 
   reports       Report[]
   verifications Verification[]
+  outgoingFlows WasteFlow[]    @relation("SourceSite")
 
   @@index([lga])
   @@index([ward])
@@ -219,6 +264,220 @@ model Gazetteer {
   @@index([lga])
   @@index([ward])
   @@map("gazetteer")
+}
+
+// ─── DeltaFlow Atlas extensions ───────────────────────────────────────────────
+
+model Facility {
+  id           String       @id @default(uuid()) @db.Uuid
+  name         String
+  facilityType FacilityType @map("facility_type")
+
+  location  Unsupported("geography(Point, 4326)")?
+  latitude  Float?
+  longitude Float?
+
+  operator    String?
+  capacityTpd Float?  @map("capacity_tpd")
+  ward        String?
+  lga         String?
+  isActive    Boolean @default(true) @map("is_active")
+  description String?
+
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  incomingFlows WasteFlow[] @relation("DestinationFacility")
+
+  @@index([facilityType])
+  @@index([lga])
+  @@map("facilities")
+}
+
+model WasteFlow {
+  id            String     @id @default(uuid()) @db.Uuid
+  wasteType     WasteType  @default(UNKNOWN) @map("waste_type")
+  status        FlowStatus @default(PENDING)
+
+  estimatedTonnage Float? @map("estimated_tonnage")
+
+  sourceSiteId         String? @map("source_site_id") @db.Uuid
+  originLat            Float?  @map("origin_lat")
+  originLng            Float?  @map("origin_lng")
+  destinationFacilityId String? @map("destination_facility_id") @db.Uuid
+  vehicleId            String? @map("vehicle_id") @db.Uuid
+
+  ward String?
+  lga  String?
+
+  collectedAt  DateTime? @map("collected_at")
+  inTransitAt  DateTime? @map("in_transit_at")
+  deliveredAt  DateTime? @map("delivered_at")
+  processedAt  DateTime? @map("processed_at")
+  notes        String?
+
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  sourceSite           DumpSite?            @relation("SourceSite", fields: [sourceSiteId], references: [id])
+  destinationFacility  Facility?            @relation("DestinationFacility", fields: [destinationFacilityId], references: [id])
+  vehicle              CollectionVehicle?   @relation(fields: [vehicleId], references: [id])
+  routePoints          VehicleRoutePoint[]
+
+  @@index([status])
+  @@index([lga])
+  @@index([wasteType])
+  @@map("waste_flows")
+}
+
+model CollectionVehicle {
+  id          String  @id @default(uuid()) @db.Uuid
+  plateNumber String  @unique @map("plate_number")
+  operator    String?
+  capacityM3  Float?  @map("capacity_m3")
+  isActive    Boolean @default(true) @map("is_active")
+
+  lastSeenLat Float?    @map("last_seen_lat")
+  lastSeenLng Float?    @map("last_seen_lng")
+  lastSeenAt  DateTime? @map("last_seen_at")
+
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  flows       WasteFlow[]
+  routePoints VehicleRoutePoint[]
+
+  @@map("collection_vehicles")
+}
+
+model VehicleRoutePoint {
+  id        String @id @default(uuid()) @db.Uuid
+  vehicleId String @map("vehicle_id") @db.Uuid
+  flowId    String? @map("flow_id") @db.Uuid
+
+  location  Unsupported("geography(Point, 4326)")?
+  latitude  Float
+  longitude Float
+  speedKmh  Float? @map("speed_kmh")
+
+  recordedAt DateTime @default(now()) @map("recorded_at")
+
+  vehicle CollectionVehicle @relation(fields: [vehicleId], references: [id])
+  flow    WasteFlow?         @relation(fields: [flowId], references: [id])
+
+  @@index([vehicleId])
+  @@index([flowId])
+  @@index([recordedAt])
+  @@map("vehicle_route_points")
+}
+
+model WaterSource {
+  id         String          @id @default(uuid()) @db.Uuid
+  name       String
+  sourceType WaterSourceType @map("source_type")
+
+  location  Unsupported("geography(Point, 4326)")?
+  latitude  Float?
+  longitude Float?
+
+  operator    String?
+  ward        String?
+  lga         String?
+  isActive    Boolean @default(true) @map("is_active")
+  description String?
+
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  readings  WaterReading[]
+  anomalies WaterAnomaly[]
+
+  @@index([sourceType])
+  @@index([lga])
+  @@map("water_sources")
+}
+
+model WaterReading {
+  id       String @id @default(uuid()) @db.Uuid
+  sourceId String @map("source_id") @db.Uuid
+
+  volumeM3     Float? @map("volume_m3")
+  qualityScore Float? @map("quality_score")
+  ph           Float?
+  turbidityNtu Float? @map("turbidity_ntu")
+  isSensor     Boolean @default(false) @map("is_sensor")
+  notes        String?
+
+  recordedAt DateTime @default(now()) @map("recorded_at")
+  createdAt  DateTime @default(now()) @map("created_at")
+
+  source WaterSource @relation(fields: [sourceId], references: [id])
+
+  @@index([sourceId])
+  @@index([recordedAt])
+  @@map("water_readings")
+}
+
+model WaterAnomaly {
+  id         String           @id @default(uuid()) @db.Uuid
+  sourceId   String?          @map("source_id") @db.Uuid
+  anomalyType WaterAnomalyType @map("anomaly_type")
+
+  location  Unsupported("geography(Point, 4326)")?
+  latitude  Float?
+  longitude Float?
+
+  severity    String?
+  description String?
+  detectedAt  DateTime  @default(now()) @map("detected_at")
+  resolvedAt  DateTime? @map("resolved_at")
+  createdAt   DateTime  @default(now()) @map("created_at")
+
+  source WaterSource? @relation(fields: [sourceId], references: [id])
+
+  @@index([anomalyType])
+  @@map("water_anomalies")
+}
+
+model FloodZone {
+  id        String         @id @default(uuid()) @db.Uuid
+  name      String?
+  riskLevel FloodRiskLevel @default(MEDIUM) @map("risk_level")
+
+  // Polygon boundary for spatial containment queries
+  boundary Unsupported("geography(Polygon, 4326)")?
+
+  ward        String?
+  lga         String?
+  description String?
+  source      String?
+
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  @@index([riskLevel])
+  @@index([lga])
+  @@map("flood_zones")
+}
+
+model ApiKey {
+  id         String     @id @default(uuid()) @db.Uuid
+  keyHash    String     @unique @map("key_hash")
+  name       String
+  tier       ApiKeyTier @default(FREE)
+  callsToday Int        @default(0) @map("calls_today")
+  callsTotal Int        @default(0) @map("calls_total")
+  dailyLimit Int        @default(100) @map("daily_limit")
+  isActive   Boolean    @default(true) @map("is_active")
+  ownerId    String?    @map("owner_id") @db.Uuid
+  lastUsedAt DateTime?  @map("last_used_at")
+  resetAt    DateTime   @default(now()) @map("reset_at")
+  createdAt  DateTime   @default(now()) @map("created_at")
+  updatedAt  DateTime   @updatedAt @map("updated_at")
+
+  @@index([isActive])
+  @@index([tier])
+  @@map("api_keys")
 }
 
 // Simple polling queue — no Redis/Celery for MVP.

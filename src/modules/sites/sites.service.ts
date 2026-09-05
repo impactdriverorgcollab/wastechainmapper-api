@@ -4,7 +4,7 @@ import { Prisma, SiteStatus, WasteType, ConfidenceTier } from '@prisma/client';
 import { CreateSiteDto } from './dto/create-site.dto';
 import { RadiusQueryDto, WardQueryDto } from './dto/radius-query.dto';
 
-interface RawSiteRow {
+export interface RawSiteRow {
   id: string;
   latitude: number | null;
   longitude: number | null;
@@ -104,18 +104,31 @@ export class SitesService {
       WHERE
         location IS NOT NULL
         AND ST_DWithin(location, ST_MakePoint(${dto.lng}, ${dto.lat})::geography, ${dto.radiusM})
-        AND status != 'REJECTED'
         ${dto.confidenceTier ? Prisma.sql`AND confidence_tier = ${dto.confidenceTier}::"ConfidenceTier"` : Prisma.empty}
         ${dto.wasteType ? Prisma.sql`AND waste_type = ${dto.wasteType}::"WasteType"` : Prisma.empty}
       ORDER BY distance_m ASC
     `;
-    return rows;
+    return rows.map((r) => ({
+      id: r.id,
+      latitude: r.latitude,
+      longitude: r.longitude,
+      status: r.status,
+      wasteType: r.waste_type,
+      confidenceTier: r.confidence_tier,
+      communityName: r.community_name,
+      ward: r.ward,
+      lga: r.lga,
+      description: r.description,
+      firstSeenAt: r.first_seen_at,
+      lastConfirmedAt: r.last_confirmed_at,
+      distance_m: r.distance_m,
+    })) as any;
   }
 
   // ── Spatial: ward/LGA containment ────────────────────────────────────────
   // Requires the gazetteer boundary polygon to be populated for the given ward.
   async findWithinWard(dto: WardQueryDto): Promise<RawSiteRow[]> {
-    return this.prisma.$queryRaw<RawSiteRow[]>`
+    const rows = await this.prisma.$queryRaw<RawSiteRow[]>`
       SELECT ds.id, ds.latitude, ds.longitude, ds.status, ds.waste_type,
              ds.confidence_tier, ds.community_name, ds.ward, ds.lga,
              ds.description, ds.first_seen_at, ds.last_confirmed_at
@@ -127,9 +140,22 @@ export class SitesService {
       WHERE
         ds.location IS NOT NULL
         AND ST_Within(ds.location::geometry, g.boundary::geometry)
-        AND ds.status != 'REJECTED'
       ORDER BY ds.first_seen_at DESC
     `;
+    return rows.map((r) => ({
+      id: r.id,
+      latitude: r.latitude,
+      longitude: r.longitude,
+      status: r.status,
+      wasteType: r.waste_type,
+      confidenceTier: r.confidence_tier,
+      communityName: r.community_name,
+      ward: r.ward,
+      lga: r.lga,
+      description: r.description,
+      firstSeenAt: r.first_seen_at,
+      lastConfirmedAt: r.last_confirmed_at,
+    })) as any;
   }
 
   // ── Update ───────────────────────────────────────────────────────────────

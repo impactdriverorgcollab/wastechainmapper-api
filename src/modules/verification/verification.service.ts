@@ -1,7 +1,7 @@
 import { Injectable, BadRequestException, NotFoundException } from '@nestjs/common';
 import { PrismaService } from '../../prisma/prisma.service';
 import { SitesService } from '../sites/sites.service';
-import { VerificationStatus, ConfidenceTier } from '@prisma/client';
+import { VerificationStatus, ConfidenceTier, SiteStatus, WasteType } from '@prisma/client';
 import { VerifyReportDto, isValidTransition } from './dto/verify.dto';
 
 @Injectable()
@@ -21,20 +21,7 @@ export class VerificationService {
       );
     }
 
-    // When approving to FIELD_VERIFIED, ensure a dump site record exists.
-    let siteId = dto.linkedSiteId ?? report.linkedSiteId ?? undefined;
-    if (dto.toStatus === VerificationStatus.FIELD_VERIFIED && !siteId) {
-      if (report.geocodedLatitude && report.geocodedLongitude) {
-        const site = await this.sites.create({
-          latitude: report.geocodedLatitude,
-          longitude: report.geocodedLongitude,
-          wasteType: report.extractedWasteType ?? undefined,
-          confidenceTier: ConfidenceTier.HIGH,
-          communityName: report.extractedLocationText ?? undefined,
-        });
-        siteId = site.id;
-      }
-    }
+    const existingSiteId = dto.linkedSiteId ?? report.linkedSiteId ?? undefined;
 
     // Derive the new confidence tier for the linked site.
     const newTier = dto.toStatus === VerificationStatus.FIELD_VERIFIED
@@ -44,6 +31,32 @@ export class VerificationService {
         : undefined;
 
     return this.prisma.$transaction(async (tx) => {
+      // Create a dump site inside the transaction if FIELD_VERIFIED and no site exists yet.
+      let siteId = existingSiteId;
+      if (dto.toStatus === VerificationStatus.FIELD_VERIFIED && !siteId) {
+        if (report.geocodedLatitude && report.geocodedLongitude) {
+          const rows = await tx.$queryRaw<[{ id: string }]>`
+            INSERT INTO dump_sites (
+              location, latitude, longitude,
+              status, waste_type, confidence_tier,
+              community_name, source_report_ids, image_urls,
+              first_seen_at, created_at, updated_at
+            ) VALUES (
+              ST_MakePoint(${report.geocodedLongitude}, ${report.geocodedLatitude})::geography,
+              ${report.geocodedLatitude}, ${report.geocodedLongitude},
+              ${SiteStatus.UNVERIFIED}::"SiteStatus",
+              ${(report.extractedWasteType ?? WasteType.UNKNOWN)}::"WasteType",
+              ${ConfidenceTier.HIGH}::"ConfidenceTier",
+              ${report.extractedLocationText ?? null},
+              '{}', '{}',
+              NOW(), NOW(), NOW()
+            )
+            RETURNING id
+          `;
+          siteId = rows[0].id;
+        }
+      }
+
       const updated = await tx.report.update({
         where: { id: reportId },
         data: {

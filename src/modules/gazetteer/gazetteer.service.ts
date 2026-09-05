@@ -1,4 +1,5 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
+import { Prisma } from '@prisma/client';
 import { PrismaService } from '../../prisma/prisma.service';
 import { IsString, IsNumber, IsOptional, IsArray } from 'class-validator';
 import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger';
@@ -55,23 +56,25 @@ export class GazetteerService {
 
   async update(id: string, dto: Partial<CreateGazetteerDto>) {
     await this.findOne(id);
-    if (dto.centroidLat && dto.centroidLng) {
-      await this.prisma.$executeRaw`
-        UPDATE gazetteer
-        SET centroid = ST_MakePoint(${dto.centroidLng}, ${dto.centroidLat})::geography,
-            centroid_lat = ${dto.centroidLat},
-            centroid_lng = ${dto.centroidLng}
-        WHERE id = ${id}::uuid
-      `;
-    }
-    return this.prisma.gazetteer.update({
-      where: { id },
-      data: {
-        ...(dto.communityName && { communityName: dto.communityName }),
-        ...(dto.ward && { ward: dto.ward }),
-        ...(dto.lga && { lga: dto.lga }),
-        ...(dto.aliases && { aliases: dto.aliases }),
-      },
+    return this.prisma.$transaction(async (tx) => {
+      if (dto.centroidLat !== undefined && dto.centroidLng !== undefined) {
+        await tx.$executeRaw`
+          UPDATE gazetteer
+          SET centroid = ST_MakePoint(${dto.centroidLng}, ${dto.centroidLat})::geography,
+              centroid_lat = ${dto.centroidLat},
+              centroid_lng = ${dto.centroidLng}
+          WHERE id = ${id}::uuid
+        `;
+      }
+      return tx.gazetteer.update({
+        where: { id },
+        data: {
+          ...(dto.communityName && { communityName: dto.communityName }),
+          ...(dto.ward && { ward: dto.ward }),
+          ...(dto.lga && { lga: dto.lga }),
+          ...(dto.aliases && { aliases: dto.aliases }),
+        },
+      });
     });
   }
 
@@ -86,7 +89,7 @@ export class GazetteerService {
              ) AS sim
       FROM gazetteer
       WHERE centroid IS NOT NULL
-        ${lga ? PrismaRaw`AND LOWER(lga) = LOWER(${lga})` : PrismaRaw``}
+        ${lga ? Prisma.sql`AND LOWER(lga) = LOWER(${lga})` : Prisma.empty}
       ORDER BY sim DESC
       LIMIT 1
     `;
@@ -96,9 +99,3 @@ export class GazetteerService {
     return { id: r.id, centroidLat: r.centroid_lat, centroidLng: r.centroid_lng, communityName: r.community_name, ward: r.ward, lga: r.lga };
   }
 }
-
-// Lightweight tag to avoid importing Prisma.sql in this file
-const PrismaRaw = (strings: TemplateStringsArray, ...values: any[]) => {
-  const { Prisma } = require('@prisma/client');
-  return Prisma.sql(strings, ...values);
-};

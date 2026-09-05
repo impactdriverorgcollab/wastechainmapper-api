@@ -18,7 +18,7 @@ CREATE EXTENSION IF NOT EXISTS postgis;
 
 CREATE TYPE "UserRole" AS ENUM ('ADMIN', 'FIELD_VERIFIER', 'PUBLIC_VIEWER');
 CREATE TYPE "SiteStatus" AS ENUM ('UNVERIFIED', 'ACTIVE', 'INACTIVE', 'REMEDIATED');
-CREATE TYPE "WasteType" AS ENUM ('MUNICIPAL', 'INDUSTRIAL', 'MEDICAL', 'ELECTRONIC', 'CONSTRUCTION', 'MIXED', 'UNKNOWN');
+CREATE TYPE "WasteType" AS ENUM ('MUNICIPAL', 'ORGANIC', 'PLASTIC', 'INDUSTRIAL', 'MEDICAL', 'ELECTRONIC', 'CONSTRUCTION', 'MIXED', 'UNKNOWN');
 CREATE TYPE "ConfidenceTier" AS ENUM ('LOW', 'MEDIUM', 'HIGH');
 CREATE TYPE "ReportSourceType" AS ENUM ('NEWS_SCRAPE', 'TWITTER_SCRAPE', 'WHATSAPP_CITIZEN', 'MANUAL_ENTRY');
 CREATE TYPE "GeocodeStatus" AS ENUM ('PENDING', 'RESOLVED_GAZETTEER', 'RESOLVED_NOMINATIM', 'UNRESOLVED');
@@ -200,4 +200,226 @@ CREATE TRIGGER trg_gazetteer_updated_at
 
 CREATE TRIGGER trg_users_updated_at
   BEFORE UPDATE ON "users"
+  FOR EACH ROW EXECUTE FUNCTION set_updated_at();
+
+-- ============================================================================
+-- DeltaFlow Atlas extension — waste flow tracking, water monitoring,
+-- geospatial layers, and API key management.
+--
+-- Patch WasteType for databases that already have the base schema applied.
+-- The CREATE TYPE above already includes ORGANIC and PLASTIC for fresh installs.
+-- ============================================================================
+
+DO $$ BEGIN ALTER TYPE "WasteType" ADD VALUE 'ORGANIC'; EXCEPTION WHEN duplicate_object THEN NULL; END $$;
+DO $$ BEGIN ALTER TYPE "WasteType" ADD VALUE 'PLASTIC'; EXCEPTION WHEN duplicate_object THEN NULL; END $$;
+
+-- 4. DeltaFlow Atlas enums
+
+CREATE TYPE "FlowStatus"       AS ENUM ('PENDING', 'COLLECTED', 'IN_TRANSIT', 'DELIVERED', 'PROCESSED');
+CREATE TYPE "FacilityType"     AS ENUM ('COLLECTION_POINT', 'TRANSFER_STATION', 'RECYCLING', 'LANDFILL', 'INCINERATION');
+CREATE TYPE "WaterSourceType"  AS ENUM ('EXTRACTION', 'DISTRIBUTION', 'CONSUMPTION', 'WASTEWATER');
+CREATE TYPE "WaterAnomalyType" AS ENUM ('LEAK', 'ILLEGAL_EXTRACTION', 'CONTAMINATION');
+CREATE TYPE "FloodRiskLevel"   AS ENUM ('LOW', 'MEDIUM', 'HIGH');
+CREATE TYPE "ApiKeyTier"       AS ENUM ('FREE', 'PROFESSIONAL', 'ENTERPRISE');
+
+-- 5. DeltaFlow Atlas tables
+
+CREATE TABLE "facilities" (
+  "id"            UUID             NOT NULL DEFAULT gen_random_uuid(),
+  "name"          TEXT             NOT NULL,
+  "facility_type" "FacilityType"   NOT NULL,
+  "location"      geography(Point, 4326),
+  "latitude"      DOUBLE PRECISION,
+  "longitude"     DOUBLE PRECISION,
+  "operator"      TEXT,
+  "capacity_tpd"  DOUBLE PRECISION,
+  "ward"          TEXT,
+  "lga"           TEXT,
+  "is_active"     BOOLEAN          NOT NULL DEFAULT true,
+  "description"   TEXT,
+  "created_at"    TIMESTAMPTZ      NOT NULL DEFAULT NOW(),
+  "updated_at"    TIMESTAMPTZ      NOT NULL DEFAULT NOW(),
+  CONSTRAINT "facilities_pkey" PRIMARY KEY ("id")
+);
+CREATE INDEX "facilities_facility_type_idx" ON "facilities"("facility_type");
+CREATE INDEX "facilities_lga_idx"           ON "facilities"("lga");
+CREATE INDEX "facilities_location_gist_idx" ON "facilities" USING GIST ("location");
+
+CREATE TABLE "collection_vehicles" (
+  "id"            UUID        NOT NULL DEFAULT gen_random_uuid(),
+  "plate_number"  TEXT        NOT NULL,
+  "operator"      TEXT,
+  "capacity_m3"   DOUBLE PRECISION,
+  "is_active"     BOOLEAN     NOT NULL DEFAULT true,
+  "last_seen_lat" DOUBLE PRECISION,
+  "last_seen_lng" DOUBLE PRECISION,
+  "last_seen_at"  TIMESTAMPTZ,
+  "created_at"    TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+  "updated_at"    TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+  CONSTRAINT "collection_vehicles_pkey"         PRIMARY KEY ("id"),
+  CONSTRAINT "collection_vehicles_plate_number_key" UNIQUE ("plate_number")
+);
+
+CREATE TABLE "waste_flows" (
+  "id"                      UUID             NOT NULL DEFAULT gen_random_uuid(),
+  "waste_type"              "WasteType"      NOT NULL DEFAULT 'UNKNOWN',
+  "status"                  "FlowStatus"     NOT NULL DEFAULT 'PENDING',
+  "estimated_tonnage"       DOUBLE PRECISION,
+  "source_site_id"          UUID,
+  "origin_lat"              DOUBLE PRECISION,
+  "origin_lng"              DOUBLE PRECISION,
+  "destination_facility_id" UUID,
+  "vehicle_id"              UUID,
+  "ward"                    TEXT,
+  "lga"                     TEXT,
+  "collected_at"            TIMESTAMPTZ,
+  "in_transit_at"           TIMESTAMPTZ,
+  "delivered_at"            TIMESTAMPTZ,
+  "processed_at"            TIMESTAMPTZ,
+  "notes"                   TEXT,
+  "created_at"              TIMESTAMPTZ      NOT NULL DEFAULT NOW(),
+  "updated_at"              TIMESTAMPTZ      NOT NULL DEFAULT NOW(),
+  CONSTRAINT "waste_flows_pkey"                      PRIMARY KEY ("id"),
+  CONSTRAINT "waste_flows_source_site_id_fkey"       FOREIGN KEY ("source_site_id")          REFERENCES "dump_sites"("id"),
+  CONSTRAINT "waste_flows_destination_facility_fkey" FOREIGN KEY ("destination_facility_id") REFERENCES "facilities"("id"),
+  CONSTRAINT "waste_flows_vehicle_id_fkey"           FOREIGN KEY ("vehicle_id")              REFERENCES "collection_vehicles"("id")
+);
+CREATE INDEX "waste_flows_status_idx"    ON "waste_flows"("status");
+CREATE INDEX "waste_flows_lga_idx"       ON "waste_flows"("lga");
+CREATE INDEX "waste_flows_waste_type_idx" ON "waste_flows"("waste_type");
+
+CREATE TABLE "vehicle_route_points" (
+  "id"          UUID             NOT NULL DEFAULT gen_random_uuid(),
+  "vehicle_id"  UUID             NOT NULL,
+  "flow_id"     UUID,
+  "location"    geography(Point, 4326),
+  "latitude"    DOUBLE PRECISION NOT NULL,
+  "longitude"   DOUBLE PRECISION NOT NULL,
+  "speed_kmh"   DOUBLE PRECISION,
+  "recorded_at" TIMESTAMPTZ      NOT NULL DEFAULT NOW(),
+  CONSTRAINT "vehicle_route_points_pkey"       PRIMARY KEY ("id"),
+  CONSTRAINT "vehicle_route_points_vehicle_fkey" FOREIGN KEY ("vehicle_id") REFERENCES "collection_vehicles"("id"),
+  CONSTRAINT "vehicle_route_points_flow_fkey"    FOREIGN KEY ("flow_id")    REFERENCES "waste_flows"("id")
+);
+CREATE INDEX "vehicle_route_points_vehicle_id_idx"  ON "vehicle_route_points"("vehicle_id");
+CREATE INDEX "vehicle_route_points_flow_id_idx"     ON "vehicle_route_points"("flow_id");
+CREATE INDEX "vehicle_route_points_recorded_at_idx" ON "vehicle_route_points"("recorded_at");
+CREATE INDEX "vehicle_route_points_location_gist_idx" ON "vehicle_route_points" USING GIST ("location");
+
+CREATE TABLE "water_sources" (
+  "id"          UUID              NOT NULL DEFAULT gen_random_uuid(),
+  "name"        TEXT              NOT NULL,
+  "source_type" "WaterSourceType" NOT NULL,
+  "location"    geography(Point, 4326),
+  "latitude"    DOUBLE PRECISION,
+  "longitude"   DOUBLE PRECISION,
+  "operator"    TEXT,
+  "ward"        TEXT,
+  "lga"         TEXT,
+  "is_active"   BOOLEAN           NOT NULL DEFAULT true,
+  "description" TEXT,
+  "created_at"  TIMESTAMPTZ       NOT NULL DEFAULT NOW(),
+  "updated_at"  TIMESTAMPTZ       NOT NULL DEFAULT NOW(),
+  CONSTRAINT "water_sources_pkey" PRIMARY KEY ("id")
+);
+CREATE INDEX "water_sources_source_type_idx"    ON "water_sources"("source_type");
+CREATE INDEX "water_sources_lga_idx"            ON "water_sources"("lga");
+CREATE INDEX "water_sources_location_gist_idx"  ON "water_sources" USING GIST ("location");
+
+CREATE TABLE "water_readings" (
+  "id"            UUID        NOT NULL DEFAULT gen_random_uuid(),
+  "source_id"     UUID        NOT NULL,
+  "volume_m3"     DOUBLE PRECISION,
+  "quality_score" DOUBLE PRECISION,
+  "ph"            DOUBLE PRECISION,
+  "turbidity_ntu" DOUBLE PRECISION,
+  "is_sensor"     BOOLEAN     NOT NULL DEFAULT false,
+  "notes"         TEXT,
+  "recorded_at"   TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+  "created_at"    TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+  CONSTRAINT "water_readings_pkey"       PRIMARY KEY ("id"),
+  CONSTRAINT "water_readings_source_fkey" FOREIGN KEY ("source_id") REFERENCES "water_sources"("id")
+);
+CREATE INDEX "water_readings_source_id_idx"  ON "water_readings"("source_id");
+CREATE INDEX "water_readings_recorded_at_idx" ON "water_readings"("recorded_at");
+
+CREATE TABLE "water_anomalies" (
+  "id"           UUID               NOT NULL DEFAULT gen_random_uuid(),
+  "source_id"    UUID,
+  "anomaly_type" "WaterAnomalyType" NOT NULL,
+  "location"     geography(Point, 4326),
+  "latitude"     DOUBLE PRECISION,
+  "longitude"    DOUBLE PRECISION,
+  "severity"     TEXT,
+  "description"  TEXT,
+  "detected_at"  TIMESTAMPTZ        NOT NULL DEFAULT NOW(),
+  "resolved_at"  TIMESTAMPTZ,
+  "created_at"   TIMESTAMPTZ        NOT NULL DEFAULT NOW(),
+  CONSTRAINT "water_anomalies_pkey"       PRIMARY KEY ("id"),
+  CONSTRAINT "water_anomalies_source_fkey" FOREIGN KEY ("source_id") REFERENCES "water_sources"("id")
+);
+CREATE INDEX "water_anomalies_anomaly_type_idx"    ON "water_anomalies"("anomaly_type");
+CREATE INDEX "water_anomalies_location_gist_idx"   ON "water_anomalies" USING GIST ("location");
+
+CREATE TABLE "flood_zones" (
+  "id"          UUID             NOT NULL DEFAULT gen_random_uuid(),
+  "name"        TEXT,
+  "risk_level"  "FloodRiskLevel" NOT NULL DEFAULT 'MEDIUM',
+  "boundary"    geography(Polygon, 4326),
+  "ward"        TEXT,
+  "lga"         TEXT,
+  "description" TEXT,
+  "source"      TEXT,
+  "created_at"  TIMESTAMPTZ      NOT NULL DEFAULT NOW(),
+  "updated_at"  TIMESTAMPTZ      NOT NULL DEFAULT NOW(),
+  CONSTRAINT "flood_zones_pkey" PRIMARY KEY ("id")
+);
+CREATE INDEX "flood_zones_risk_level_idx"    ON "flood_zones"("risk_level");
+CREATE INDEX "flood_zones_lga_idx"           ON "flood_zones"("lga");
+CREATE INDEX "flood_zones_boundary_gist_idx" ON "flood_zones" USING GIST ("boundary");
+
+CREATE TABLE "api_keys" (
+  "id"          UUID         NOT NULL DEFAULT gen_random_uuid(),
+  "key_hash"    TEXT         NOT NULL,
+  "name"        TEXT         NOT NULL,
+  "tier"        "ApiKeyTier" NOT NULL DEFAULT 'FREE',
+  "calls_today" INTEGER      NOT NULL DEFAULT 0,
+  "calls_total" INTEGER      NOT NULL DEFAULT 0,
+  "daily_limit" INTEGER      NOT NULL DEFAULT 100,
+  "is_active"   BOOLEAN      NOT NULL DEFAULT true,
+  "owner_id"    UUID,
+  "last_used_at" TIMESTAMPTZ,
+  "reset_at"    TIMESTAMPTZ  NOT NULL DEFAULT NOW(),
+  "created_at"  TIMESTAMPTZ  NOT NULL DEFAULT NOW(),
+  "updated_at"  TIMESTAMPTZ  NOT NULL DEFAULT NOW(),
+  CONSTRAINT "api_keys_pkey"     PRIMARY KEY ("id"),
+  CONSTRAINT "api_keys_key_hash_key" UNIQUE ("key_hash")
+);
+CREATE INDEX "api_keys_is_active_idx" ON "api_keys"("is_active");
+CREATE INDEX "api_keys_tier_idx"      ON "api_keys"("tier");
+
+-- 6. updated_at triggers for new tables
+
+CREATE TRIGGER trg_facilities_updated_at
+  BEFORE UPDATE ON "facilities"
+  FOR EACH ROW EXECUTE FUNCTION set_updated_at();
+
+CREATE TRIGGER trg_collection_vehicles_updated_at
+  BEFORE UPDATE ON "collection_vehicles"
+  FOR EACH ROW EXECUTE FUNCTION set_updated_at();
+
+CREATE TRIGGER trg_waste_flows_updated_at
+  BEFORE UPDATE ON "waste_flows"
+  FOR EACH ROW EXECUTE FUNCTION set_updated_at();
+
+CREATE TRIGGER trg_water_sources_updated_at
+  BEFORE UPDATE ON "water_sources"
+  FOR EACH ROW EXECUTE FUNCTION set_updated_at();
+
+CREATE TRIGGER trg_flood_zones_updated_at
+  BEFORE UPDATE ON "flood_zones"
+  FOR EACH ROW EXECUTE FUNCTION set_updated_at();
+
+CREATE TRIGGER trg_api_keys_updated_at
+  BEFORE UPDATE ON "api_keys"
   FOR EACH ROW EXECUTE FUNCTION set_updated_at();

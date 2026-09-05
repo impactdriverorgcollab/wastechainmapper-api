@@ -32,7 +32,7 @@ export class ReportsController {
   @UseGuards(JwtAuthGuard, RolesGuard)
   @Roles(UserRole.ADMIN, UserRole.FIELD_VERIFIER)
   @ApiBearerAuth()
-  queue(@Query('limit') limit?: number) {
+  queue(@Query('limit') @Type(() => Number) limit?: number) {
     return this.reports.findVerificationQueue(limit);
   }
 

@@ -18,10 +18,11 @@ async function bootstrap() {
   });
 
   const swagger = new DocumentBuilder()
-    .setTitle('WasteWatch API')
-    .setDescription('Environmental intelligence platform — Rivers State waste tracking')
-    .setVersion('0.1.0')
+    .setTitle('DeltaFlow Atlas API')
+    .setDescription('Geospatial intelligence platform — waste flows, water monitoring, and flood risk across Rivers State and the Niger Delta')
+    .setVersion('2.0.0')
     .addBearerAuth()
+    .addApiKey({ type: 'apiKey', name: 'X-API-Key', in: 'header' }, 'api-key')
     .build();
   SwaggerModule.setup('api/docs', app, SwaggerModule.createDocument(app, swagger));
 
