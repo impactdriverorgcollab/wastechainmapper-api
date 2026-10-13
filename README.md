@@ -121,6 +121,15 @@ The scraper turns place names into map positions using the `gazetteer` table. Th
 
 Place data: contains information from OpenStreetMap contributors, licensed under the ODbL. https://www.openstreetmap.org/copyright
 
+## Hosting the API
+
+The website on Vercel calls this API from its own server, so the API needs a public address. If the site shows "The API did not answer in time" (502) on every page, the API is not reachable from Vercel.
+
+1. In Render, choose New, Blueprint, and pick this repository. It reads `render.yaml`.
+2. Fill in `DATABASE_URL` (the Supabase transaction pooler, port 6543), `JWT_SECRET` and `CORS_ORIGIN`.
+3. When it is live, open `https://<your-service>.onrender.com/api/docs`. It should load.
+4. In Vercel, under the website project's Environment Variables, set `API_URL` to `https://<your-service>.onrender.com` and `WEB_API_KEY` to the website key (the same value as in `wastewatch-web/.env.local`), then redeploy.
+
 ## Importing partner spreadsheets
 
 Operational data (tonnage, facilities, water readings) cannot be scraped. It comes from RIWAMA, contractors and utilities, usually as spreadsheets. An administrator uploads them at `/admin/import` on the website, or calls `POST /imports/:kind` (kinds: `dump-sites`, `facilities`, `waste-flows`, `water-readings`; admin sign-in required; add `?dryRun=true` to check without saving).

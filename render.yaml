@@ -1,0 +1,25 @@
+# Hosts the API on Render so the Vercel website can reach it.
+# The website's server calls this API, so it must be on a public address. localhost will not do.
+#
+# Use the Starter plan or better. The free plan goes to sleep after 15 minutes and takes about a
+# minute to wake, which is longer than the website waits (45 seconds), so visitors see errors.
+services:
+  - type: web
+    name: wastechainmapper-api
+    runtime: node
+    plan: starter
+    buildCommand: npm ci --include=dev && npx prisma generate && npm run build
+    startCommand: node dist/main
+    healthCheckPath: /api/docs
+    envVars:
+      - key: NODE_ENV
+        value: production
+      # The Supabase "Transaction pooler" address (port 6543), with ?pgbouncer=true on the end.
+      - key: DATABASE_URL
+        sync: false
+      # A long random string. Changing it signs every admin out.
+      - key: JWT_SECRET
+        sync: false
+      # The website's address, for example https://wastechainmapper.vercel.app
+      - key: CORS_ORIGIN
+        sync: false
