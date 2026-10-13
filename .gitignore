@@ -3,3 +3,6 @@ dist/
 .env
 *.js.map
 prisma/migrations/**/migration_lock.toml
+
+# Build cache for scripts/build-gazetteer.mjs (OpenStreetMap lookups)
+scripts/.cache/

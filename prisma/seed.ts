@@ -1,72 +1,68 @@
 /**
- * WasteChainMapper — reference seed for Rivers State
+ * WasteChainMapper: demo seed for Rivers State.
  * Run: npx prisma db seed  (after migration + generate)
+ *
+ * Everything below except the optional admin user is ILLUSTRATIVE demo data
+ * (operators, capacities, coordinates and sample incidents are not verified).
+ * It must not be loaded into a database that feeds the public map.
+ *
+ * Optional: SEED_ADMIN_EMAIL + SEED_ADMIN_PASSWORD (12+ characters) also creates an admin.
  */
 import { PrismaClient } from '@prisma/client';
 import * as argon2 from 'argon2';
+import * as fs from 'fs';
+import * as path from 'path';
 
 const prisma = new PrismaClient();
 const db = () => prisma as any;
 
 async function main() {
-  console.log('🌱 Seeding WasteChainMapper database…');
+  if (process.env.NODE_ENV === 'production' && process.env.SEED_ALLOW_DEMO !== 'true') {
+    throw new Error('Refusing to load demo data in production. Set SEED_ALLOW_DEMO=true to override.');
+  }
+  console.log('Seeding WasteChainMapper demo data...');
 
-  // ── Admin user ────────────────────────────────────────────────────────────────
-  const adminPw = await argon2.hash('admin-deltaflow-2026');
-  await prisma.user.upsert({
-    where: { email: 'admin@deltaflow.ng' },
-    update: {},
-    create: {
-      email: 'admin@deltaflow.ng',
-      passwordHash: adminPw,
-      displayName: 'DeltaFlow Admin',
-      role: 'ADMIN',
-    },
-  });
-  await prisma.user.upsert({
-    where: { email: 'verifier@deltaflow.ng' },
-    update: {},
-    create: {
-      email: 'verifier@deltaflow.ng',
-      passwordHash: await argon2.hash('verifier-2026'),
-      displayName: 'Field Verifier',
-      role: 'FIELD_VERIFIER',
-    },
-  });
-  console.log('✓ Users seeded');
+  // ── Admin user (only when credentials are supplied) ───────────────────────────
+  const adminEmail = process.env.SEED_ADMIN_EMAIL?.trim().toLowerCase();
+  const adminPassword = process.env.SEED_ADMIN_PASSWORD;
+  if (adminEmail && adminPassword && adminPassword.length >= 12) {
+    await prisma.user.upsert({
+      where: { email: adminEmail },
+      update: {},
+      create: {
+        email: adminEmail,
+        passwordHash: await argon2.hash(adminPassword),
+        displayName: 'Admin',
+        role: 'ADMIN',
+      },
+    });
+    console.log('Admin user ready');
+  } else {
+    console.log('No admin created. Set SEED_ADMIN_EMAIL and SEED_ADMIN_PASSWORD (12+ chars) to create one.');
+  }
 
-  // ── Gazetteer (Rivers State communities) ──────────────────────────────────────
-  const gazetteers = [
-    { community: 'Rumuola', ward: 'Rumuola', lga: 'Port Harcourt', lat: 4.8401, lng: 7.0201, aliases: ['Rumuola Road', 'Rumuola junction'] },
-    { community: 'GRA Phase 2', ward: 'GRA Phase 2', lga: 'Port Harcourt', lat: 4.8156, lng: 7.0134, aliases: ['Government Residential Area', 'GRA PH'] },
-    { community: 'Trans Amadi', ward: 'Trans Amadi', lga: 'Port Harcourt', lat: 4.8093, lng: 7.0299, aliases: ['Trans-Amadi', 'Trans Amadi Industrial Layout', 'Amadi Creek'] },
-    { community: 'Diobu', ward: 'Diobu', lga: 'Port Harcourt', lat: 4.7831, lng: 6.9984, aliases: ['Mile 1 Diobu', 'Fimie', 'Old GRA'] },
-    { community: 'Woji', ward: 'Woji', lga: 'Obio-Akpor', lat: 4.8156, lng: 7.0412, aliases: ['Woji Creek', 'Peter Odili Road'] },
-    { community: 'Rumuigbo', ward: 'Rumuigbo', lga: 'Obio-Akpor', lat: 4.8234, lng: 7.0045, aliases: ['Rumuigbo', 'Elelenwo Road'] },
-    { community: 'Eliozu', ward: 'Eliozu', lga: 'Obio-Akpor', lat: 4.8712, lng: 7.0564, aliases: ['Eliozu', 'Airport Road South'] },
-    { community: 'Choba', ward: 'Choba', lga: 'Obio-Akpor', lat: 4.9012, lng: 7.0234, aliases: ['Choba', 'UNIPORT Road', 'University of Port Harcourt'] },
-    { community: 'Elelenwo', ward: 'Elelenwo', lga: 'Obio-Akpor', lat: 4.8601, lng: 7.0401, aliases: ['Elelenwo', 'Rumuibekwe', 'Stadium Road South'] },
-    { community: 'Ogale', ward: 'Ogale', lga: 'Eleme', lat: 4.7654, lng: 7.1123, aliases: ['Eleme', 'Ogale', 'Refinery Road', 'PHRC'] },
-    { community: 'Okrika Town', ward: 'Okrika Town', lga: 'Okrika', lat: 4.7391, lng: 7.0892, aliases: ['Okrika', 'Waterfront Okrika'] },
-    { community: 'Bonny Island', ward: 'Bonny Island', lga: 'Bonny', lat: 4.4412, lng: 7.1521, aliases: ['Bonny', 'Bonny Island', 'LNG Base'] },
-    { community: 'Rumuosi', ward: 'Rumuosi', lga: 'Obio-Akpor', lat: 4.8634, lng: 7.0456, aliases: ['Rumuosi', 'Obio-Akpor junction'] },
-    { community: 'Eagle Island', ward: 'Eagle Island', lga: 'Port Harcourt', lat: 4.7900, lng: 7.0050, aliases: ['Eagle Island', 'Egbelu', 'Creek side PH'] },
-  ];
-
-  for (const g of gazetteers) {
-    const existing = await prisma.gazetteer.findFirst({ where: { communityName: g.community, lga: g.lga } });
-    if (!existing) {
-      const created = await prisma.gazetteer.create({
-        data: { communityName: g.community, ward: g.ward, lga: g.lga, centroidLat: g.lat, centroidLng: g.lng, aliases: g.aliases },
-      });
+  // ── Gazetteer: real place names and coordinates from OpenStreetMap ────────────
+  // Build or refresh the file with: node scripts/build-gazetteer.mjs
+  const gazetteerFile = path.resolve(__dirname, 'data/gazetteer-osm.json');
+  if (fs.existsSync(gazetteerFile)) {
+    const { entries } = JSON.parse(fs.readFileSync(gazetteerFile, 'utf8')) as {
+      entries: { name: string; ward: string; lga: string; lat: number; lng: number; aliases: string[] }[];
+    };
+    for (const g of entries) {
       await prisma.$executeRaw`
-        UPDATE "gazetteer"
-        SET "centroid" = ST_SetSRID(ST_MakePoint(${g.lng}, ${g.lat}), 4326)::geography
-        WHERE id = ${created.id}::uuid
+        INSERT INTO gazetteer (community_name, ward, lga, centroid, centroid_lat, centroid_lng, aliases)
+        VALUES (${g.name}, ${g.ward}, ${g.lga},
+                ST_SetSRID(ST_MakePoint(${g.lng}::float8, ${g.lat}::float8), 4326)::geography,
+                ${g.lat}::float8, ${g.lng}::float8, ${g.aliases}::text[])
+        ON CONFLICT (community_name, ward, lga) DO UPDATE
+          SET centroid = EXCLUDED.centroid, centroid_lat = EXCLUDED.centroid_lat,
+              centroid_lng = EXCLUDED.centroid_lng, aliases = EXCLUDED.aliases
       `;
     }
+    console.log(`✓ Gazetteer seeded (${entries.length} OpenStreetMap places)`);
+  } else {
+    console.log('Gazetteer skipped: prisma/data/gazetteer-osm.json is missing. Run: node scripts/build-gazetteer.mjs');
   }
-  console.log('✓ Gazetteer seeded');
 
   // ── Collection points ─────────────────────────────────────────────────────────
   const collectionPoints = [
@@ -377,7 +373,6 @@ async function main() {
   }
 
   console.log('\n✅ WasteChainMapper seed complete.');
-  console.log('   Admin login: admin@deltaflow.ng / admin-deltaflow-2026');
 }
 
 main()

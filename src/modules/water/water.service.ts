@@ -62,8 +62,12 @@ export class WaterService {
     return db(this.prisma).waterReading.findMany({
       where: {
         sourceId,
-        ...(from && { recordedAt: { gte: new Date(from) } }),
-        ...(to && { recordedAt: { lte: new Date(to) } }),
+        ...((from || to) && {
+          recordedAt: {
+            ...(from && { gte: new Date(from) }),
+            ...(to && { lte: new Date(to) }),
+          },
+        }),
       },
       orderBy: { recordedAt: 'desc' },
       take: 200,

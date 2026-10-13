@@ -1,10 +1,17 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
+import { IsNumber, IsOptional, IsString, Max, Min, MinLength } from 'class-validator';
+import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger';
 import { PrismaService } from '../../prisma/prisma.service';
 
 export class CreateVehicleDto {
-  plateNumber: string;
-  operator?: string;
-  capacityM3?: number;
+  @ApiProperty() @IsString() @MinLength(3) plateNumber: string;
+  @ApiPropertyOptional() @IsOptional() @IsString() operator?: string;
+  @ApiPropertyOptional() @IsOptional() @IsNumber() @Min(0) capacityM3?: number;
+}
+
+export class UpdateLocationDto {
+  @ApiProperty() @IsNumber() @Min(-90) @Max(90) latitude: number;
+  @ApiProperty() @IsNumber() @Min(-180) @Max(180) longitude: number;
 }
 
 const db = (p: PrismaService) => p as any;

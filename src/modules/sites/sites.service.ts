@@ -1,4 +1,4 @@
-import { Injectable, NotFoundException } from '@nestjs/common';
+import { Injectable, NotFoundException, BadRequestException } from '@nestjs/common';
 import { PrismaService } from '../../prisma/prisma.service';
 import { Prisma, SiteStatus, WasteType, ConfidenceTier } from '@prisma/client';
 import { CreateSiteDto } from './dto/create-site.dto';
@@ -71,7 +71,9 @@ export class SitesService {
         ...(where.ward && { ward: where.ward }),
         ...(where.confidenceTier && { confidenceTier: where.confidenceTier }),
         ...(where.wasteType && { wasteType: where.wasteType }),
-        ...(where.status && { status: where.status }),
+        // INACTIVE sites (for example an unconfirmed site whose every report was rejected) are
+        // hidden unless someone asks for that status by name.
+        status: where.status ?? { not: SiteStatus.INACTIVE },
       },
       orderBy: { firstSeenAt: 'desc' },
       skip: (page - 1) * limit,
@@ -103,6 +105,7 @@ export class SitesService {
       FROM dump_sites
       WHERE
         location IS NOT NULL
+        AND status <> 'INACTIVE'::"SiteStatus"
         AND ST_DWithin(location, ST_MakePoint(${dto.lng}, ${dto.lat})::geography, ${dto.radiusM})
         ${dto.confidenceTier ? Prisma.sql`AND confidence_tier = ${dto.confidenceTier}::"ConfidenceTier"` : Prisma.empty}
         ${dto.wasteType ? Prisma.sql`AND waste_type = ${dto.wasteType}::"WasteType"` : Prisma.empty}
@@ -139,6 +142,7 @@ export class SitesService {
         AND g.boundary IS NOT NULL
       WHERE
         ds.location IS NOT NULL
+        AND ds.status <> 'INACTIVE'::"SiteStatus"
         AND ST_Within(ds.location::geometry, g.boundary::geometry)
       ORDER BY ds.first_seen_at DESC
     `;
@@ -161,6 +165,10 @@ export class SitesService {
   // ── Update ───────────────────────────────────────────────────────────────
   async update(id: string, dto: Partial<CreateSiteDto>) {
     await this.findOne(id);
+
+    if ((dto.latitude === undefined) !== (dto.longitude === undefined)) {
+      throw new BadRequestException('Send latitude and longitude together.');
+    }
 
     // If coordinates are being updated, rebuild the geography column via raw SQL.
     if (dto.latitude !== undefined && dto.longitude !== undefined) {

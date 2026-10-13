@@ -13,6 +13,7 @@ export class AnalyticsService {
       where: {
         latitude: { not: null },
         longitude: { not: null },
+        status: { not: 'INACTIVE' },
         ...(lga && { lga }),
       },
       select: { latitude: true, longitude: true, confidenceTier: true, wasteType: true },
@@ -84,7 +85,7 @@ export class AnalyticsService {
       totalSites, totalFlows, processedFlows, openAnomalies,
       facilities, waterSources, vehicles,
     ] = await Promise.all([
-      this.prisma.dumpSite.count(),
+      this.prisma.dumpSite.count({ where: { status: { not: 'INACTIVE' } } }),
       db(this.prisma).wasteFlow.count(),
       db(this.prisma).wasteFlow.count({ where: { status: 'PROCESSED' } }),
       db(this.prisma).waterAnomaly.count({ where: { resolvedAt: null } }),

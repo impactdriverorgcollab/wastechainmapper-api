@@ -12,7 +12,12 @@
     "prisma:generate": "prisma generate",
     "prisma:migrate:dev": "prisma migrate dev",
     "prisma:studio": "prisma studio",
-    "db:seed": "ts-node prisma/seed.ts"
+    "db:seed": "ts-node prisma/seed.ts",
+    "db:manual-sql": "node scripts/build-manual-sql.mjs",
+    "gazetteer:build": "node scripts/build-gazetteer.mjs",
+    "gazetteer:load": "ts-node scripts/load-gazetteer.ts",
+    "web-key": "ts-node scripts/issue-web-key.ts",
+    "test:imports": "ts-node src/modules/imports/import-rules.test.ts"
   },
   "prisma": {
     "seed": "ts-node prisma/seed.ts"

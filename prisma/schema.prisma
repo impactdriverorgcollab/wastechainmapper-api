@@ -110,6 +110,7 @@ enum ApiKeyTier {
   FREE
   PROFESSIONAL
   ENTERPRISE
+  INTERNAL
 }
 
 // ─── Models ───────────────────────────────────────────────────────────────────
@@ -316,6 +317,9 @@ model WasteFlow {
   processedAt  DateTime? @map("processed_at")
   notes        String?
 
+  // Reference from an imported spreadsheet. Makes re-uploading the same file safe.
+  sourceRef    String?   @unique @map("source_ref")
+
   createdAt DateTime @default(now()) @map("created_at")
   updatedAt DateTime @updatedAt @map("updated_at")
 
@@ -386,6 +390,14 @@ model WaterSource {
   isActive    Boolean @default(true) @map("is_active")
   description String?
 
+  // Provenance of imported points (WPDx, OpenStreetMap). Null for hand-entered sources.
+  sourceRef        String?   @unique @map("source_ref")
+  dataSource       String?   @map("data_source")
+  surveyedAt       DateTime? @map("surveyed_at")
+  condition        String?
+  technology       String?
+  populationServed Int?      @map("population_served")
+
   createdAt DateTime @default(now()) @map("created_at")
   updatedAt DateTime @updatedAt @map("updated_at")
 
@@ -407,6 +419,9 @@ model WaterReading {
   turbidityNtu Float? @map("turbidity_ntu")
   isSensor     Boolean @default(false) @map("is_sensor")
   notes        String?
+
+  // Reference from an imported spreadsheet. Makes re-uploading the same file safe.
+  sourceRef    String? @unique @map("source_ref")
 
   recordedAt DateTime @default(now()) @map("recorded_at")
   createdAt  DateTime @default(now()) @map("created_at")
@@ -494,4 +509,14 @@ model ScrapeJob {
 
   @@index([status])
   @@map("scrape_jobs")
+}
+
+// Articles already processed by the scraper (written by wastewatch-scraper, not by this API).
+model SeenArticle {
+  url       String   @id
+  source    String?
+  outcome   String
+  firstSeen DateTime @default(now()) @map("first_seen")
+
+  @@map("seen_articles")
 }

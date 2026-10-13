@@ -1,3 +1,8 @@
+-- DEPRECATED: this script does not match the current schema (column names differ and the
+-- geography columns are never filled), so it fails or produces rows spatial queries cannot see.
+-- Its coordinates also disagree with prisma/seed.ts and have not been checked against a map.
+-- Use prisma/seed.ts for demo data, and load real data from a checked source such as OpenStreetMap.
+
 -- Known illegal dump sites in Rivers State (publicly documented)
 INSERT INTO dump_sites (
   id, latitude, longitude, status, waste_type, confidence_tier,

@@ -25,7 +25,9 @@ export class AnalyticsController {
     @Query('lga') lga?: string,
     @Query('days') days?: string,
   ) {
-    return this.service.flowTimeline(lga, days ? parseInt(days, 10) : 30);
+    const parsed = Number.parseInt(days ?? '', 10);
+    const safeDays = Number.isFinite(parsed) ? Math.min(Math.max(parsed, 1), 365) : 30;
+    return this.service.flowTimeline(lga, safeDays);
   }
 
   @Get('benchmark')

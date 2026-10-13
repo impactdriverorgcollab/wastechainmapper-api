@@ -1,0 +1,5193 @@
+{
+ "source": "OpenStreetMap via Overpass API and Nominatim",
+ "license": "ODbL 1.0. Contains information from OpenStreetMap contributors. https://www.openstreetmap.org/copyright",
+ "retrievedAt": "2026-10-12",
+ "notes": "Ward is \"Unknown\" because OpenStreetMap has no ward boundaries for these places. Coordinates are the OSM place node, usually the centre of the settlement.",
+ "count": 492,
+ "entries": [
+  {
+   "name": "Abua",
+   "lga": "Abua/Odual",
+   "ward": "Unknown",
+   "lat": 4.855952,
+   "lng": 6.645763,
+   "aliases": [],
+   "placeType": "town",
+   "osmId": "node/501331249"
+  },
+  {
+   "name": "Agada",
+   "lga": "Abua/Odual",
+   "ward": "Unknown",
+   "lat": 4.799498,
+   "lng": 6.688427,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501513791"
+  },
+  {
+   "name": "Agada (II)",
+   "lga": "Abua/Odual",
+   "ward": "Unknown",
+   "lat": 4.804892,
+   "lng": 6.680774,
+   "aliases": [],
+   "placeType": "locality",
+   "osmId": "node/501514771"
+  },
+  {
+   "name": "Agunugban",
+   "lga": "Abua/Odual",
+   "ward": "Unknown",
+   "lat": 4.945225,
+   "lng": 6.588069,
+   "aliases": [
+    "Agunughan"
+   ],
+   "placeType": "village",
+   "osmId": "node/501393309"
+  },
+  {
+   "name": "Akani",
+   "lga": "Abua/Odual",
+   "ward": "Unknown",
+   "lat": 4.76448,
+   "lng": 6.497625,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501496603"
+  },
+  {
+   "name": "Amerikpoko",
+   "lga": "Abua/Odual",
+   "ward": "Unknown",
+   "lat": 4.882778,
+   "lng": 6.451389,
+   "aliases": [
+    "Emerikpoko",
+    "Amerikopoko"
+   ],
+   "placeType": "village",
+   "osmId": "node/501514723"
+  },
+  {
+   "name": "Amoroto",
+   "lga": "Abua/Odual",
+   "ward": "Unknown",
+   "lat": 4.728509,
+   "lng": 6.455355,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501430451"
+  },
+  {
+   "name": "Anu",
+   "lga": "Abua/Odual",
+   "ward": "Unknown",
+   "lat": 4.804588,
+   "lng": 6.693405,
+   "aliases": [],
+   "placeType": "locality",
+   "osmId": "node/501393125"
+  },
+  {
+   "name": "Arukwa Waterside",
+   "lga": "Abua/Odual",
+   "ward": "Unknown",
+   "lat": 4.867918,
+   "lng": 6.579856,
+   "aliases": [],
+   "placeType": "locality",
+   "osmId": "node/501329804"
+  },
+  {
+   "name": "Ayong",
+   "lga": "Abua/Odual",
+   "ward": "Unknown",
+   "lat": 4.848068,
+   "lng": 6.481309,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501497430"
+  },
+  {
+   "name": "Ayun",
+   "lga": "Abua/Odual",
+   "ward": "Unknown",
+   "lat": 4.858975,
+   "lng": 6.450266,
+   "aliases": [
+    "Ayon"
+   ],
+   "placeType": "village",
+   "osmId": "node/501430466"
+  },
+  {
+   "name": "Degema Hulk",
+   "lga": "Abua/Odual",
+   "ward": "Unknown",
+   "lat": 4.760091,
+   "lng": 6.750121,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501514715"
+  },
+  {
+   "name": "Egbama",
+   "lga": "Abua/Odual",
+   "ward": "Unknown",
+   "lat": 4.812614,
+   "lng": 6.602738,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501463652"
+  },
+  {
+   "name": "Egbolom",
+   "lga": "Abua/Odual",
+   "ward": "Unknown",
+   "lat": 4.791719,
+   "lng": 6.668998,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501433443"
+  },
+  {
+   "name": "Egorbiri",
+   "lga": "Abua/Odual",
+   "ward": "Unknown",
+   "lat": 4.809369,
+   "lng": 6.594623,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501333474"
+  },
+  {
+   "name": "Eluku",
+   "lga": "Abua/Odual",
+   "ward": "Unknown",
+   "lat": 4.755532,
+   "lng": 6.636832,
+   "aliases": [
+    "Eluko"
+   ],
+   "placeType": "village",
+   "osmId": "node/501392938"
+  },
+  {
+   "name": "Emago",
+   "lga": "Abua/Odual",
+   "ward": "Unknown",
+   "lat": 4.718095,
+   "lng": 6.466849,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501430190"
+  },
+  {
+   "name": "Emebu",
+   "lga": "Abua/Odual",
+   "ward": "Unknown",
+   "lat": 4.906734,
+   "lng": 6.587716,
+   "aliases": [
+    "Emabu"
+   ],
+   "placeType": "village",
+   "osmId": "node/501496586"
+  },
+  {
+   "name": "Emelesu",
+   "lga": "Abua/Odual",
+   "ward": "Unknown",
+   "lat": 4.839303,
+   "lng": 6.698506,
+   "aliases": [
+    "Emelesua"
+   ],
+   "placeType": "village",
+   "osmId": "node/501463748"
+  },
+  {
+   "name": "Engenni",
+   "lga": "Abua/Odual",
+   "ward": "Unknown",
+   "lat": 4.819545,
+   "lng": 6.586633,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501514772"
+  },
+  {
+   "name": "Epaghia",
+   "lga": "Abua/Odual",
+   "ward": "Unknown",
+   "lat": 4.799531,
+   "lng": 6.65186,
+   "aliases": [
+    "Epaia"
+   ],
+   "placeType": "village",
+   "osmId": "node/501396140"
+  },
+  {
+   "name": "Ewon",
+   "lga": "Abua/Odual",
+   "ward": "Unknown",
+   "lat": 4.779378,
+   "lng": 6.640575,
+   "aliases": [
+    "Iyaki-Ewon",
+    "Iyaki"
+   ],
+   "placeType": "village",
+   "osmId": "node/501521714"
+  },
+  {
+   "name": "Gunekiri",
+   "lga": "Abua/Odual",
+   "ward": "Unknown",
+   "lat": 4.792133,
+   "lng": 6.715383,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501514646"
+  },
+  {
+   "name": "Kugbo",
+   "lga": "Abua/Odual",
+   "ward": "Unknown",
+   "lat": 4.718095,
+   "lng": 6.466849,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501430194"
+  },
+  {
+   "name": "Obarayi",
+   "lga": "Abua/Odual",
+   "ward": "Unknown",
+   "lat": 4.918743,
+   "lng": 6.576744,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501465764"
+  },
+  {
+   "name": "Obedum",
+   "lga": "Abua/Odual",
+   "ward": "Unknown",
+   "lat": 4.903099,
+   "lng": 6.440075,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501430378"
+  },
+  {
+   "name": "Odau",
+   "lga": "Abua/Odual",
+   "ward": "Unknown",
+   "lat": 4.921538,
+   "lng": 6.450547,
+   "aliases": [
+    "Odan",
+    "Odua"
+   ],
+   "placeType": "village",
+   "osmId": "node/501483715"
+  },
+  {
+   "name": "Ogbema",
+   "lga": "Abua/Odual",
+   "ward": "Unknown",
+   "lat": 4.812605,
+   "lng": 6.602707,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501463655"
+  },
+  {
+   "name": "Ogbema Koku",
+   "lga": "Abua/Odual",
+   "ward": "Unknown",
+   "lat": 4.78933,
+   "lng": 6.641208,
+   "aliases": [
+    "Ogboma-Koku"
+   ],
+   "placeType": "village",
+   "osmId": "node/501496451"
+  },
+  {
+   "name": "Ogboloma",
+   "lga": "Abua/Odual",
+   "ward": "Unknown",
+   "lat": 4.805779,
+   "lng": 6.48332,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501496450"
+  },
+  {
+   "name": "Ogonokom",
+   "lga": "Abua/Odual",
+   "ward": "Unknown",
+   "lat": 4.791097,
+   "lng": 6.709181,
+   "aliases": [
+    "Ogbnokom"
+   ],
+   "placeType": "village",
+   "osmId": "node/501329546"
+  },
+  {
+   "name": "Okobor",
+   "lga": "Abua/Odual",
+   "ward": "Unknown",
+   "lat": 4.884909,
+   "lng": 6.617642,
+   "aliases": [
+    "Okobaw",
+    "Okobo"
+   ],
+   "placeType": "village",
+   "osmId": "node/501329853"
+  },
+  {
+   "name": "Okolobili",
+   "lga": "Abua/Odual",
+   "ward": "Unknown",
+   "lat": 4.805066,
+   "lng": 6.720402,
+   "aliases": [
+    "Kalabari Settlement"
+   ],
+   "placeType": "village",
+   "osmId": "node/501465754"
+  },
+  {
+   "name": "Okolomada",
+   "lga": "Abua/Odual",
+   "ward": "Unknown",
+   "lat": 4.849883,
+   "lng": 6.488141,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501513164"
+  },
+  {
+   "name": "Okolomade",
+   "lga": "Abua/Odual",
+   "ward": "Unknown",
+   "lat": 4.849883,
+   "lng": 6.488141,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501463475"
+  },
+  {
+   "name": "Omokwa",
+   "lga": "Abua/Odual",
+   "ward": "Unknown",
+   "lat": 4.850308,
+   "lng": 6.654655,
+   "aliases": [
+    "Amokwa"
+   ],
+   "placeType": "village",
+   "osmId": "node/501496615"
+  },
+  {
+   "name": "Opuogbogolo",
+   "lga": "Abua/Odual",
+   "ward": "Unknown",
+   "lat": 4.90517,
+   "lng": 6.569048,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501432805"
+  },
+  {
+   "name": "Serebia",
+   "lga": "Abua/Odual",
+   "ward": "Unknown",
+   "lat": 4.842655,
+   "lng": 6.705062,
+   "aliases": [
+    "Seregbia",
+    "Sereobia"
+   ],
+   "placeType": "village",
+   "osmId": "node/501497099"
+  },
+  {
+   "name": "Abarikpo",
+   "lga": "Ahoada East",
+   "ward": "Unknown",
+   "lat": 5.155171,
+   "lng": 6.635057,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/8868023439"
+  },
+  {
+   "name": "Abessa",
+   "lga": "Ahoada East",
+   "ward": "Unknown",
+   "lat": 4.958622,
+   "lng": 6.536621,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501336151"
+  },
+  {
+   "name": "Ahoada",
+   "lga": "Ahoada East",
+   "ward": "Unknown",
+   "lat": 5.085204,
+   "lng": 6.64696,
+   "aliases": [],
+   "placeType": "town",
+   "osmId": "node/501509796"
+  },
+  {
+   "name": "Ala-Ahoada",
+   "lga": "Ahoada East",
+   "ward": "Unknown",
+   "lat": 5.105158,
+   "lng": 6.626785,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/8867998606"
+  },
+  {
+   "name": "Awurugboko",
+   "lga": "Ahoada East",
+   "ward": "Unknown",
+   "lat": 5.151925,
+   "lng": 6.596756,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/8868006679"
+  },
+  {
+   "name": "Edeoha",
+   "lga": "Ahoada East",
+   "ward": "Unknown",
+   "lat": 5.0294,
+   "lng": 6.629921,
+   "aliases": [
+    "Oduaha"
+   ],
+   "placeType": "village",
+   "osmId": "node/501524359"
+  },
+  {
+   "name": "Ekpena",
+   "lga": "Ahoada East",
+   "ward": "Unknown",
+   "lat": 5.082773,
+   "lng": 6.667496,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/8868652804"
+  },
+  {
+   "name": "Idoke",
+   "lga": "Ahoada East",
+   "ward": "Unknown",
+   "lat": 5.027955,
+   "lng": 6.66608,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/8868548952"
+  },
+  {
+   "name": "Iheke",
+   "lga": "Ahoada East",
+   "ward": "Unknown",
+   "lat": 5.067621,
+   "lng": 6.621823,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/8867998605"
+  },
+  {
+   "name": "Ihowo",
+   "lga": "Ahoada East",
+   "ward": "Unknown",
+   "lat": 5.007649,
+   "lng": 6.66211,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/8868548951"
+  },
+  {
+   "name": "Ihuaba",
+   "lga": "Ahoada East",
+   "ward": "Unknown",
+   "lat": 5.03471,
+   "lng": 6.677088,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/8868548953"
+  },
+  {
+   "name": "Ihuama",
+   "lga": "Ahoada East",
+   "ward": "Unknown",
+   "lat": 4.975762,
+   "lng": 6.67484,
+   "aliases": [
+    "Ehuama"
+   ],
+   "placeType": "village",
+   "osmId": "node/501497288"
+  },
+  {
+   "name": "Ihubogo",
+   "lga": "Ahoada East",
+   "ward": "Unknown",
+   "lat": 5.181764,
+   "lng": 6.662799,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/8868023438"
+  },
+  {
+   "name": "Ihubulu",
+   "lga": "Ahoada East",
+   "ward": "Unknown",
+   "lat": 5.08814,
+   "lng": 6.604204,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/8867998599"
+  },
+  {
+   "name": "Obelle",
+   "lga": "Ahoada East",
+   "ward": "Unknown",
+   "lat": 4.919519,
+   "lng": 6.673298,
+   "aliases": [
+    "Obele-Ibaa"
+   ],
+   "placeType": "village",
+   "osmId": "node/501393164"
+  },
+  {
+   "name": "Obiokwu",
+   "lga": "Ahoada East",
+   "ward": "Unknown",
+   "lat": 5.120304,
+   "lng": 6.598292,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/8868006681"
+  },
+  {
+   "name": "Ochigba",
+   "lga": "Ahoada East",
+   "ward": "Unknown",
+   "lat": 4.99799,
+   "lng": 6.587349,
+   "aliases": [
+    "Ochiba"
+   ],
+   "placeType": "village",
+   "osmId": "node/501522388"
+  },
+  {
+   "name": "Odiabidi",
+   "lga": "Ahoada East",
+   "ward": "Unknown",
+   "lat": 4.950073,
+   "lng": 6.63648,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501395844"
+  },
+  {
+   "name": "Odimeneyi",
+   "lga": "Ahoada East",
+   "ward": "Unknown",
+   "lat": 5.140993,
+   "lng": 6.665503,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/8868537636"
+  },
+  {
+   "name": "Ogbo",
+   "lga": "Ahoada East",
+   "ward": "Unknown",
+   "lat": 5.131403,
+   "lng": 6.628762,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501489382"
+  },
+  {
+   "name": "Oklisama",
+   "lga": "Ahoada East",
+   "ward": "Unknown",
+   "lat": 5.13366,
+   "lng": 6.684006,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/8868537637"
+  },
+  {
+   "name": "Oriaje",
+   "lga": "Ahoada East",
+   "ward": "Unknown",
+   "lat": 5.080059,
+   "lng": 6.682001,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/8868652803"
+  },
+  {
+   "name": "Ubio",
+   "lga": "Ahoada East",
+   "ward": "Unknown",
+   "lat": 5.174464,
+   "lng": 6.616778,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/8868677002"
+  },
+  {
+   "name": "Uduagba",
+   "lga": "Ahoada East",
+   "ward": "Unknown",
+   "lat": 5.058972,
+   "lng": 6.639212,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501450814"
+  },
+  {
+   "name": "Ulapata",
+   "lga": "Ahoada East",
+   "ward": "Unknown",
+   "lat": 5.090617,
+   "lng": 6.626913,
+   "aliases": [
+    "Oraputa"
+   ],
+   "placeType": "village",
+   "osmId": "node/501423556"
+  },
+  {
+   "name": "Unakala",
+   "lga": "Ahoada East",
+   "ward": "Unknown",
+   "lat": 5.026578,
+   "lng": 6.598706,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/7900799846"
+  },
+  {
+   "name": "Akara",
+   "lga": "Ahoada West",
+   "ward": "Unknown",
+   "lat": 5.105399,
+   "lng": 6.504744,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/8868001160"
+  },
+  {
+   "name": "Akaramini",
+   "lga": "Ahoada West",
+   "ward": "Unknown",
+   "lat": 5.118773,
+   "lng": 6.486899,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/8868001162"
+  },
+  {
+   "name": "Akinima",
+   "lga": "Ahoada West",
+   "ward": "Unknown",
+   "lat": 5.088367,
+   "lng": 6.469924,
+   "aliases": [],
+   "placeType": "town",
+   "osmId": "node/7896204001"
+  },
+  {
+   "name": "Ebiriba",
+   "lga": "Ahoada West",
+   "ward": "Unknown",
+   "lat": 5.145118,
+   "lng": 6.540625,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/8868006675"
+  },
+  {
+   "name": "Ebraso",
+   "lga": "Ahoada West",
+   "ward": "Unknown",
+   "lat": 5.137825,
+   "lng": 6.54136,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/8868006674"
+  },
+  {
+   "name": "Emezi I",
+   "lga": "Ahoada West",
+   "ward": "Unknown",
+   "lat": 5.072881,
+   "lng": 6.527644,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/8868001157"
+  },
+  {
+   "name": "Emezi II",
+   "lga": "Ahoada West",
+   "ward": "Unknown",
+   "lat": 5.072545,
+   "lng": 6.516365,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/8868001158"
+  },
+  {
+   "name": "Idu",
+   "lga": "Ahoada West",
+   "ward": "Unknown",
+   "lat": 5.102837,
+   "lng": 6.549901,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501351944"
+  },
+  {
+   "name": "Igovia",
+   "lga": "Ahoada West",
+   "ward": "Unknown",
+   "lat": 4.974572,
+   "lng": 6.472504,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501433452"
+  },
+  {
+   "name": "Isusu",
+   "lga": "Ahoada West",
+   "ward": "Unknown",
+   "lat": 5.159061,
+   "lng": 6.491189,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/8780907942"
+  },
+  {
+   "name": "Kunusha",
+   "lga": "Ahoada West",
+   "ward": "Unknown",
+   "lat": 4.976991,
+   "lng": 6.46983,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501433412"
+  },
+  {
+   "name": "Nembe",
+   "lga": "Ahoada West",
+   "ward": "Unknown",
+   "lat": 5.082555,
+   "lng": 6.57031,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/8867998600"
+  },
+  {
+   "name": "Obode",
+   "lga": "Ahoada West",
+   "ward": "Unknown",
+   "lat": 5.01088,
+   "lng": 6.526449,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/8868497820"
+  },
+  {
+   "name": "Oboh",
+   "lga": "Ahoada West",
+   "ward": "Unknown",
+   "lat": 5.17051,
+   "lng": 6.517324,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/8868006676"
+  },
+  {
+   "name": "Ochebele",
+   "lga": "Ahoada West",
+   "ward": "Unknown",
+   "lat": 5.142201,
+   "lng": 6.503055,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/8868001163"
+  },
+  {
+   "name": "Ochika",
+   "lga": "Ahoada West",
+   "ward": "Unknown",
+   "lat": 5.073381,
+   "lng": 6.563249,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/8867998601"
+  },
+  {
+   "name": "Odiderengwaji",
+   "lga": "Ahoada West",
+   "ward": "Unknown",
+   "lat": 5.063143,
+   "lng": 6.467374,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/8868012592"
+  },
+  {
+   "name": "Odieke",
+   "lga": "Ahoada West",
+   "ward": "Unknown",
+   "lat": 5.020041,
+   "lng": 6.440302,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/8868012594"
+  },
+  {
+   "name": "Odiopiti",
+   "lga": "Ahoada West",
+   "ward": "Unknown",
+   "lat": 5.044331,
+   "lng": 6.452731,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/8868012593"
+  },
+  {
+   "name": "Ogbedi",
+   "lga": "Ahoada West",
+   "ward": "Unknown",
+   "lat": 5.044875,
+   "lng": 6.511185,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501528047"
+  },
+  {
+   "name": "Ogbologbolo",
+   "lga": "Ahoada West",
+   "ward": "Unknown",
+   "lat": 5.012219,
+   "lng": 6.557666,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/7900774599"
+  },
+  {
+   "name": "Ogoda",
+   "lga": "Ahoada West",
+   "ward": "Unknown",
+   "lat": 5.116759,
+   "lng": 6.574939,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/8867998597"
+  },
+  {
+   "name": "Ogolokiama",
+   "lga": "Ahoada West",
+   "ward": "Unknown",
+   "lat": 4.976248,
+   "lng": 6.498372,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501486178"
+  },
+  {
+   "name": "Okarki",
+   "lga": "Ahoada West",
+   "ward": "Unknown",
+   "lat": 4.983118,
+   "lng": 6.429248,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501336104"
+  },
+  {
+   "name": "Okogbe",
+   "lga": "Ahoada West",
+   "ward": "Unknown",
+   "lat": 5.061437,
+   "lng": 6.540781,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/7898535422"
+  },
+  {
+   "name": "Olekata",
+   "lga": "Ahoada West",
+   "ward": "Unknown",
+   "lat": 5.065033,
+   "lng": 6.588598,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/8867998604"
+  },
+  {
+   "name": "Olokob I",
+   "lga": "Ahoada West",
+   "ward": "Unknown",
+   "lat": 5.060189,
+   "lng": 6.569096,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/8867998602"
+  },
+  {
+   "name": "Olokob II",
+   "lga": "Ahoada West",
+   "ward": "Unknown",
+   "lat": 5.050042,
+   "lng": 6.567331,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/8867998603"
+  },
+  {
+   "name": "Olubie",
+   "lga": "Ahoada West",
+   "ward": "Unknown",
+   "lat": 5.147096,
+   "lng": 6.579933,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/8868006680"
+  },
+  {
+   "name": "Onitu",
+   "lga": "Ahoada West",
+   "ward": "Unknown",
+   "lat": 5.088692,
+   "lng": 6.472385,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501489784"
+  },
+  {
+   "name": "Oshi",
+   "lga": "Ahoada West",
+   "ward": "Unknown",
+   "lat": 5.096413,
+   "lng": 6.487274,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501451884"
+  },
+  {
+   "name": "Ositu",
+   "lga": "Ahoada West",
+   "ward": "Unknown",
+   "lat": 5.083607,
+   "lng": 6.479707,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/8868001161"
+  },
+  {
+   "name": "Oyiba",
+   "lga": "Ahoada West",
+   "ward": "Unknown",
+   "lat": 5.099399,
+   "lng": 6.574388,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501407978"
+  },
+  {
+   "name": "Ubeta",
+   "lga": "Ahoada West",
+   "ward": "Unknown",
+   "lat": 5.166704,
+   "lng": 6.5849,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501465510"
+  },
+  {
+   "name": "Ukperede",
+   "lga": "Ahoada West",
+   "ward": "Unknown",
+   "lat": 5.08498,
+   "lng": 6.536904,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/8868001159"
+  },
+  {
+   "name": "Uputabo",
+   "lga": "Ahoada West",
+   "ward": "Unknown",
+   "lat": 5.085939,
+   "lng": 6.588883,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/8867998598"
+  },
+  {
+   "name": "Uwuchi",
+   "lga": "Ahoada West",
+   "ward": "Unknown",
+   "lat": 5.175695,
+   "lng": 6.568682,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/8868006678"
+  },
+  {
+   "name": "Abelkiri",
+   "lga": "Akuku-Toru",
+   "ward": "Unknown",
+   "lat": 4.554019,
+   "lng": 6.600296,
+   "aliases": [
+    "Abukiri"
+   ],
+   "placeType": "village",
+   "osmId": "node/501496730"
+  },
+  {
+   "name": "Abonnema",
+   "lga": "Akuku-Toru",
+   "ward": "Unknown",
+   "lat": 4.724306,
+   "lng": 6.773903,
+   "aliases": [],
+   "placeType": "town",
+   "osmId": "node/501496717"
+  },
+  {
+   "name": "Agudaboko",
+   "lga": "Akuku-Toru",
+   "ward": "Unknown",
+   "lat": 4.398315,
+   "lng": 6.688055,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501432364"
+  },
+  {
+   "name": "Agudakiri",
+   "lga": "Akuku-Toru",
+   "ward": "Unknown",
+   "lat": 4.404267,
+   "lng": 6.687115,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501334521"
+  },
+  {
+   "name": "Aiya Abissa",
+   "lga": "Akuku-Toru",
+   "ward": "Unknown",
+   "lat": 4.395846,
+   "lng": 6.765569,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501464197"
+  },
+  {
+   "name": "Alalabo Obenikiri",
+   "lga": "Akuku-Toru",
+   "ward": "Unknown",
+   "lat": 4.486069,
+   "lng": 6.813159,
+   "aliases": [
+    "Bankikiri"
+   ],
+   "placeType": "village",
+   "osmId": "node/501392960"
+  },
+  {
+   "name": "Allagoakiri",
+   "lga": "Akuku-Toru",
+   "ward": "Unknown",
+   "lat": 4.694833,
+   "lng": 6.570182,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501484107"
+  },
+  {
+   "name": "Apiboko",
+   "lga": "Akuku-Toru",
+   "ward": "Unknown",
+   "lat": 4.451069,
+   "lng": 6.712396,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501513441"
+  },
+  {
+   "name": "Balo",
+   "lga": "Akuku-Toru",
+   "ward": "Unknown",
+   "lat": 4.448822,
+   "lng": 6.81293,
+   "aliases": [
+    "Dagogokiri"
+   ],
+   "placeType": "village",
+   "osmId": "node/501463740"
+  },
+  {
+   "name": "Balo Creek",
+   "lga": "Akuku-Toru",
+   "ward": "Unknown",
+   "lat": 4.457315,
+   "lng": 6.822965,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501514626"
+  },
+  {
+   "name": "Dabibikiri",
+   "lga": "Akuku-Toru",
+   "ward": "Unknown",
+   "lat": 4.393898,
+   "lng": 6.714597,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501395803"
+  },
+  {
+   "name": "Dannykiri",
+   "lga": "Akuku-Toru",
+   "ward": "Unknown",
+   "lat": 4.434667,
+   "lng": 6.533775,
+   "aliases": [
+    "Ikirikokiri"
+   ],
+   "placeType": "village",
+   "osmId": "node/501496583"
+  },
+  {
+   "name": "Eddykiri",
+   "lga": "Akuku-Toru",
+   "ward": "Unknown",
+   "lat": 4.578902,
+   "lng": 6.800849,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501513320"
+  },
+  {
+   "name": "Eddykiri",
+   "lga": "Akuku-Toru",
+   "ward": "Unknown",
+   "lat": 4.364346,
+   "lng": 6.697737,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501522733"
+  },
+  {
+   "name": "Ejekiri",
+   "lga": "Akuku-Toru",
+   "ward": "Unknown",
+   "lat": 4.427879,
+   "lng": 6.547668,
+   "aliases": [
+    "Markkiri"
+   ],
+   "placeType": "village",
+   "osmId": "node/501392723"
+  },
+  {
+   "name": "Ekwilema",
+   "lga": "Akuku-Toru",
+   "ward": "Unknown",
+   "lat": 4.598727,
+   "lng": 6.756154,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501496520"
+  },
+  {
+   "name": "Elem Abissa",
+   "lga": "Akuku-Toru",
+   "ward": "Unknown",
+   "lat": 4.422728,
+   "lng": 6.781489,
+   "aliases": [
+    "Elem Abisse",
+    "Bishop Kiri",
+    "Bishopkiri"
+   ],
+   "placeType": "village",
+   "osmId": "node/501521719"
+  },
+  {
+   "name": "Elizakiri",
+   "lga": "Akuku-Toru",
+   "ward": "Unknown",
+   "lat": 4.324308,
+   "lng": 6.6371,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501485831"
+  },
+  {
+   "name": "Erisekiri",
+   "lga": "Akuku-Toru",
+   "ward": "Unknown",
+   "lat": 4.680617,
+   "lng": 6.782011,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501497402"
+  },
+  {
+   "name": "Esengebelekiri",
+   "lga": "Akuku-Toru",
+   "ward": "Unknown",
+   "lat": 4.45473,
+   "lng": 6.755406,
+   "aliases": [
+    "Dabibikiri"
+   ],
+   "placeType": "village",
+   "osmId": "node/501496584"
+  },
+  {
+   "name": "Frankkiri",
+   "lga": "Akuku-Toru",
+   "ward": "Unknown",
+   "lat": 4.449329,
+   "lng": 6.605368,
+   "aliases": [
+    "Ijokiri"
+   ],
+   "placeType": "village",
+   "osmId": "node/501330207"
+  },
+  {
+   "name": "Ikiriko",
+   "lga": "Akuku-Toru",
+   "ward": "Unknown",
+   "lat": 4.370354,
+   "lng": 6.560452,
+   "aliases": [
+    "Ikiriko Ideikiri",
+    "Ideikiri"
+   ],
+   "placeType": "village",
+   "osmId": "node/501430017"
+  },
+  {
+   "name": "Ilolo",
+   "lga": "Akuku-Toru",
+   "ward": "Unknown",
+   "lat": 4.480719,
+   "lng": 6.787738,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501514642"
+  },
+  {
+   "name": "Inyomaboko",
+   "lga": "Akuku-Toru",
+   "ward": "Unknown",
+   "lat": 4.391185,
+   "lng": 6.603311,
+   "aliases": [
+    "Iniemaboko"
+   ],
+   "placeType": "village",
+   "osmId": "node/501484228"
+  },
+  {
+   "name": "Isaihkiri",
+   "lga": "Akuku-Toru",
+   "ward": "Unknown",
+   "lat": 4.712745,
+   "lng": 6.58711,
+   "aliases": [
+    "Isaiahkiri"
+   ],
+   "placeType": "village",
+   "osmId": "node/501496640"
+  },
+  {
+   "name": "Iwokiri",
+   "lga": "Akuku-Toru",
+   "ward": "Unknown",
+   "lat": 4.455945,
+   "lng": 6.696955,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501522844"
+  },
+  {
+   "name": "Kirikakiri",
+   "lga": "Akuku-Toru",
+   "ward": "Unknown",
+   "lat": 4.597796,
+   "lng": 6.643234,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501485773"
+  },
+  {
+   "name": "Krakrama",
+   "lga": "Akuku-Toru",
+   "ward": "Unknown",
+   "lat": 4.740186,
+   "lng": 6.678164,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501497063"
+  },
+  {
+   "name": "Kula",
+   "lga": "Akuku-Toru",
+   "ward": "Unknown",
+   "lat": 4.341743,
+   "lng": 6.644826,
+   "aliases": [],
+   "placeType": "town",
+   "osmId": "node/501496489"
+  },
+  {
+   "name": "Kuroghakiri",
+   "lga": "Akuku-Toru",
+   "ward": "Unknown",
+   "lat": 4.354963,
+   "lng": 6.587201,
+   "aliases": [
+    "Koniyiboko",
+    "Kuroghakkiri"
+   ],
+   "placeType": "village",
+   "osmId": "node/501483879"
+  },
+  {
+   "name": "Lelekiri",
+   "lga": "Akuku-Toru",
+   "ward": "Unknown",
+   "lat": 4.663337,
+   "lng": 6.777052,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501330016"
+  },
+  {
+   "name": "Mamikiri",
+   "lga": "Akuku-Toru",
+   "ward": "Unknown",
+   "lat": 4.729667,
+   "lng": 6.73732,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501397012"
+  },
+  {
+   "name": "Obokiri",
+   "lga": "Akuku-Toru",
+   "ward": "Unknown",
+   "lat": 4.733385,
+   "lng": 6.654207,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501514465"
+  },
+  {
+   "name": "Obokofina",
+   "lga": "Akuku-Toru",
+   "ward": "Unknown",
+   "lat": 4.595303,
+   "lng": 6.624062,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501485770"
+  },
+  {
+   "name": "Odibokiri",
+   "lga": "Akuku-Toru",
+   "ward": "Unknown",
+   "lat": 4.5506,
+   "lng": 6.72363,
+   "aliases": [
+    "Okoroboko"
+   ],
+   "placeType": "village",
+   "osmId": "node/501430006"
+  },
+  {
+   "name": "Offorboko",
+   "lga": "Akuku-Toru",
+   "ward": "Unknown",
+   "lat": 4.435824,
+   "lng": 6.661253,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501521648"
+  },
+  {
+   "name": "Olomaboko",
+   "lga": "Akuku-Toru",
+   "ward": "Unknown",
+   "lat": 4.393889,
+   "lng": 6.828503,
+   "aliases": [
+    "Okparakiri"
+   ],
+   "placeType": "village",
+   "osmId": "node/501496573"
+  },
+  {
+   "name": "Olomabokokin",
+   "lga": "Akuku-Toru",
+   "ward": "Unknown",
+   "lat": 4.404157,
+   "lng": 6.713745,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501485678"
+  },
+  {
+   "name": "Onangisuo",
+   "lga": "Akuku-Toru",
+   "ward": "Unknown",
+   "lat": 4.529418,
+   "lng": 6.701759,
+   "aliases": [
+    "Onongisuo"
+   ],
+   "placeType": "village",
+   "osmId": "node/501465163"
+  },
+  {
+   "name": "Opukiri",
+   "lga": "Akuku-Toru",
+   "ward": "Unknown",
+   "lat": 4.613622,
+   "lng": 6.720033,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501430400"
+  },
+  {
+   "name": "Orugbanikiri",
+   "lga": "Akuku-Toru",
+   "ward": "Unknown",
+   "lat": 4.44657,
+   "lng": 6.60559,
+   "aliases": [
+    "Nathikiri"
+   ],
+   "placeType": "village",
+   "osmId": "node/501521899"
+  },
+  {
+   "name": "Orukiri",
+   "lga": "Akuku-Toru",
+   "ward": "Unknown",
+   "lat": 4.410042,
+   "lng": 6.831599,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501513575"
+  },
+  {
+   "name": "Orusangama",
+   "lga": "Akuku-Toru",
+   "ward": "Unknown",
+   "lat": 4.67339,
+   "lng": 6.582128,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501429760"
+  },
+  {
+   "name": "Owupoku",
+   "lga": "Akuku-Toru",
+   "ward": "Unknown",
+   "lat": 4.379305,
+   "lng": 6.695469,
+   "aliases": [
+    "Owupubo",
+    "Oluapoku"
+   ],
+   "placeType": "village",
+   "osmId": "node/501392456"
+  },
+  {
+   "name": "Presakiri",
+   "lga": "Akuku-Toru",
+   "ward": "Unknown",
+   "lat": 4.378517,
+   "lng": 6.80888,
+   "aliases": [
+    "Akpakiri"
+   ],
+   "placeType": "village",
+   "osmId": "node/501486122"
+  },
+  {
+   "name": "Profitkiri",
+   "lga": "Akuku-Toru",
+   "ward": "Unknown",
+   "lat": 4.577225,
+   "lng": 6.799092,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501429864"
+  },
+  {
+   "name": "Pukokiri",
+   "lga": "Akuku-Toru",
+   "ward": "Unknown",
+   "lat": 4.362274,
+   "lng": 6.571022,
+   "aliases": [
+    "Ipikokiri",
+    "Pikokiri"
+   ],
+   "placeType": "village",
+   "osmId": "node/501470171"
+  },
+  {
+   "name": "Sangapiri",
+   "lga": "Akuku-Toru",
+   "ward": "Unknown",
+   "lat": 4.348633,
+   "lng": 6.749118,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501432433"
+  },
+  {
+   "name": "Sarahkiri",
+   "lga": "Akuku-Toru",
+   "ward": "Unknown",
+   "lat": 4.470331,
+   "lng": 6.534219,
+   "aliases": [
+    "Seriakiri"
+   ],
+   "placeType": "village",
+   "osmId": "node/501392915"
+  },
+  {
+   "name": "Soku",
+   "lga": "Akuku-Toru",
+   "ward": "Unknown",
+   "lat": 4.676777,
+   "lng": 6.681423,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501521768"
+  },
+  {
+   "name": "Twoni",
+   "lga": "Akuku-Toru",
+   "ward": "Unknown",
+   "lat": 4.485406,
+   "lng": 6.575148,
+   "aliases": [
+    "Tonie"
+   ],
+   "placeType": "village",
+   "osmId": "node/501430341"
+  },
+  {
+   "name": "Aganfor",
+   "lga": "Andoni",
+   "ward": "Unknown",
+   "lat": 4.495386,
+   "lng": 7.425924,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501344178"
+  },
+  {
+   "name": "Aganna",
+   "lga": "Andoni",
+   "ward": "Unknown",
+   "lat": 4.479653,
+   "lng": 7.387534,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501437204"
+  },
+  {
+   "name": "Akaradi",
+   "lga": "Andoni",
+   "ward": "Unknown",
+   "lat": 4.51843,
+   "lng": 7.425324,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/6841964053"
+  },
+  {
+   "name": "Ama-Ekut",
+   "lga": "Andoni",
+   "ward": "Unknown",
+   "lat": 4.449218,
+   "lng": 7.48531,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501515614"
+  },
+  {
+   "name": "Ama-Sunday",
+   "lga": "Andoni",
+   "ward": "Unknown",
+   "lat": 4.496413,
+   "lng": 7.415853,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501402045"
+  },
+  {
+   "name": "Amanku",
+   "lga": "Andoni",
+   "ward": "Unknown",
+   "lat": 4.565175,
+   "lng": 7.348627,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501498210"
+  },
+  {
+   "name": "Amaoke",
+   "lga": "Andoni",
+   "ward": "Unknown",
+   "lat": 4.446307,
+   "lng": 7.334194,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501498214"
+  },
+  {
+   "name": "Ayanboko",
+   "lga": "Andoni",
+   "ward": "Unknown",
+   "lat": 4.477106,
+   "lng": 7.365949,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501488193"
+  },
+  {
+   "name": "Bukolum",
+   "lga": "Andoni",
+   "ward": "Unknown",
+   "lat": 4.494836,
+   "lng": 7.472228,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501515604"
+  },
+  {
+   "name": "Dema",
+   "lga": "Andoni",
+   "ward": "Unknown",
+   "lat": 4.564955,
+   "lng": 7.385273,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501468180"
+  },
+  {
+   "name": "Ebuguma",
+   "lga": "Andoni",
+   "ward": "Unknown",
+   "lat": 4.50587,
+   "lng": 7.47252,
+   "aliases": [
+    "Ebukuma"
+   ],
+   "placeType": "village",
+   "osmId": "node/501523622"
+  },
+  {
+   "name": "Egbomu",
+   "lga": "Andoni",
+   "ward": "Unknown",
+   "lat": 4.552548,
+   "lng": 7.402078,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501402554"
+  },
+  {
+   "name": "Egwede",
+   "lga": "Andoni",
+   "ward": "Unknown",
+   "lat": 4.481934,
+   "lng": 7.391598,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501437198"
+  },
+  {
+   "name": "Ekede",
+   "lga": "Andoni",
+   "ward": "Unknown",
+   "lat": 4.480445,
+   "lng": 7.433158,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501523662"
+  },
+  {
+   "name": "Ekwoke",
+   "lga": "Andoni",
+   "ward": "Unknown",
+   "lat": 4.493495,
+   "lng": 7.362051,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501523645"
+  },
+  {
+   "name": "Ibot-Usut",
+   "lga": "Andoni",
+   "ward": "Unknown",
+   "lat": 4.443098,
+   "lng": 7.362284,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501498200"
+  },
+  {
+   "name": "Ibotokpon",
+   "lga": "Andoni",
+   "ward": "Unknown",
+   "lat": 4.459595,
+   "lng": 7.335386,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501523681"
+  },
+  {
+   "name": "Ilutumbi",
+   "lga": "Andoni",
+   "ward": "Unknown",
+   "lat": 4.47956,
+   "lng": 7.374406,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501523664"
+  },
+  {
+   "name": "Isiodum",
+   "lga": "Andoni",
+   "ward": "Unknown",
+   "lat": 4.537664,
+   "lng": 7.423602,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/6841964044"
+  },
+  {
+   "name": "Muma",
+   "lga": "Andoni",
+   "ward": "Unknown",
+   "lat": 4.456097,
+   "lng": 7.337732,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501437272"
+  },
+  {
+   "name": "Ngo",
+   "lga": "Andoni",
+   "ward": "Unknown",
+   "lat": 4.483279,
+   "lng": 7.414591,
+   "aliases": [],
+   "placeType": "town",
+   "osmId": "node/501519129"
+  },
+  {
+   "name": "Nkeret",
+   "lga": "Andoni",
+   "ward": "Unknown",
+   "lat": 4.481211,
+   "lng": 7.468659,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501515605"
+  },
+  {
+   "name": "Nyengala",
+   "lga": "Andoni",
+   "ward": "Unknown",
+   "lat": 4.47994,
+   "lng": 7.393352,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501468334"
+  },
+  {
+   "name": "Okorolo",
+   "lga": "Andoni",
+   "ward": "Unknown",
+   "lat": 4.489671,
+   "lng": 7.476863,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501437188"
+  },
+  {
+   "name": "Otudon",
+   "lga": "Andoni",
+   "ward": "Unknown",
+   "lat": 4.451372,
+   "lng": 7.335474,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501344410"
+  },
+  {
+   "name": "Abalama",
+   "lga": "Asari-Toru",
+   "ward": "Unknown",
+   "lat": 4.766946,
+   "lng": 6.836087,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501521778"
+  },
+  {
+   "name": "Angulama",
+   "lga": "Asari-Toru",
+   "ward": "Unknown",
+   "lat": 4.719923,
+   "lng": 6.834596,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501484234"
+  },
+  {
+   "name": "Buguma",
+   "lga": "Asari-Toru",
+   "ward": "Unknown",
+   "lat": 4.734881,
+   "lng": 6.863424,
+   "aliases": [
+    "Bugama"
+   ],
+   "placeType": "town",
+   "osmId": "node/501484037"
+  },
+  {
+   "name": "Ifoko",
+   "lga": "Asari-Toru",
+   "ward": "Unknown",
+   "lat": 4.761857,
+   "lng": 6.814335,
+   "aliases": [
+    "Brickfield"
+   ],
+   "placeType": "village",
+   "osmId": "node/501429790"
+  },
+  {
+   "name": "Ilelema",
+   "lga": "Asari-Toru",
+   "ward": "Unknown",
+   "lat": 4.797696,
+   "lng": 6.788313,
+   "aliases": [
+    "Illelima"
+   ],
+   "placeType": "village",
+   "osmId": "node/501463725"
+  },
+  {
+   "name": "Kalabari",
+   "lga": "Asari-Toru",
+   "ward": "Unknown",
+   "lat": 4.764167,
+   "lng": 6.815,
+   "aliases": [
+    "Kalabari Settlement"
+   ],
+   "placeType": "village",
+   "osmId": "node/501436251"
+  },
+  {
+   "name": "Minama",
+   "lga": "Asari-Toru",
+   "ward": "Unknown",
+   "lat": 4.731369,
+   "lng": 6.814317,
+   "aliases": [
+    "Ninama",
+    "Minima"
+   ],
+   "placeType": "village",
+   "osmId": "node/501463935"
+  },
+  {
+   "name": "Obenibokiri",
+   "lga": "Asari-Toru",
+   "ward": "Unknown",
+   "lat": 4.731193,
+   "lng": 6.885502,
+   "aliases": [
+    "Bekirikiri"
+   ],
+   "placeType": "village",
+   "osmId": "node/501430408"
+  },
+  {
+   "name": "Owinkiri Kalama",
+   "lga": "Asari-Toru",
+   "ward": "Unknown",
+   "lat": 4.737763,
+   "lng": 6.833933,
+   "aliases": [
+    "Winkiri Kalama",
+    "Omekwe-Kalama"
+   ],
+   "placeType": "village",
+   "osmId": "node/501336141"
+  },
+  {
+   "name": "Sama-Naguakiri",
+   "lga": "Asari-Toru",
+   "ward": "Unknown",
+   "lat": 4.812822,
+   "lng": 6.827021,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501392776"
+  },
+  {
+   "name": "Sangama",
+   "lga": "Asari-Toru",
+   "ward": "Unknown",
+   "lat": 4.758844,
+   "lng": 6.820048,
+   "aliases": [
+    "Sangana"
+   ],
+   "placeType": "village",
+   "osmId": "node/501484016"
+  },
+  {
+   "name": "Tena",
+   "lga": "Asari-Toru",
+   "ward": "Unknown",
+   "lat": 4.783237,
+   "lng": 6.819458,
+   "aliases": [
+    "Tema"
+   ],
+   "placeType": "village",
+   "osmId": "node/501496594"
+  },
+  {
+   "name": "Adamakiri",
+   "lga": "Bonny",
+   "ward": "Unknown",
+   "lat": 4.558056,
+   "lng": 7.066323,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501437181"
+  },
+  {
+   "name": "Asangalaka",
+   "lga": "Bonny",
+   "ward": "Unknown",
+   "lat": 4.617304,
+   "lng": 7.207625,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501468232"
+  },
+  {
+   "name": "Baluba",
+   "lga": "Bonny",
+   "ward": "Unknown",
+   "lat": 4.563626,
+   "lng": 7.170728,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501523789"
+  },
+  {
+   "name": "Bell Point",
+   "lga": "Bonny",
+   "ward": "Unknown",
+   "lat": 4.566015,
+   "lng": 7.052108,
+   "aliases": [],
+   "placeType": "locality",
+   "osmId": "node/501262248"
+  },
+  {
+   "name": "Birakiri",
+   "lga": "Bonny",
+   "ward": "Unknown",
+   "lat": 4.567453,
+   "lng": 7.130536,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501488189"
+  },
+  {
+   "name": "Boloba",
+   "lga": "Bonny",
+   "ward": "Unknown",
+   "lat": 4.563626,
+   "lng": 7.170818,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501345347"
+  },
+  {
+   "name": "Bonny",
+   "lga": "Bonny",
+   "ward": "Unknown",
+   "lat": 4.434055,
+   "lng": 7.17542,
+   "aliases": [
+    "Bonny Town"
+   ],
+   "placeType": "town",
+   "osmId": "node/501515580"
+  },
+  {
+   "name": "Bonny-Owuwukiri",
+   "lga": "Bonny",
+   "ward": "Unknown",
+   "lat": 4.557183,
+   "lng": 7.239675,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501498324"
+  },
+  {
+   "name": "East Point",
+   "lga": "Bonny",
+   "ward": "Unknown",
+   "lat": 4.569454,
+   "lng": 7.070961,
+   "aliases": [],
+   "placeType": "locality",
+   "osmId": "node/501253591"
+  },
+  {
+   "name": "Eferewarie",
+   "lga": "Bonny",
+   "ward": "Unknown",
+   "lat": 4.494279,
+   "lng": 7.271581,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501468194"
+  },
+  {
+   "name": "Egelebie-Jumbo",
+   "lga": "Bonny",
+   "ward": "Unknown",
+   "lat": 4.429528,
+   "lng": 7.291032,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501437329"
+  },
+  {
+   "name": "Eyamba Town",
+   "lga": "Bonny",
+   "ward": "Unknown",
+   "lat": 4.442785,
+   "lng": 7.167137,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501469172"
+  },
+  {
+   "name": "Field Point",
+   "lga": "Bonny",
+   "ward": "Unknown",
+   "lat": 4.383008,
+   "lng": 7.134081,
+   "aliases": [],
+   "placeType": "locality",
+   "osmId": "node/501295328"
+  },
+  {
+   "name": "Finima",
+   "lga": "Bonny",
+   "ward": "Unknown",
+   "lat": 4.406155,
+   "lng": 7.137806,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501515938"
+  },
+  {
+   "name": "Fuakpa",
+   "lga": "Bonny",
+   "ward": "Unknown",
+   "lat": 4.4736,
+   "lng": 7.190788,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/6823876225"
+  },
+  {
+   "name": "Greenkiri",
+   "lga": "Bonny",
+   "ward": "Unknown",
+   "lat": 4.584033,
+   "lng": 7.174371,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501488155"
+  },
+  {
+   "name": "North Point",
+   "lga": "Bonny",
+   "ward": "Unknown",
+   "lat": 4.574096,
+   "lng": 7.065795,
+   "aliases": [],
+   "placeType": "locality",
+   "osmId": "node/501256114"
+  },
+  {
+   "name": "Oloma",
+   "lga": "Bonny",
+   "ward": "Unknown",
+   "lat": 4.459026,
+   "lng": 7.198131,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/6823876224"
+  },
+  {
+   "name": "Omubiokolo",
+   "lga": "Bonny",
+   "ward": "Unknown",
+   "lat": 4.480082,
+   "lng": 7.307539,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501488212"
+  },
+  {
+   "name": "Opotumbi",
+   "lga": "Bonny",
+   "ward": "Unknown",
+   "lat": 4.466745,
+   "lng": 7.30112,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501498198"
+  },
+  {
+   "name": "Opuadakiri",
+   "lga": "Bonny",
+   "ward": "Unknown",
+   "lat": 4.595176,
+   "lng": 7.171769,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501498176"
+  },
+  {
+   "name": "Owokpo",
+   "lga": "Bonny",
+   "ward": "Unknown",
+   "lat": 4.495496,
+   "lng": 7.328843,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501344167"
+  },
+  {
+   "name": "Peterside",
+   "lga": "Bonny",
+   "ward": "Unknown",
+   "lat": 4.479449,
+   "lng": 7.161845,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501402559"
+  },
+  {
+   "name": "Sobiekiri I",
+   "lga": "Bonny",
+   "ward": "Unknown",
+   "lat": 4.541574,
+   "lng": 7.24359,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501498325"
+  },
+  {
+   "name": "Sobiekiri II",
+   "lga": "Bonny",
+   "ward": "Unknown",
+   "lat": 4.534266,
+   "lng": 7.238773,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501488335"
+  },
+  {
+   "name": "Sobiekiri III",
+   "lga": "Bonny",
+   "ward": "Unknown",
+   "lat": 4.532483,
+   "lng": 7.240715,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501345449"
+  },
+  {
+   "name": "Sodiyenkiri",
+   "lga": "Bonny",
+   "ward": "Unknown",
+   "lat": 4.543475,
+   "lng": 7.153891,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501488338"
+  },
+  {
+   "name": "Tobinkubo",
+   "lga": "Bonny",
+   "ward": "Unknown",
+   "lat": 4.562074,
+   "lng": 7.170225,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501498141"
+  },
+  {
+   "name": "Tumbikoko",
+   "lga": "Bonny",
+   "ward": "Unknown",
+   "lat": 4.562085,
+   "lng": 7.170155,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501515552"
+  },
+  {
+   "name": "Tumbikuku",
+   "lga": "Bonny",
+   "ward": "Unknown",
+   "lat": 4.56211,
+   "lng": 7.170088,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501498140"
+  },
+  {
+   "name": "West Point",
+   "lga": "Bonny",
+   "ward": "Unknown",
+   "lat": 4.562597,
+   "lng": 7.059707,
+   "aliases": [],
+   "placeType": "locality",
+   "osmId": "node/501252164"
+  },
+  {
+   "name": "Winstanley Head",
+   "lga": "Bonny",
+   "ward": "Unknown",
+   "lat": 4.53531,
+   "lng": 7.234097,
+   "aliases": [
+    "Winstanley Point"
+   ],
+   "placeType": "locality",
+   "osmId": "node/501274186"
+  },
+  {
+   "name": "Yobelekiri",
+   "lga": "Bonny",
+   "ward": "Unknown",
+   "lat": 4.583019,
+   "lng": 7.174771,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501515593"
+  },
+  {
+   "name": "Adokiakiri",
+   "lga": "Degema",
+   "ward": "Unknown",
+   "lat": 4.649941,
+   "lng": 7.027425,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501344063"
+  },
+  {
+   "name": "Arugbana",
+   "lga": "Degema",
+   "ward": "Unknown",
+   "lat": 4.646324,
+   "lng": 7.007801,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501488223"
+  },
+  {
+   "name": "Bakana",
+   "lga": "Degema",
+   "ward": "Unknown",
+   "lat": 4.737332,
+   "lng": 6.966012,
+   "aliases": [
+    "Bakana Town"
+   ],
+   "placeType": "village",
+   "osmId": "node/501463979"
+  },
+  {
+   "name": "Bille",
+   "lga": "Degema",
+   "ward": "Unknown",
+   "lat": 4.576416,
+   "lng": 6.887859,
+   "aliases": [],
+   "placeType": "town",
+   "osmId": "node/501513263"
+  },
+  {
+   "name": "Buoybokukiri",
+   "lga": "Degema",
+   "ward": "Unknown",
+   "lat": 4.595616,
+   "lng": 6.83445,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501521754"
+  },
+  {
+   "name": "Degema",
+   "lga": "Degema",
+   "ward": "Unknown",
+   "lat": 4.757988,
+   "lng": 6.768009,
+   "aliases": [],
+   "placeType": "town",
+   "osmId": "node/501513323"
+  },
+  {
+   "name": "Egenegenekiri",
+   "lga": "Degema",
+   "ward": "Unknown",
+   "lat": 4.623199,
+   "lng": 6.95494,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501521751"
+  },
+  {
+   "name": "Ekenekiri",
+   "lga": "Degema",
+   "ward": "Unknown",
+   "lat": 4.805195,
+   "lng": 6.743972,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501465421"
+  },
+  {
+   "name": "Elem Ifoko",
+   "lga": "Degema",
+   "ward": "Unknown",
+   "lat": 4.408541,
+   "lng": 7.009443,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501498145"
+  },
+  {
+   "name": "Elem Kalabari",
+   "lga": "Degema",
+   "ward": "Unknown",
+   "lat": 4.570072,
+   "lng": 6.974427,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501496610"
+  },
+  {
+   "name": "Elem-Ifoko",
+   "lga": "Degema",
+   "ward": "Unknown",
+   "lat": 4.418788,
+   "lng": 6.998504,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501485767"
+  },
+  {
+   "name": "Elem-Krakrama",
+   "lga": "Degema",
+   "ward": "Unknown",
+   "lat": 4.449893,
+   "lng": 6.989931,
+   "aliases": [
+    "Young Town"
+   ],
+   "placeType": "village",
+   "osmId": "node/501392949"
+  },
+  {
+   "name": "Elem-Tombia",
+   "lga": "Degema",
+   "ward": "Unknown",
+   "lat": 4.468252,
+   "lng": 6.991035,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501513390"
+  },
+  {
+   "name": "Erebia",
+   "lga": "Degema",
+   "ward": "Unknown",
+   "lat": 4.458821,
+   "lng": 6.902986,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501497272"
+  },
+  {
+   "name": "Fenipanga",
+   "lga": "Degema",
+   "ward": "Unknown",
+   "lat": 4.55095,
+   "lng": 6.964132,
+   "aliases": [
+    "Fenipainga"
+   ],
+   "placeType": "village",
+   "osmId": "node/501392543"
+  },
+  {
+   "name": "Gulakiri",
+   "lga": "Degema",
+   "ward": "Unknown",
+   "lat": 4.766341,
+   "lng": 6.95004,
+   "aliases": [
+    "Amangulakiri",
+    "Amanagulakiri"
+   ],
+   "placeType": "village",
+   "osmId": "node/501497387"
+  },
+  {
+   "name": "Harry's Town",
+   "lga": "Degema",
+   "ward": "Unknown",
+   "lat": 4.798508,
+   "lng": 6.778984,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501392672"
+  },
+  {
+   "name": "Ifoko",
+   "lga": "Degema",
+   "ward": "Unknown",
+   "lat": 4.409276,
+   "lng": 7.012907,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501498143"
+  },
+  {
+   "name": "Igbigimina-Senkiri",
+   "lga": "Degema",
+   "ward": "Unknown",
+   "lat": 4.660408,
+   "lng": 7.009084,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501515712"
+  },
+  {
+   "name": "Ikwake Amatangolo Odirogu",
+   "lga": "Degema",
+   "ward": "Unknown",
+   "lat": 4.752884,
+   "lng": 6.967094,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501521903"
+  },
+  {
+   "name": "Ke",
+   "lga": "Degema",
+   "ward": "Unknown",
+   "lat": 4.454561,
+   "lng": 6.915462,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501392407"
+  },
+  {
+   "name": "Keboko",
+   "lga": "Degema",
+   "ward": "Unknown",
+   "lat": 4.516635,
+   "lng": 6.824993,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501483783"
+  },
+  {
+   "name": "Kebokokiri",
+   "lga": "Degema",
+   "ward": "Unknown",
+   "lat": 4.448942,
+   "lng": 6.849023,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501514447"
+  },
+  {
+   "name": "Krakrama",
+   "lga": "Degema",
+   "ward": "Unknown",
+   "lat": 4.752535,
+   "lng": 6.785413,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501465639"
+  },
+  {
+   "name": "Mingidukiri",
+   "lga": "Degema",
+   "ward": "Unknown",
+   "lat": 4.624163,
+   "lng": 6.836007,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501330522"
+  },
+  {
+   "name": "Ngbetokurukiri",
+   "lga": "Degema",
+   "ward": "Unknown",
+   "lat": 4.803362,
+   "lng": 6.75414,
+   "aliases": [
+    "Ngbetchurukiri"
+   ],
+   "placeType": "village",
+   "osmId": "node/501396618"
+  },
+  {
+   "name": "Ogbomkiri",
+   "lga": "Degema",
+   "ward": "Unknown",
+   "lat": 4.686354,
+   "lng": 7.002291,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501402665"
+  },
+  {
+   "name": "Ojukiri Opuaru",
+   "lga": "Degema",
+   "ward": "Unknown",
+   "lat": 4.640676,
+   "lng": 7.019825,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501523640"
+  },
+  {
+   "name": "Okikiri",
+   "lga": "Degema",
+   "ward": "Unknown",
+   "lat": 4.533867,
+   "lng": 6.81732,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501483873"
+  },
+  {
+   "name": "Okpuruta",
+   "lga": "Degema",
+   "ward": "Unknown",
+   "lat": 4.776351,
+   "lng": 6.915262,
+   "aliases": [
+    "Okupuruta"
+   ],
+   "placeType": "village",
+   "osmId": "node/501392797"
+  },
+  {
+   "name": "Okusikiri",
+   "lga": "Degema",
+   "ward": "Unknown",
+   "lat": 4.526205,
+   "lng": 6.982635,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501430142"
+  },
+  {
+   "name": "Old Bakana",
+   "lga": "Degema",
+   "ward": "Unknown",
+   "lat": 4.745087,
+   "lng": 6.964362,
+   "aliases": [
+    "Bush Bakana"
+   ],
+   "placeType": "village",
+   "osmId": "node/501496559"
+  },
+  {
+   "name": "Opu Arugbana",
+   "lga": "Degema",
+   "ward": "Unknown",
+   "lat": 4.642238,
+   "lng": 7.010612,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501344045"
+  },
+  {
+   "name": "Opumakiri",
+   "lga": "Degema",
+   "ward": "Unknown",
+   "lat": 4.568527,
+   "lng": 7.004836,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501468239"
+  },
+  {
+   "name": "Owupokuobo",
+   "lga": "Degema",
+   "ward": "Unknown",
+   "lat": 4.517246,
+   "lng": 6.984182,
+   "aliases": [
+    "Owupokuobu"
+   ],
+   "placeType": "village",
+   "osmId": "node/501496484"
+  },
+  {
+   "name": "Percival Point",
+   "lga": "Degema",
+   "ward": "Unknown",
+   "lat": 4.599777,
+   "lng": 6.99886,
+   "aliases": [],
+   "placeType": "locality",
+   "osmId": "node/501277215"
+  },
+  {
+   "name": "Pribiri",
+   "lga": "Degema",
+   "ward": "Unknown",
+   "lat": 4.598267,
+   "lng": 7.05818,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501402038"
+  },
+  {
+   "name": "Temakiri",
+   "lga": "Degema",
+   "ward": "Unknown",
+   "lat": 4.525548,
+   "lng": 6.863292,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501483471"
+  },
+  {
+   "name": "Usokun",
+   "lga": "Degema",
+   "ward": "Unknown",
+   "lat": 4.784975,
+   "lng": 6.769427,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501429810"
+  },
+  {
+   "name": "Akpajo",
+   "lga": "Eleme",
+   "ward": "Unknown",
+   "lat": 4.82159,
+   "lng": 7.090813,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501437309"
+  },
+  {
+   "name": "Alesa",
+   "lga": "Eleme",
+   "ward": "Unknown",
+   "lat": 4.785596,
+   "lng": 7.117191,
+   "aliases": [],
+   "placeType": "town",
+   "osmId": "node/501488225"
+  },
+  {
+   "name": "Aletu",
+   "lga": "Eleme",
+   "ward": "Unknown",
+   "lat": 4.798895,
+   "lng": 7.109735,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/10984743869"
+  },
+  {
+   "name": "Alonchia-Igobama",
+   "lga": "Eleme",
+   "ward": "Unknown",
+   "lat": 4.749422,
+   "lng": 7.107794,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501488274"
+  },
+  {
+   "name": "Ebubu",
+   "lga": "Eleme",
+   "ward": "Unknown",
+   "lat": 4.757653,
+   "lng": 7.157393,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/6749914199"
+  },
+  {
+   "name": "Eleme",
+   "lga": "Eleme",
+   "ward": "Unknown",
+   "lat": 4.750652,
+   "lng": 7.147425,
+   "aliases": [],
+   "placeType": "neighbourhood",
+   "osmId": "relation/3720752"
+  },
+  {
+   "name": "Eteo",
+   "lga": "Eleme",
+   "ward": "Unknown",
+   "lat": 4.750107,
+   "lng": 7.184578,
+   "aliases": [
+    "Eteu"
+   ],
+   "placeType": "village",
+   "osmId": "node/501343964"
+  },
+  {
+   "name": "Nchia",
+   "lga": "Eleme",
+   "ward": "Unknown",
+   "lat": 4.792174,
+   "lng": 7.120214,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/10984743868"
+  },
+  {
+   "name": "Nomabom Tai Tasaro",
+   "lga": "Eleme",
+   "ward": "Unknown",
+   "lat": 4.792662,
+   "lng": 7.203668,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501402458"
+  },
+  {
+   "name": "Ogale",
+   "lga": "Eleme",
+   "ward": "Unknown",
+   "lat": 4.787438,
+   "lng": 7.126217,
+   "aliases": [],
+   "placeType": "town",
+   "osmId": "node/10984743867"
+  },
+  {
+   "name": "Ogani",
+   "lga": "Eleme",
+   "ward": "Unknown",
+   "lat": 4.780018,
+   "lng": 7.152437,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501344762"
+  },
+  {
+   "name": "Okochiri",
+   "lga": "Eleme",
+   "ward": "Unknown",
+   "lat": 4.743405,
+   "lng": 7.115146,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501402601"
+  },
+  {
+   "name": "Onne",
+   "lga": "Eleme",
+   "ward": "Unknown",
+   "lat": 4.724985,
+   "lng": 7.152435,
+   "aliases": [
+    "Awne"
+   ],
+   "placeType": "town",
+   "osmId": "node/501404491"
+  },
+  {
+   "name": "Ahiankwo",
+   "lga": "Emohua",
+   "ward": "Unknown",
+   "lat": 4.82523,
+   "lng": 6.833542,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501432379"
+  },
+  {
+   "name": "Akukwaterra",
+   "lga": "Emohua",
+   "ward": "Unknown",
+   "lat": 4.851392,
+   "lng": 6.816903,
+   "aliases": [
+    "Akukwaferra",
+    "Akukuwaterra",
+    "Akwukwoeterre"
+   ],
+   "placeType": "village",
+   "osmId": "node/501393062"
+  },
+  {
+   "name": "Egbeda",
+   "lga": "Emohua",
+   "ward": "Unknown",
+   "lat": 5.234722,
+   "lng": 6.7525,
+   "aliases": [
+    "Egbede"
+   ],
+   "placeType": "village",
+   "osmId": "node/501515404"
+  },
+  {
+   "name": "Elele Alimini",
+   "lga": "Emohua",
+   "ward": "Unknown",
+   "lat": 5.055386,
+   "lng": 6.731541,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/7898546366"
+  },
+  {
+   "name": "Emohua",
+   "lga": "Emohua",
+   "ward": "Unknown",
+   "lat": 4.883885,
+   "lng": 6.860978,
+   "aliases": [],
+   "placeType": "town",
+   "osmId": "node/501521756"
+  },
+  {
+   "name": "Ibaa",
+   "lga": "Emohua",
+   "ward": "Unknown",
+   "lat": 4.967675,
+   "lng": 6.815654,
+   "aliases": [
+    "Iba",
+    "Ibe"
+   ],
+   "placeType": "village",
+   "osmId": "node/501393279"
+  },
+  {
+   "name": "Mbuosi",
+   "lga": "Emohua",
+   "ward": "Unknown",
+   "lat": 4.877799,
+   "lng": 6.885049,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501513365"
+  },
+  {
+   "name": "Ndele",
+   "lga": "Emohua",
+   "ward": "Unknown",
+   "lat": 4.971014,
+   "lng": 6.741275,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501484246"
+  },
+  {
+   "name": "Ogbakiri",
+   "lga": "Emohua",
+   "ward": "Unknown",
+   "lat": 4.793802,
+   "lng": 6.910759,
+   "aliases": [],
+   "placeType": "hamlet",
+   "osmId": "node/501521647"
+  },
+  {
+   "name": "Ogbamafa",
+   "lga": "Emohua",
+   "ward": "Unknown",
+   "lat": 4.848993,
+   "lng": 6.843675,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501522366"
+  },
+  {
+   "name": "Ogbokiri",
+   "lga": "Emohua",
+   "ward": "Unknown",
+   "lat": 4.793849,
+   "lng": 6.91076,
+   "aliases": [],
+   "placeType": "hamlet",
+   "osmId": "node/501329481"
+  },
+  {
+   "name": "Okpabo",
+   "lga": "Emohua",
+   "ward": "Unknown",
+   "lat": 5.135943,
+   "lng": 6.708578,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501397345"
+  },
+  {
+   "name": "Orugbanikiri",
+   "lga": "Emohua",
+   "ward": "Unknown",
+   "lat": 4.817009,
+   "lng": 6.747461,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501522713"
+  },
+  {
+   "name": "Orugborkiri",
+   "lga": "Emohua",
+   "ward": "Unknown",
+   "lat": 4.841612,
+   "lng": 6.782668,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501465141"
+  },
+  {
+   "name": "Osogu",
+   "lga": "Emohua",
+   "ward": "Unknown",
+   "lat": 4.861964,
+   "lng": 6.763794,
+   "aliases": [
+    "Osuogo"
+   ],
+   "placeType": "village",
+   "osmId": "node/501463365"
+  },
+  {
+   "name": "Rumakunde",
+   "lga": "Emohua",
+   "ward": "Unknown",
+   "lat": 4.880559,
+   "lng": 6.859281,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501465345"
+  },
+  {
+   "name": "Rumuekpe",
+   "lga": "Emohua",
+   "ward": "Unknown",
+   "lat": 4.877649,
+   "lng": 6.862911,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/13202668126"
+  },
+  {
+   "name": "Rumuji",
+   "lga": "Emohua",
+   "ward": "Unknown",
+   "lat": 4.938277,
+   "lng": 6.78032,
+   "aliases": [
+    "Runuji"
+   ],
+   "placeType": "village",
+   "osmId": "node/501429938"
+  },
+  {
+   "name": "Ubumimi",
+   "lga": "Emohua",
+   "ward": "Unknown",
+   "lat": 5.266667,
+   "lng": 6.733333,
+   "aliases": [
+    "Ubomine",
+    "Ubimimi"
+   ],
+   "placeType": "village",
+   "osmId": "node/501518504"
+  },
+  {
+   "name": "Umo Diogo",
+   "lga": "Emohua",
+   "ward": "Unknown",
+   "lat": 5.172222,
+   "lng": 6.797778,
+   "aliases": [
+    "Omo Doga"
+   ],
+   "placeType": "village",
+   "osmId": "node/501401105"
+  },
+  {
+   "name": "Chokocho",
+   "lga": "Etche",
+   "ward": "Unknown",
+   "lat": 4.989029,
+   "lng": 7.050958,
+   "aliases": [
+    "Chokoehe"
+   ],
+   "placeType": "town",
+   "osmId": "node/501401968"
+  },
+  {
+   "name": "Igbo-Ekhe",
+   "lga": "Etche",
+   "ward": "Unknown",
+   "lat": 4.948964,
+   "lng": 7.08412,
+   "aliases": [],
+   "placeType": "town",
+   "osmId": "node/501344606"
+  },
+  {
+   "name": "Isu",
+   "lga": "Etche",
+   "ward": "Unknown",
+   "lat": 5.133333,
+   "lng": 7.016667,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501361691"
+  },
+  {
+   "name": "Obono",
+   "lga": "Etche",
+   "ward": "Unknown",
+   "lat": 5.136944,
+   "lng": 6.986944,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501400272"
+  },
+  {
+   "name": "Obukwu",
+   "lga": "Etche",
+   "ward": "Unknown",
+   "lat": 5.126667,
+   "lng": 6.995,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501400563"
+  },
+  {
+   "name": "Obwaro",
+   "lga": "Etche",
+   "ward": "Unknown",
+   "lat": 5.133333,
+   "lng": 7.183333,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501498720"
+  },
+  {
+   "name": "Okehi",
+   "lga": "Etche",
+   "ward": "Unknown",
+   "lat": 5.136752,
+   "lng": 7.13844,
+   "aliases": [],
+   "placeType": "town",
+   "osmId": "node/501381067"
+  },
+  {
+   "name": "Opiro",
+   "lga": "Etche",
+   "ward": "Unknown",
+   "lat": 5.033333,
+   "lng": 7.05,
+   "aliases": [
+    "Opire"
+   ],
+   "placeType": "village",
+   "osmId": "node/501522770"
+  },
+  {
+   "name": "Ozuzu",
+   "lga": "Etche",
+   "ward": "Unknown",
+   "lat": 5.1475,
+   "lng": 6.996111,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501467546"
+  },
+  {
+   "name": "Umu Ukpo",
+   "lga": "Etche",
+   "ward": "Unknown",
+   "lat": 5.146923,
+   "lng": 7.186927,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501524201"
+  },
+  {
+   "name": "Biara",
+   "lga": "Gokana",
+   "ward": "Unknown",
+   "lat": 4.672754,
+   "lng": 7.301097,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501469266"
+  },
+  {
+   "name": "Bodo",
+   "lga": "Gokana",
+   "ward": "Unknown",
+   "lat": 4.626644,
+   "lng": 7.270446,
+   "aliases": [],
+   "placeType": "town",
+   "osmId": "node/501488148"
+  },
+  {
+   "name": "Dere",
+   "lga": "Gokana",
+   "ward": "Unknown",
+   "lat": 4.664345,
+   "lng": 7.272104,
+   "aliases": [],
+   "placeType": "town",
+   "osmId": "node/501516019"
+  },
+  {
+   "name": "Kibani",
+   "lga": "Gokana",
+   "ward": "Unknown",
+   "lat": 4.616657,
+   "lng": 7.303637,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501523943"
+  },
+  {
+   "name": "Kpor",
+   "lga": "Gokana",
+   "ward": "Unknown",
+   "lat": 4.652162,
+   "lng": 7.287663,
+   "aliases": [],
+   "placeType": "town",
+   "osmId": "node/501515583"
+  },
+  {
+   "name": "Mogho",
+   "lga": "Gokana",
+   "ward": "Unknown",
+   "lat": 4.64759,
+   "lng": 7.290184,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501346286"
+  },
+  {
+   "name": "Nwabia",
+   "lga": "Gokana",
+   "ward": "Unknown",
+   "lat": 4.673533,
+   "lng": 7.311131,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501516020"
+  },
+  {
+   "name": "Yeghe",
+   "lga": "Gokana",
+   "ward": "Unknown",
+   "lat": 4.684495,
+   "lng": 7.344989,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/6977116573"
+  },
+  {
+   "name": "Ahia",
+   "lga": "Ikwerre",
+   "ward": "Unknown",
+   "lat": 5.176667,
+   "lng": 6.962778,
+   "aliases": [
+    "Ihia"
+   ],
+   "placeType": "village",
+   "osmId": "node/501497989"
+  },
+  {
+   "name": "Aloa",
+   "lga": "Ikwerre",
+   "ward": "Unknown",
+   "lat": 4.933472,
+   "lng": 6.949001,
+   "aliases": [
+    "Allua"
+   ],
+   "placeType": "village",
+   "osmId": "node/501463970"
+  },
+  {
+   "name": "Elele",
+   "lga": "Ikwerre",
+   "ward": "Unknown",
+   "lat": 5.101667,
+   "lng": 6.814167,
+   "aliases": [],
+   "placeType": "town",
+   "osmId": "node/501400998"
+  },
+  {
+   "name": "Igwuruta",
+   "lga": "Ikwerre",
+   "ward": "Unknown",
+   "lat": 4.954369,
+   "lng": 7.012672,
+   "aliases": [
+    "Igrita"
+   ],
+   "placeType": "town",
+   "osmId": "node/501403765"
+  },
+  {
+   "name": "Isiokpo",
+   "lga": "Ikwerre",
+   "ward": "Unknown",
+   "lat": 5.001265,
+   "lng": 6.873239,
+   "aliases": [
+    "Nsokpo"
+   ],
+   "placeType": "town",
+   "osmId": "node/501467196"
+  },
+  {
+   "name": "Isokpo Water Side",
+   "lga": "Ikwerre",
+   "ward": "Unknown",
+   "lat": 4.912588,
+   "lng": 6.881066,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501514486"
+  },
+  {
+   "name": "Okohia",
+   "lga": "Ikwerre",
+   "ward": "Unknown",
+   "lat": 5.22,
+   "lng": 6.917778,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501402785"
+  },
+  {
+   "name": "Omagwa",
+   "lga": "Ikwerre",
+   "ward": "Unknown",
+   "lat": 4.989203,
+   "lng": 6.915599,
+   "aliases": [],
+   "placeType": "town",
+   "osmId": "node/13388446475"
+  },
+  {
+   "name": "Omuoko",
+   "lga": "Ikwerre",
+   "ward": "Unknown",
+   "lat": 4.920782,
+   "lng": 6.911631,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501463832"
+  },
+  {
+   "name": "Omuoko",
+   "lga": "Ikwerre",
+   "ward": "Unknown",
+   "lat": 4.919776,
+   "lng": 6.908893,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501485348"
+  },
+  {
+   "name": "Omuoko",
+   "lga": "Ikwerre",
+   "ward": "Unknown",
+   "lat": 4.92,
+   "lng": 6.909167,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501515402"
+  },
+  {
+   "name": "Ubima",
+   "lga": "Ikwerre",
+   "ward": "Unknown",
+   "lat": 5.120556,
+   "lng": 6.902778,
+   "aliases": [
+    "Ibima"
+   ],
+   "placeType": "village",
+   "osmId": "node/501467552"
+  },
+  {
+   "name": "Baen",
+   "lga": "Khana",
+   "ward": "Unknown",
+   "lat": 4.630368,
+   "lng": 7.456286,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501344287"
+  },
+  {
+   "name": "Beri",
+   "lga": "Khana",
+   "ward": "Unknown",
+   "lat": 4.691611,
+   "lng": 7.429076,
+   "aliases": [
+    "Nyobe Beeri",
+    "Yombe Beri"
+   ],
+   "placeType": "village",
+   "osmId": "node/501523961"
+  },
+  {
+   "name": "Bori",
+   "lga": "Khana",
+   "ward": "Unknown",
+   "lat": 4.674818,
+   "lng": 7.365613,
+   "aliases": [],
+   "placeType": "town",
+   "osmId": "node/501468187"
+  },
+  {
+   "name": "Buan",
+   "lga": "Khana",
+   "ward": "Unknown",
+   "lat": 4.613198,
+   "lng": 7.490136,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501515577"
+  },
+  {
+   "name": "Ekem",
+   "lga": "Khana",
+   "ward": "Unknown",
+   "lat": 4.616978,
+   "lng": 7.391835,
+   "aliases": [
+    "Eken"
+   ],
+   "placeType": "village",
+   "osmId": "node/501437002"
+  },
+  {
+   "name": "Ewon",
+   "lga": "Khana",
+   "ward": "Unknown",
+   "lat": 4.64147,
+   "lng": 7.491098,
+   "aliases": [
+    "Ewen"
+   ],
+   "placeType": "village",
+   "osmId": "node/501438835"
+  },
+  {
+   "name": "Gwara",
+   "lga": "Khana",
+   "ward": "Unknown",
+   "lat": 4.608907,
+   "lng": 7.408206,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501498258"
+  },
+  {
+   "name": "Ika",
+   "lga": "Khana",
+   "ward": "Unknown",
+   "lat": 4.578001,
+   "lng": 7.367641,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501515932"
+  },
+  {
+   "name": "Iyaba",
+   "lga": "Khana",
+   "ward": "Unknown",
+   "lat": 4.590845,
+   "lng": 7.46975,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501344791"
+  },
+  {
+   "name": "Jor Sogho",
+   "lga": "Khana",
+   "ward": "Unknown",
+   "lat": 4.750092,
+   "lng": 7.357188,
+   "aliases": [
+    "Lor Soo",
+    "Lor"
+   ],
+   "placeType": "village",
+   "osmId": "node/501402253"
+  },
+  {
+   "name": "Kono",
+   "lga": "Khana",
+   "ward": "Unknown",
+   "lat": 4.599467,
+   "lng": 7.500046,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501438260"
+  },
+  {
+   "name": "Kowo Bewa",
+   "lga": "Khana",
+   "ward": "Unknown",
+   "lat": 4.633681,
+   "lng": 7.364511,
+   "aliases": [
+    "Kono Bewa",
+    "Bewa"
+   ],
+   "placeType": "village",
+   "osmId": "node/501469006"
+  },
+  {
+   "name": "Kpean",
+   "lga": "Khana",
+   "ward": "Unknown",
+   "lat": 4.612383,
+   "lng": 7.451899,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501469003"
+  },
+  {
+   "name": "Kwakwa",
+   "lga": "Khana",
+   "ward": "Unknown",
+   "lat": 4.62172,
+   "lng": 7.480248,
+   "aliases": [
+    "Kwawa"
+   ],
+   "placeType": "village",
+   "osmId": "node/501468971"
+  },
+  {
+   "name": "Lousi Sogho",
+   "lga": "Khana",
+   "ward": "Unknown",
+   "lat": 4.743845,
+   "lng": 7.359401,
+   "aliases": [
+    "Soo",
+    "Luugue Sogho",
+    "Lousi Soo"
+   ],
+   "placeType": "village",
+   "osmId": "node/501488589"
+  },
+  {
+   "name": "Lubara",
+   "lga": "Khana",
+   "ward": "Unknown",
+   "lat": 4.662158,
+   "lng": 7.45546,
+   "aliases": [
+    "Luubara"
+   ],
+   "placeType": "village",
+   "osmId": "node/501523909"
+  },
+  {
+   "name": "Lumene",
+   "lga": "Khana",
+   "ward": "Unknown",
+   "lat": 4.64865,
+   "lng": 7.479126,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501404004"
+  },
+  {
+   "name": "Lumene Bangha",
+   "lga": "Khana",
+   "ward": "Unknown",
+   "lat": 4.722823,
+   "lng": 7.492836,
+   "aliases": [
+    "Lumene"
+   ],
+   "placeType": "village",
+   "osmId": "node/501401975"
+  },
+  {
+   "name": "Nonwa Sogho",
+   "lga": "Khana",
+   "ward": "Unknown",
+   "lat": 4.762018,
+   "lng": 7.405761,
+   "aliases": [
+    "Nonwa Soo"
+   ],
+   "placeType": "village",
+   "osmId": "node/501488981"
+  },
+  {
+   "name": "Notem",
+   "lga": "Khana",
+   "ward": "Unknown",
+   "lat": 4.672279,
+   "lng": 7.368919,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501348032"
+  },
+  {
+   "name": "Nyogor Luekon",
+   "lga": "Khana",
+   "ward": "Unknown",
+   "lat": 4.75028,
+   "lng": 7.434275,
+   "aliases": [
+    "Nwogor Luekon"
+   ],
+   "placeType": "village",
+   "osmId": "node/501345027"
+  },
+  {
+   "name": "Nyokwu",
+   "lga": "Khana",
+   "ward": "Unknown",
+   "lat": 4.723812,
+   "lng": 7.442767,
+   "aliases": [
+    "Nyokuru"
+   ],
+   "placeType": "village",
+   "osmId": "node/501469297"
+  },
+  {
+   "name": "Okwale",
+   "lga": "Khana",
+   "ward": "Unknown",
+   "lat": 4.797527,
+   "lng": 7.389446,
+   "aliases": [
+    "Okwali"
+   ],
+   "placeType": "village",
+   "osmId": "node/501348941"
+  },
+  {
+   "name": "Sii",
+   "lga": "Khana",
+   "ward": "Unknown",
+   "lat": 4.603549,
+   "lng": 7.419816,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501401878"
+  },
+  {
+   "name": "Sime Luekon",
+   "lga": "Khana",
+   "ward": "Unknown",
+   "lat": 4.79186,
+   "lng": 7.465636,
+   "aliases": [
+    "Sime Luek"
+   ],
+   "placeType": "village",
+   "osmId": "node/501515553"
+  },
+  {
+   "name": "Tabangh",
+   "lga": "Khana",
+   "ward": "Unknown",
+   "lat": 4.729792,
+   "lng": 7.418976,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501498142"
+  },
+  {
+   "name": "Wiikwe Luebon",
+   "lga": "Khana",
+   "ward": "Unknown",
+   "lat": 4.777131,
+   "lng": 7.413558,
+   "aliases": [
+    "Wiikwe Luekon"
+   ],
+   "placeType": "village",
+   "osmId": "node/501460847"
+  },
+  {
+   "name": "Wiyakara",
+   "lga": "Khana",
+   "ward": "Unknown",
+   "lat": 4.667172,
+   "lng": 7.419492,
+   "aliases": [
+    "Wijakara"
+   ],
+   "placeType": "village",
+   "osmId": "node/501520814"
+  },
+  {
+   "name": "Alakahia",
+   "lga": "Obio-Akpor",
+   "ward": "Unknown",
+   "lat": 4.885583,
+   "lng": 6.925917,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501514587"
+  },
+  {
+   "name": "Alozo",
+   "lga": "Obio-Akpor",
+   "ward": "Unknown",
+   "lat": 4.873611,
+   "lng": 6.981944,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501425537"
+  },
+  {
+   "name": "Choba",
+   "lga": "Obio-Akpor",
+   "ward": "Unknown",
+   "lat": 4.887255,
+   "lng": 6.90399,
+   "aliases": [],
+   "placeType": "suburb",
+   "osmId": "node/501522324"
+  },
+  {
+   "name": "Elelenwo",
+   "lga": "Obio-Akpor",
+   "ward": "Unknown",
+   "lat": 4.849909,
+   "lng": 7.066707,
+   "aliases": [],
+   "placeType": "town",
+   "osmId": "node/501271774"
+  },
+  {
+   "name": "Elimgbu",
+   "lga": "Obio-Akpor",
+   "ward": "Unknown",
+   "lat": 4.869906,
+   "lng": 7.055729,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501515646"
+  },
+  {
+   "name": "Eliowhani",
+   "lga": "Obio-Akpor",
+   "ward": "Unknown",
+   "lat": 4.866601,
+   "lng": 7.033192,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501486047"
+  },
+  {
+   "name": "Eliozu",
+   "lga": "Obio-Akpor",
+   "ward": "Unknown",
+   "lat": 4.863384,
+   "lng": 7.02316,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501402343"
+  },
+  {
+   "name": "Eneka",
+   "lga": "Obio-Akpor",
+   "ward": "Unknown",
+   "lat": 4.899709,
+   "lng": 7.033307,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501488746"
+  },
+  {
+   "name": "Eneka",
+   "lga": "Obio-Akpor",
+   "ward": "Unknown",
+   "lat": 4.899914,
+   "lng": 7.033178,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501488749"
+  },
+  {
+   "name": "Iwofe",
+   "lga": "Obio-Akpor",
+   "ward": "Unknown",
+   "lat": 4.817778,
+   "lng": 6.956667,
+   "aliases": [
+    "Obukuru",
+    "Owofi"
+   ],
+   "placeType": "village",
+   "osmId": "node/501515403"
+  },
+  {
+   "name": "Mgbuoshimini",
+   "lga": "Obio-Akpor",
+   "ward": "Unknown",
+   "lat": 4.807537,
+   "lng": 6.973802,
+   "aliases": [
+    "Nbuosimiri"
+   ],
+   "placeType": "village",
+   "osmId": "node/501522598"
+  },
+  {
+   "name": "Ogbogoro",
+   "lga": "Obio-Akpor",
+   "ward": "Unknown",
+   "lat": 4.846584,
+   "lng": 6.928807,
+   "aliases": [
+    "Kalabukuru"
+   ],
+   "placeType": "village",
+   "osmId": "node/501429813"
+  },
+  {
+   "name": "Ogboro",
+   "lga": "Obio-Akpor",
+   "ward": "Unknown",
+   "lat": 4.873387,
+   "lng": 6.986947,
+   "aliases": [
+    "Ogbodo"
+   ],
+   "placeType": "village",
+   "osmId": "node/501527938"
+  },
+  {
+   "name": "Oginigba",
+   "lga": "Obio-Akpor",
+   "ward": "Unknown",
+   "lat": 4.824248,
+   "lng": 7.0425,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501404643"
+  },
+  {
+   "name": "Ozuoba",
+   "lga": "Obio-Akpor",
+   "ward": "Unknown",
+   "lat": 4.871345,
+   "lng": 6.933402,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/3600594428"
+  },
+  {
+   "name": "Rivers State University",
+   "lga": "Obio-Akpor",
+   "ward": "Unknown",
+   "lat": 4.796986,
+   "lng": 6.980749,
+   "aliases": [],
+   "placeType": "neighbourhood",
+   "osmId": "relation/10559059"
+  },
+  {
+   "name": "Rumu-Okoro-Odomey",
+   "lga": "Obio-Akpor",
+   "ward": "Unknown",
+   "lat": 4.863352,
+   "lng": 7.006262,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501515830"
+  },
+  {
+   "name": "Rumu-Ola",
+   "lga": "Obio-Akpor",
+   "ward": "Unknown",
+   "lat": 4.835825,
+   "lng": 6.992315,
+   "aliases": [
+    "Umuolo"
+   ],
+   "placeType": "suburb",
+   "osmId": "node/501497251"
+  },
+  {
+   "name": "Rumuaholu",
+   "lga": "Obio-Akpor",
+   "ward": "Unknown",
+   "lat": 4.87442,
+   "lng": 6.988312,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501497109"
+  },
+  {
+   "name": "Rumualogu",
+   "lga": "Obio-Akpor",
+   "ward": "Unknown",
+   "lat": 4.876077,
+   "lng": 6.917845,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/5144971954"
+  },
+  {
+   "name": "Rumuepirikom",
+   "lga": "Obio-Akpor",
+   "ward": "Unknown",
+   "lat": 4.829529,
+   "lng": 6.981353,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501465348"
+  },
+  {
+   "name": "Rumuigbo",
+   "lga": "Obio-Akpor",
+   "ward": "Unknown",
+   "lat": 4.851004,
+   "lng": 6.990967,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501523816"
+  },
+  {
+   "name": "Rumukwachi",
+   "lga": "Obio-Akpor",
+   "ward": "Unknown",
+   "lat": 4.865278,
+   "lng": 6.928889,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501400265"
+  },
+  {
+   "name": "Rumunduru",
+   "lga": "Obio-Akpor",
+   "ward": "Unknown",
+   "lat": 4.870478,
+   "lng": 7.030442,
+   "aliases": [
+    "Rumudara"
+   ],
+   "placeType": "village",
+   "osmId": "node/501515743"
+  },
+  {
+   "name": "Rumuodara",
+   "lga": "Obio-Akpor",
+   "ward": "Unknown",
+   "lat": 4.853741,
+   "lng": 7.032379,
+   "aliases": [
+    "Umudara"
+   ],
+   "placeType": "village",
+   "osmId": "node/501515657"
+  },
+  {
+   "name": "Rumuodumaya",
+   "lga": "Obio-Akpor",
+   "ward": "Unknown",
+   "lat": 4.877855,
+   "lng": 7.004579,
+   "aliases": [],
+   "placeType": "town",
+   "osmId": "node/501523703"
+  },
+  {
+   "name": "Rumuofa",
+   "lga": "Obio-Akpor",
+   "ward": "Unknown",
+   "lat": 4.890701,
+   "lng": 7.030378,
+   "aliases": [
+    "Umuofa",
+    "Umuola"
+   ],
+   "placeType": "village",
+   "osmId": "node/501468712"
+  },
+  {
+   "name": "Rumuogonoma",
+   "lga": "Obio-Akpor",
+   "ward": "Unknown",
+   "lat": 4.895771,
+   "lng": 7.038132,
+   "aliases": [
+    "Umuoqonnama",
+    "Umuoqonoma"
+   ],
+   "placeType": "village",
+   "osmId": "node/501468715"
+  },
+  {
+   "name": "Rumuokoro",
+   "lga": "Obio-Akpor",
+   "ward": "Unknown",
+   "lat": 4.866843,
+   "lng": 6.996997,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501498446"
+  },
+  {
+   "name": "Rumuokwuta",
+   "lga": "Obio-Akpor",
+   "ward": "Unknown",
+   "lat": 4.84083,
+   "lng": 6.986064,
+   "aliases": [
+    "Umuochita",
+    "Umuchitta"
+   ],
+   "placeType": "village",
+   "osmId": "node/501345646"
+  },
+  {
+   "name": "Rumuomasi",
+   "lga": "Obio-Akpor",
+   "ward": "Unknown",
+   "lat": 4.831249,
+   "lng": 7.026632,
+   "aliases": [],
+   "placeType": "neighbourhood",
+   "osmId": "node/501468727"
+  },
+  {
+   "name": "Rumuosi",
+   "lga": "Obio-Akpor",
+   "ward": "Unknown",
+   "lat": 4.878537,
+   "lng": 6.941522,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501521700"
+  },
+  {
+   "name": "Umuigbekwo",
+   "lga": "Obio-Akpor",
+   "ward": "Unknown",
+   "lat": 4.816253,
+   "lng": 7.073663,
+   "aliases": [
+    "Umuibekwo"
+   ],
+   "placeType": "village",
+   "osmId": "node/501402920"
+  },
+  {
+   "name": "Akabuka",
+   "lga": "Ogba/Egbema/Ndoni",
+   "ward": "Unknown",
+   "lat": 5.235344,
+   "lng": 6.645139,
+   "aliases": [],
+   "placeType": "town",
+   "osmId": "node/501500863"
+  },
+  {
+   "name": "Akafta",
+   "lga": "Ogba/Egbema/Ndoni",
+   "ward": "Unknown",
+   "lat": 5.259525,
+   "lng": 6.69924,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/8912174921"
+  },
+  {
+   "name": "Ebocha",
+   "lga": "Ogba/Egbema/Ndoni",
+   "ward": "Unknown",
+   "lat": 5.472893,
+   "lng": 6.720709,
+   "aliases": [],
+   "placeType": "town",
+   "osmId": "node/8873204360"
+  },
+  {
+   "name": "Egbada",
+   "lga": "Ogba/Egbema/Ndoni",
+   "ward": "Unknown",
+   "lat": 5.332286,
+   "lng": 6.700709,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/8912142415"
+  },
+  {
+   "name": "Egita",
+   "lga": "Ogba/Egbema/Ndoni",
+   "ward": "Unknown",
+   "lat": 5.273179,
+   "lng": 6.681761,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/8912174922"
+  },
+  {
+   "name": "Ekpeaga",
+   "lga": "Ogba/Egbema/Ndoni",
+   "ward": "Unknown",
+   "lat": 5.409776,
+   "lng": 6.728997,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/8942694913"
+  },
+  {
+   "name": "Elehia",
+   "lga": "Ogba/Egbema/Ndoni",
+   "ward": "Unknown",
+   "lat": 5.28554,
+   "lng": 6.699626,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/8912174920"
+  },
+  {
+   "name": "Elieta",
+   "lga": "Ogba/Egbema/Ndoni",
+   "ward": "Unknown",
+   "lat": 5.311756,
+   "lng": 6.701657,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/8912174918"
+  },
+  {
+   "name": "Erema",
+   "lga": "Ogba/Egbema/Ndoni",
+   "ward": "Unknown",
+   "lat": 5.216667,
+   "lng": 6.7,
+   "aliases": [
+    "Erima"
+   ],
+   "placeType": "village",
+   "osmId": "node/501335548"
+  },
+  {
+   "name": "Iduobosuku",
+   "lga": "Ogba/Egbema/Ndoni",
+   "ward": "Unknown",
+   "lat": 5.244779,
+   "lng": 6.590709,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/8868663620"
+  },
+  {
+   "name": "Ikiri",
+   "lga": "Ogba/Egbema/Ndoni",
+   "ward": "Unknown",
+   "lat": 5.293782,
+   "lng": 6.703805,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/8912174919"
+  },
+  {
+   "name": "Ishukwa",
+   "lga": "Ogba/Egbema/Ndoni",
+   "ward": "Unknown",
+   "lat": 5.658445,
+   "lng": 6.627668,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501465654"
+  },
+  {
+   "name": "Kreigam",
+   "lga": "Ogba/Egbema/Ndoni",
+   "ward": "Unknown",
+   "lat": 5.298205,
+   "lng": 6.619059,
+   "aliases": [
+    "Kreigani"
+   ],
+   "placeType": "village",
+   "osmId": "node/501499943"
+  },
+  {
+   "name": "Ndoni",
+   "lga": "Ogba/Egbema/Ndoni",
+   "ward": "Unknown",
+   "lat": 5.548903,
+   "lng": 6.586514,
+   "aliases": [],
+   "placeType": "town",
+   "osmId": "node/501493366"
+  },
+  {
+   "name": "Obagi",
+   "lga": "Ogba/Egbema/Ndoni",
+   "ward": "Unknown",
+   "lat": 5.247856,
+   "lng": 6.613841,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/8868663619"
+  },
+  {
+   "name": "Obie",
+   "lga": "Ogba/Egbema/Ndoni",
+   "ward": "Unknown",
+   "lat": 5.390875,
+   "lng": 6.6754,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/8868684531"
+  },
+  {
+   "name": "Obigbo",
+   "lga": "Ogba/Egbema/Ndoni",
+   "ward": "Unknown",
+   "lat": 5.263785,
+   "lng": 6.60623,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/8868663621"
+  },
+  {
+   "name": "Oboh",
+   "lga": "Ogba/Egbema/Ndoni",
+   "ward": "Unknown",
+   "lat": 5.383735,
+   "lng": 6.685865,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/8868684537"
+  },
+  {
+   "name": "Obrama",
+   "lga": "Ogba/Egbema/Ndoni",
+   "ward": "Unknown",
+   "lat": 5.225078,
+   "lng": 6.60073,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/8868663618"
+  },
+  {
+   "name": "Obrikom",
+   "lga": "Ogba/Egbema/Ndoni",
+   "ward": "Unknown",
+   "lat": 5.394736,
+   "lng": 6.667797,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/8868684532"
+  },
+  {
+   "name": "Ogbeose",
+   "lga": "Ogba/Egbema/Ndoni",
+   "ward": "Unknown",
+   "lat": 5.679702,
+   "lng": 6.61333,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/9067851845"
+  },
+  {
+   "name": "Ohalielu",
+   "lga": "Ogba/Egbema/Ndoni",
+   "ward": "Unknown",
+   "lat": 5.283382,
+   "lng": 6.613872,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/8868663622"
+  },
+  {
+   "name": "Okansu",
+   "lga": "Ogba/Egbema/Ndoni",
+   "ward": "Unknown",
+   "lat": 5.353759,
+   "lng": 6.71427,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/8912142416"
+  },
+  {
+   "name": "Okwuzi",
+   "lga": "Ogba/Egbema/Ndoni",
+   "ward": "Unknown",
+   "lat": 5.483333,
+   "lng": 6.733333,
+   "aliases": [
+    "Okwuzu"
+   ],
+   "placeType": "village",
+   "osmId": "node/501474311"
+  },
+  {
+   "name": "Olokuma",
+   "lga": "Ogba/Egbema/Ndoni",
+   "ward": "Unknown",
+   "lat": 5.200655,
+   "lng": 6.558983,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/8868006677"
+  },
+  {
+   "name": "Omoku",
+   "lga": "Ogba/Egbema/Ndoni",
+   "ward": "Unknown",
+   "lat": 5.345239,
+   "lng": 6.656951,
+   "aliases": [
+    "Omoko"
+   ],
+   "placeType": "town",
+   "osmId": "node/501499345"
+  },
+  {
+   "name": "Oworinnopia",
+   "lga": "Ogba/Egbema/Ndoni",
+   "ward": "Unknown",
+   "lat": 5.708818,
+   "lng": 6.617365,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/9067851846"
+  },
+  {
+   "name": "Owosha",
+   "lga": "Ogba/Egbema/Ndoni",
+   "ward": "Unknown",
+   "lat": 5.634993,
+   "lng": 6.654814,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/9067851848"
+  },
+  {
+   "name": "Owube",
+   "lga": "Ogba/Egbema/Ndoni",
+   "ward": "Unknown",
+   "lat": 5.19602,
+   "lng": 6.59222,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/8868677001"
+  },
+  {
+   "name": "Udhedhe",
+   "lga": "Ogba/Egbema/Ndoni",
+   "ward": "Unknown",
+   "lat": 5.41601,
+   "lng": 6.49411,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/8848977127"
+  },
+  {
+   "name": "Uju",
+   "lga": "Ogba/Egbema/Ndoni",
+   "ward": "Unknown",
+   "lat": 5.345242,
+   "lng": 6.720389,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/8912174917"
+  },
+  {
+   "name": "Utuochi",
+   "lga": "Ogba/Egbema/Ndoni",
+   "ward": "Unknown",
+   "lat": 5.416982,
+   "lng": 6.528974,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/8848960661"
+  },
+  {
+   "name": "Uwaji",
+   "lga": "Ogba/Egbema/Ndoni",
+   "ward": "Unknown",
+   "lat": 5.211244,
+   "lng": 6.640931,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/8868023440"
+  },
+  {
+   "name": "Aworkiri",
+   "lga": "Ogu/Bolo",
+   "ward": "Unknown",
+   "lat": 4.650817,
+   "lng": 7.172874,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501402025"
+  },
+  {
+   "name": "Bolo",
+   "lga": "Ogu/Bolo",
+   "ward": "Unknown",
+   "lat": 4.669061,
+   "lng": 7.222589,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501402672"
+  },
+  {
+   "name": "Ogu",
+   "lga": "Ogu/Bolo",
+   "ward": "Unknown",
+   "lat": 4.724511,
+   "lng": 7.198578,
+   "aliases": [],
+   "placeType": "town",
+   "osmId": "node/501349166"
+  },
+  {
+   "name": "Oroberekiri",
+   "lga": "Ogu/Bolo",
+   "ward": "Unknown",
+   "lat": 4.645153,
+   "lng": 7.175573,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501437109"
+  },
+  {
+   "name": "Owo Ogono",
+   "lga": "Ogu/Bolo",
+   "ward": "Unknown",
+   "lat": 4.657858,
+   "lng": 7.155451,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501402313"
+  },
+  {
+   "name": "Oyu",
+   "lga": "Ogu/Bolo",
+   "ward": "Unknown",
+   "lat": 4.73162,
+   "lng": 7.196298,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501524153"
+  },
+  {
+   "name": "Wakama",
+   "lga": "Ogu/Bolo",
+   "ward": "Unknown",
+   "lat": 4.694141,
+   "lng": 7.223428,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501437554"
+  },
+  {
+   "name": "Alochia",
+   "lga": "Okrika",
+   "ward": "Unknown",
+   "lat": 4.611983,
+   "lng": 7.163627,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501498175"
+  },
+  {
+   "name": "Anderekiri",
+   "lga": "Okrika",
+   "ward": "Unknown",
+   "lat": 4.678781,
+   "lng": 7.088309,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501515697"
+  },
+  {
+   "name": "Ininokiribi",
+   "lga": "Okrika",
+   "ward": "Unknown",
+   "lat": 4.611815,
+   "lng": 7.16366,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501391581"
+  },
+  {
+   "name": "Isaka",
+   "lga": "Okrika",
+   "ward": "Unknown",
+   "lat": 4.739741,
+   "lng": 6.99856,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501496639"
+  },
+  {
+   "name": "Ogoloma",
+   "lga": "Okrika",
+   "ward": "Unknown",
+   "lat": 4.738901,
+   "lng": 7.08262,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501516103"
+  },
+  {
+   "name": "Okrika",
+   "lga": "Okrika",
+   "ward": "Unknown",
+   "lat": 4.741589,
+   "lng": 7.084877,
+   "aliases": [],
+   "placeType": "town",
+   "osmId": "node/501516094"
+  },
+  {
+   "name": "Sara;Sarah",
+   "lga": "Okrika",
+   "ward": "Unknown",
+   "lat": 4.676561,
+   "lng": 7.090406,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501436985"
+  },
+  {
+   "name": "Snake Island",
+   "lga": "Okrika",
+   "ward": "Unknown",
+   "lat": 4.7,
+   "lng": 7.083333,
+   "aliases": [],
+   "placeType": "island",
+   "osmId": "node/501240203"
+  },
+  {
+   "name": "Trapukiri",
+   "lga": "Okrika",
+   "ward": "Unknown",
+   "lat": 4.680803,
+   "lng": 7.086233,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501402680"
+  },
+  {
+   "name": "Asarama",
+   "lga": "Opobo/Nkoro",
+   "ward": "Unknown",
+   "lat": 4.531367,
+   "lng": 7.442101,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501468526"
+  },
+  {
+   "name": "Cornelius-ama",
+   "lga": "Opobo/Nkoro",
+   "ward": "Unknown",
+   "lat": 4.503288,
+   "lng": 7.480357,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/13715662848"
+  },
+  {
+   "name": "Egenden",
+   "lga": "Opobo/Nkoro",
+   "ward": "Unknown",
+   "lat": 4.52956,
+   "lng": 7.449069,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501439114"
+  },
+  {
+   "name": "Ekereborikiri",
+   "lga": "Opobo/Nkoro",
+   "ward": "Unknown",
+   "lat": 4.490437,
+   "lng": 7.493791,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501437193"
+  },
+  {
+   "name": "Epellema",
+   "lga": "Opobo/Nkoro",
+   "ward": "Unknown",
+   "lat": 4.494518,
+   "lng": 7.521645,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501518947"
+  },
+  {
+   "name": "Kalasunju",
+   "lga": "Opobo/Nkoro",
+   "ward": "Unknown",
+   "lat": 4.477517,
+   "lng": 7.54538,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/13715633735"
+  },
+  {
+   "name": "Kilibiama",
+   "lga": "Opobo/Nkoro",
+   "ward": "Unknown",
+   "lat": 4.523628,
+   "lng": 7.510327,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501469055"
+  },
+  {
+   "name": "Minima",
+   "lga": "Opobo/Nkoro",
+   "ward": "Unknown",
+   "lat": 4.49757,
+   "lng": 7.54339,
+   "aliases": [
+    "Oku Minima"
+   ],
+   "placeType": "village",
+   "osmId": "node/501515807"
+  },
+  {
+   "name": "Nkoro",
+   "lga": "Opobo/Nkoro",
+   "ward": "Unknown",
+   "lat": 4.544994,
+   "lng": 7.46607,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501515872"
+  },
+  {
+   "name": "Opobo Town",
+   "lga": "Opobo/Nkoro",
+   "ward": "Unknown",
+   "lat": 4.512912,
+   "lng": 7.538255,
+   "aliases": [],
+   "placeType": "town",
+   "osmId": "node/501506571"
+  },
+  {
+   "name": "Queens Town",
+   "lga": "Opobo/Nkoro",
+   "ward": "Unknown",
+   "lat": 4.487808,
+   "lng": 7.568431,
+   "aliases": [],
+   "placeType": "town",
+   "osmId": "node/13715642215"
+  },
+  {
+   "name": "Unyeada",
+   "lga": "Opobo/Nkoro",
+   "ward": "Unknown",
+   "lat": 4.52678,
+   "lng": 7.443738,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501516021"
+  },
+  {
+   "name": "Afam",
+   "lga": "Oyigbo",
+   "ward": "Unknown",
+   "lat": 4.816667,
+   "lng": 7.316667,
+   "aliases": [
+    "Afam Uko",
+    "Afam Uka",
+    "Afam-Uku"
+   ],
+   "placeType": "village",
+   "osmId": "node/501451251"
+  },
+  {
+   "name": "Azuogu",
+   "lga": "Oyigbo",
+   "ward": "Unknown",
+   "lat": 4.843253,
+   "lng": 7.399328,
+   "aliases": [
+    "Azuago"
+   ],
+   "placeType": "village",
+   "osmId": "node/501515602"
+  },
+  {
+   "name": "Ban Lori",
+   "lga": "Oyigbo",
+   "ward": "Unknown",
+   "lat": 4.806317,
+   "lng": 7.432023,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501468284"
+  },
+  {
+   "name": "Egburu",
+   "lga": "Oyigbo",
+   "ward": "Unknown",
+   "lat": 4.809819,
+   "lng": 7.28005,
+   "aliases": [
+    "Eberu"
+   ],
+   "placeType": "village",
+   "osmId": "node/501343997"
+  },
+  {
+   "name": "Ka Lori",
+   "lga": "Oyigbo",
+   "ward": "Unknown",
+   "lat": 4.802535,
+   "lng": 7.437846,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501469066"
+  },
+  {
+   "name": "Lekuma Abiama",
+   "lga": "Oyigbo",
+   "ward": "Unknown",
+   "lat": 4.851453,
+   "lng": 7.193333,
+   "aliases": [
+    "Abiama"
+   ],
+   "placeType": "village",
+   "osmId": "node/501498225"
+  },
+  {
+   "name": "Obakpu",
+   "lga": "Oyigbo",
+   "ward": "Unknown",
+   "lat": 4.85058,
+   "lng": 7.321284,
+   "aliases": [
+    "Oboakpu"
+   ],
+   "placeType": "village",
+   "osmId": "node/501379053"
+  },
+  {
+   "name": "Oyigbo",
+   "lga": "Oyigbo",
+   "ward": "Unknown",
+   "lat": 4.881408,
+   "lng": 7.133447,
+   "aliases": [
+    "Obigbo"
+   ],
+   "placeType": "town",
+   "osmId": "node/501494526"
+  },
+  {
+   "name": "Abuja Nembe",
+   "lga": "Port Harcourt",
+   "ward": "Unknown",
+   "lat": 4.756493,
+   "lng": 7.020754,
+   "aliases": [],
+   "placeType": "neighbourhood",
+   "osmId": "node/7108115532"
+  },
+  {
+   "name": "Aggrey",
+   "lga": "Port Harcourt",
+   "ward": "Unknown",
+   "lat": 4.761892,
+   "lng": 7.035875,
+   "aliases": [],
+   "placeType": "neighbourhood",
+   "osmId": "node/7108146402"
+  },
+  {
+   "name": "Baptist",
+   "lga": "Port Harcourt",
+   "ward": "Unknown",
+   "lat": 4.759896,
+   "lng": 7.038609,
+   "aliases": [],
+   "placeType": "neighbourhood",
+   "osmId": "node/7108115541"
+  },
+  {
+   "name": "Bishop Johnson",
+   "lga": "Port Harcourt",
+   "ward": "Unknown",
+   "lat": 4.755043,
+   "lng": 7.034716,
+   "aliases": [],
+   "placeType": "neighbourhood",
+   "osmId": "node/7108115537"
+  },
+  {
+   "name": "Borokiri",
+   "lga": "Port Harcourt",
+   "ward": "Unknown",
+   "lat": 4.746561,
+   "lng": 7.037539,
+   "aliases": [],
+   "placeType": "suburb",
+   "osmId": "node/501344888"
+  },
+  {
+   "name": "Cemetery",
+   "lga": "Port Harcourt",
+   "ward": "Unknown",
+   "lat": 4.764884,
+   "lng": 7.029356,
+   "aliases": [],
+   "placeType": "neighbourhood",
+   "osmId": "node/7108146406"
+  },
+  {
+   "name": "Diobu",
+   "lga": "Port Harcourt",
+   "ward": "Unknown",
+   "lat": 4.799993,
+   "lng": 7.00733,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501468461"
+  },
+  {
+   "name": "Dobu",
+   "lga": "Port Harcourt",
+   "ward": "Unknown",
+   "lat": 4.805616,
+   "lng": 6.98778,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501392932"
+  },
+  {
+   "name": "Eagle Island",
+   "lga": "Port Harcourt",
+   "ward": "Unknown",
+   "lat": 4.778059,
+   "lng": 6.984722,
+   "aliases": [],
+   "placeType": "neighbourhood",
+   "osmId": "node/9775395220"
+  },
+  {
+   "name": "Egbema",
+   "lga": "Port Harcourt",
+   "ward": "Unknown",
+   "lat": 4.739407,
+   "lng": 7.041305,
+   "aliases": [],
+   "placeType": "neighbourhood",
+   "osmId": "node/7108115535"
+  },
+  {
+   "name": "Elekahia",
+   "lga": "Port Harcourt",
+   "ward": "Unknown",
+   "lat": 4.814307,
+   "lng": 7.021189,
+   "aliases": [],
+   "placeType": "suburb",
+   "osmId": "node/501515651"
+  },
+  {
+   "name": "Enugu",
+   "lga": "Port Harcourt",
+   "ward": "Unknown",
+   "lat": 4.760954,
+   "lng": 7.037759,
+   "aliases": [],
+   "placeType": "neighbourhood",
+   "osmId": "node/7108115540"
+  },
+  {
+   "name": "Eremo Ogbagoro",
+   "lga": "Port Harcourt",
+   "ward": "Unknown",
+   "lat": 4.789665,
+   "lng": 6.97146,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501393199"
+  },
+  {
+   "name": "Eremo Ogbogoro",
+   "lga": "Port Harcourt",
+   "ward": "Unknown",
+   "lat": 4.789665,
+   "lng": 6.971407,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501513506"
+  },
+  {
+   "name": "Eremogbogoro",
+   "lga": "Port Harcourt",
+   "ward": "Unknown",
+   "lat": 4.789665,
+   "lng": 6.971338,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501484254"
+  },
+  {
+   "name": "Etche",
+   "lga": "Port Harcourt",
+   "ward": "Unknown",
+   "lat": 4.744223,
+   "lng": 7.047307,
+   "aliases": [],
+   "placeType": "neighbourhood",
+   "osmId": "node/7108115536"
+  },
+  {
+   "name": "Fisherman Trade",
+   "lga": "Port Harcourt",
+   "ward": "Unknown",
+   "lat": 4.774351,
+   "lng": 7.024727,
+   "aliases": [],
+   "placeType": "neighbourhood",
+   "osmId": "node/7108146405"
+  },
+  {
+   "name": "Gbundu",
+   "lga": "Port Harcourt",
+   "ward": "Unknown",
+   "lat": 4.75463,
+   "lng": 7.013258,
+   "aliases": [],
+   "placeType": "neighbourhood",
+   "osmId": "node/7108115530"
+  },
+  {
+   "name": "Golf Estate",
+   "lga": "Port Harcourt",
+   "ward": "Unknown",
+   "lat": 4.800542,
+   "lng": 7.05806,
+   "aliases": [],
+   "placeType": "hamlet",
+   "osmId": "node/3605463945"
+  },
+  {
+   "name": "Ibadan",
+   "lga": "Port Harcourt",
+   "ward": "Unknown",
+   "lat": 4.756341,
+   "lng": 7.031007,
+   "aliases": [],
+   "placeType": "neighbourhood",
+   "osmId": "node/7108115538"
+  },
+  {
+   "name": "Marine Base",
+   "lga": "Port Harcourt",
+   "ward": "Unknown",
+   "lat": 4.769825,
+   "lng": 7.027244,
+   "aliases": [],
+   "placeType": "neighbourhood",
+   "osmId": "node/7108115543"
+  },
+  {
+   "name": "Ndoki",
+   "lga": "Port Harcourt",
+   "ward": "Unknown",
+   "lat": 4.758372,
+   "lng": 7.039076,
+   "aliases": [],
+   "placeType": "neighbourhood",
+   "osmId": "node/7108115542"
+  },
+  {
+   "name": "NEPA",
+   "lga": "Port Harcourt",
+   "ward": "Unknown",
+   "lat": 4.767001,
+   "lng": 7.026361,
+   "aliases": [],
+   "placeType": "neighbourhood",
+   "osmId": "node/7108146404"
+  },
+  {
+   "name": "Okujagu",
+   "lga": "Port Harcourt",
+   "ward": "Unknown",
+   "lat": 4.762838,
+   "lng": 7.034692,
+   "aliases": [],
+   "placeType": "neighbourhood",
+   "osmId": "node/7108146403"
+  },
+  {
+   "name": "Old GRA",
+   "lga": "Port Harcourt",
+   "ward": "Unknown",
+   "lat": 4.778989,
+   "lng": 7.012499,
+   "aliases": [],
+   "placeType": "quarter",
+   "osmId": "node/7108115544"
+  },
+  {
+   "name": "Orupolo",
+   "lga": "Port Harcourt",
+   "ward": "Unknown",
+   "lat": 4.756143,
+   "lng": 7.040478,
+   "aliases": [],
+   "placeType": "neighbourhood",
+   "osmId": "node/7108115539"
+  },
+  {
+   "name": "Port Harcourt",
+   "lga": "Port Harcourt",
+   "ward": "Unknown",
+   "lat": 4.767658,
+   "lng": 7.018853,
+   "aliases": [],
+   "placeType": "city",
+   "osmId": "node/27565065",
+   "population": 1382592
+  },
+  {
+   "name": "Prisons Dockyard",
+   "lga": "Port Harcourt",
+   "ward": "Unknown",
+   "lat": 4.755712,
+   "lng": 7.018233,
+   "aliases": [],
+   "placeType": "neighbourhood",
+   "osmId": "node/7108115531"
+  },
+  {
+   "name": "Rumukalagbor",
+   "lga": "Port Harcourt",
+   "ward": "Unknown",
+   "lat": 4.812544,
+   "lng": 7.012469,
+   "aliases": [
+    "Rumukalagbo"
+   ],
+   "placeType": "suburb",
+   "osmId": "node/501515650"
+  },
+  {
+   "name": "Woji",
+   "lga": "Port Harcourt",
+   "ward": "Unknown",
+   "lat": 4.816369,
+   "lng": 6.989401,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501513532"
+  },
+  {
+   "name": "Yam Zone",
+   "lga": "Port Harcourt",
+   "ward": "Unknown",
+   "lat": 4.757765,
+   "lng": 7.027123,
+   "aliases": [],
+   "placeType": "neighbourhood",
+   "osmId": "node/7108115533"
+  },
+  {
+   "name": "Ban Ogoyi",
+   "lga": "Tai",
+   "ward": "Unknown",
+   "lat": 4.80205,
+   "lng": 7.226104,
+   "aliases": [
+    "Ban Ogoi"
+   ],
+   "placeType": "village",
+   "osmId": "node/501498173"
+  },
+  {
+   "name": "Botem",
+   "lga": "Tai",
+   "ward": "Unknown",
+   "lat": 4.73005,
+   "lng": 7.280708,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501437069"
+  },
+  {
+   "name": "Bunu Barana",
+   "lga": "Tai",
+   "ward": "Unknown",
+   "lat": 4.762035,
+   "lng": 7.242335,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501515575"
+  },
+  {
+   "name": "Chara",
+   "lga": "Tai",
+   "ward": "Unknown",
+   "lat": 4.718412,
+   "lng": 7.250787,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501401962"
+  },
+  {
+   "name": "Holo",
+   "lga": "Tai",
+   "ward": "Unknown",
+   "lat": 4.739437,
+   "lng": 7.296845,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/6690664320"
+  },
+  {
+   "name": "Kpogo",
+   "lga": "Tai",
+   "ward": "Unknown",
+   "lat": 4.704593,
+   "lng": 7.229302,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/501403410"
+  },
+  {
+   "name": "Saakpenwa",
+   "lga": "Tai",
+   "ward": "Unknown",
+   "lat": 4.71677,
+   "lng": 7.264706,
+   "aliases": [],
+   "placeType": "village",
+   "osmId": "node/10580322517"
+  }
+ ]
+}

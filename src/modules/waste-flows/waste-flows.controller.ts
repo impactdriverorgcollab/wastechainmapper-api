@@ -9,24 +9,22 @@ import { RolesGuard } from '../../common/guards/roles.guard';
 import { Roles } from '../../common/decorators/roles.decorator';
 import { UserRole, WasteType } from '@prisma/client';
 import { FlowStatus } from '../../common/enums/deltaflow.enums';
-import { IsOptional, IsEnum, IsString } from 'class-validator';
-import { ApiPropertyOptional } from '@nestjs/swagger';
-import { Type } from 'class-transformer';
+import { IsOptional, IsEnum, IsString, IsNumber, IsUUID, Min, Max } from 'class-validator';
+import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger';
+import { PaginationDto } from '../../common/dto/pagination.dto';
 
-class FlowFilterDto {
+class FlowFilterDto extends PaginationDto {
   @ApiPropertyOptional({ enum: FlowStatus }) @IsOptional() @IsEnum(FlowStatus) status?: FlowStatus;
   @ApiPropertyOptional({ enum: WasteType }) @IsOptional() @IsEnum(WasteType) wasteType?: WasteType;
   @ApiPropertyOptional() @IsOptional() @IsString() lga?: string;
-  @ApiPropertyOptional({ default: 1 }) @IsOptional() @Type(() => Number) page?: number;
-  @ApiPropertyOptional({ default: 50 }) @IsOptional() @Type(() => Number) limit?: number;
 }
 
 class AddRoutePointDto {
-  latitude: number;
-  longitude: number;
-  vehicleId: string;
-  flowId?: string;
-  speedKmh?: number;
+  @ApiProperty() @IsNumber() @Min(-90) @Max(90) latitude: number;
+  @ApiProperty() @IsNumber() @Min(-180) @Max(180) longitude: number;
+  @ApiProperty() @IsUUID() vehicleId: string;
+  @ApiPropertyOptional() @IsOptional() @IsUUID() flowId?: string;
+  @ApiPropertyOptional() @IsOptional() @IsNumber() @Min(0) @Max(300) speedKmh?: number;
 }
 
 @ApiTags('waste-flows')

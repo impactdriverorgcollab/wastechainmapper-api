@@ -1,5 +1,5 @@
 import { IsEnum, IsOptional, IsNumber, IsString, IsBoolean, Min, Max } from 'class-validator';
-import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger';
+import { ApiProperty, ApiPropertyOptional, PartialType } from '@nestjs/swagger';
 import { FacilityType } from '../../../common/enums/deltaflow.enums';
 
 export class CreateFacilityDto {

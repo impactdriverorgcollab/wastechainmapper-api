@@ -3,7 +3,7 @@ import {
 } from '@nestjs/common';
 import { ApiTags, ApiBearerAuth, ApiOperation } from '@nestjs/swagger';
 import { SitesService } from './sites.service';
-import { CreateSiteDto } from './dto/create-site.dto';
+import { CreateSiteDto, UpdateSiteDto } from './dto/create-site.dto';
 import { RadiusQueryDto, WardQueryDto } from './dto/radius-query.dto';
 import { JwtAuthGuard } from '../../common/guards/jwt-auth.guard';
 import { RolesGuard } from '../../common/guards/roles.guard';
@@ -11,16 +11,14 @@ import { Roles } from '../../common/decorators/roles.decorator';
 import { UserRole, ConfidenceTier, WasteType, SiteStatus } from '@prisma/client';
 import { IsOptional, IsEnum, IsString } from 'class-validator';
 import { ApiPropertyOptional } from '@nestjs/swagger';
-import { Type } from 'class-transformer';
+import { PaginationDto } from '../../common/dto/pagination.dto';
 
-class SiteFilterDto {
+class SiteFilterDto extends PaginationDto {
   @ApiPropertyOptional() @IsOptional() @IsString() lga?: string;
   @ApiPropertyOptional() @IsOptional() @IsString() ward?: string;
   @ApiPropertyOptional({ enum: ConfidenceTier }) @IsOptional() @IsEnum(ConfidenceTier) confidenceTier?: ConfidenceTier;
   @ApiPropertyOptional({ enum: WasteType }) @IsOptional() @IsEnum(WasteType) wasteType?: WasteType;
   @ApiPropertyOptional({ enum: SiteStatus }) @IsOptional() @IsEnum(SiteStatus) status?: SiteStatus;
-  @ApiPropertyOptional({ default: 1 }) @IsOptional() @Type(() => Number) page?: number;
-  @ApiPropertyOptional({ default: 50 }) @IsOptional() @Type(() => Number) limit?: number;
 }
 
 @ApiTags('sites')
@@ -63,7 +61,7 @@ export class SitesController {
   @UseGuards(JwtAuthGuard, RolesGuard)
   @Roles(UserRole.ADMIN, UserRole.FIELD_VERIFIER)
   @ApiBearerAuth()
-  update(@Param('id') id: string, @Body() dto: Partial<CreateSiteDto>) {
+  update(@Param('id') id: string, @Body() dto: UpdateSiteDto) {
     return this.sites.update(id, dto);
   }
 

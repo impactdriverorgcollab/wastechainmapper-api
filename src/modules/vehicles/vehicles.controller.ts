@@ -2,7 +2,7 @@ import {
   Controller, Get, Post, Patch, Body, Param, Query, UseGuards,
 } from '@nestjs/common';
 import { ApiTags, ApiBearerAuth, ApiOperation } from '@nestjs/swagger';
-import { VehiclesService, CreateVehicleDto } from './vehicles.service';
+import { VehiclesService, CreateVehicleDto, UpdateLocationDto } from './vehicles.service';
 import { JwtAuthGuard } from '../../common/guards/jwt-auth.guard';
 import { RolesGuard } from '../../common/guards/roles.guard';
 import { Roles } from '../../common/decorators/roles.decorator';
@@ -48,7 +48,7 @@ export class VehiclesController {
   @ApiOperation({ summary: 'Push real-time GPS position for a collection vehicle' })
   updateLocation(
     @Param('id') id: string,
-    @Body() body: { latitude: number; longitude: number },
+    @Body() body: UpdateLocationDto,
   ) {
     return this.service.updateLocation(id, body.latitude, body.longitude);
   }

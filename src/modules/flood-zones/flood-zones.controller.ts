@@ -6,8 +6,8 @@ import { RolesGuard } from '../../common/guards/roles.guard';
 import { Roles } from '../../common/decorators/roles.decorator';
 import { UserRole } from '@prisma/client';
 import { FloodRiskLevel } from '../../common/enums/deltaflow.enums';
-import { IsEnum, IsOptional, IsString } from 'class-validator';
-import { ApiPropertyOptional } from '@nestjs/swagger';
+import { IsEnum, IsOptional, IsString, IsJSON } from 'class-validator';
+import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger';
 
 const db = (p: PrismaService) => p as any;
 
@@ -17,13 +17,14 @@ class FloodZoneFilterDto {
 }
 
 class CreateFloodZoneDto {
-  name?: string;
-  riskLevel?: FloodRiskLevel;
-  ward?: string;
-  lga?: string;
-  description?: string;
-  source?: string;
-  boundaryGeoJson?: string;
+  @ApiPropertyOptional() @IsOptional() @IsString() name?: string;
+  @ApiProperty({ enum: FloodRiskLevel }) @IsEnum(FloodRiskLevel) riskLevel: FloodRiskLevel;
+  @ApiPropertyOptional() @IsOptional() @IsString() ward?: string;
+  @ApiPropertyOptional() @IsOptional() @IsString() lga?: string;
+  @ApiPropertyOptional() @IsOptional() @IsString() description?: string;
+  @ApiPropertyOptional() @IsOptional() @IsString() source?: string;
+  @ApiPropertyOptional({ description: 'Polygon geometry as a GeoJSON string' })
+  @IsOptional() @IsJSON() boundaryGeoJson?: string;
 }
 
 @ApiTags('flood-zones')

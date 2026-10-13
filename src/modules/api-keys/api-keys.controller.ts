@@ -6,8 +6,9 @@ import { RolesGuard } from '../../common/guards/roles.guard';
 import { Roles } from '../../common/decorators/roles.decorator';
 import { UserRole } from '@prisma/client';
 import { ApiKeysService } from './api-keys.service';
+import { Public } from '../../common/decorators/public.decorator';
 
-enum ApiKeyTierDto { FREE = 'FREE', PROFESSIONAL = 'PROFESSIONAL', ENTERPRISE = 'ENTERPRISE' }
+enum ApiKeyTierDto { FREE = 'FREE', PROFESSIONAL = 'PROFESSIONAL', ENTERPRISE = 'ENTERPRISE', INTERNAL = 'INTERNAL' }
 
 class IssueApiKeyDto {
   @ApiProperty({ example: 'RSMEPB Public Dashboard' })
@@ -25,6 +26,7 @@ class IssueApiKeyDto {
 export class ApiKeysController {
   constructor(private svc: ApiKeysService) {}
 
+  @Public()
   @Get('tiers')
   @ApiOperation({ summary: 'List available API tiers and their rate limits (public)' })
   tiers() { return this.svc.tierInfo(); }

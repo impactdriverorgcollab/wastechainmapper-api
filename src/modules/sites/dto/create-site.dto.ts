@@ -1,5 +1,5 @@
 import { IsEnum, IsOptional, IsNumber, IsString, IsArray, Min, Max } from 'class-validator';
-import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger';
+import { ApiProperty, ApiPropertyOptional, PartialType } from '@nestjs/swagger';
 import { WasteType, SiteStatus, ConfidenceTier } from '@prisma/client';
 
 export class CreateSiteDto {
@@ -55,3 +55,5 @@ export class CreateSiteDto {
   @IsArray()
   sourceReportIds?: string[];
 }
+
+export class UpdateSiteDto extends PartialType(CreateSiteDto) {}

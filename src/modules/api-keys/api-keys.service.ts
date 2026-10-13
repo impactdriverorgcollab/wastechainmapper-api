@@ -6,6 +6,8 @@ const TIER_LIMITS: Record<string, number> = {
   FREE: 100,
   PROFESSIONAL: 5_000,
   ENTERPRISE: 100_000,
+  // The website's own key. Counted but never limited, so the limit column is unused.
+  INTERNAL: 0,
 };
 
 @Injectable()

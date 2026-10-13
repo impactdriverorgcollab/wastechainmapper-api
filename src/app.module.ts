@@ -1,4 +1,6 @@
 import { Module } from '@nestjs/common';
+import { APP_GUARD } from '@nestjs/core';
+import { ApiKeyGuard } from './common/guards/api-key.guard';
 import { ConfigModule } from '@nestjs/config';
 import { PrismaModule } from './prisma/prisma.module';
 import { AuthModule } from './modules/auth/auth.module';
@@ -15,6 +17,7 @@ import { VehiclesModule } from './modules/vehicles/vehicles.module';
 import { AnalyticsModule } from './modules/analytics/analytics.module';
 import { FloodZonesModule } from './modules/flood-zones/flood-zones.module';
 import { ApiKeysModule } from './modules/api-keys/api-keys.module';
+import { ImportsModule } from './modules/imports/imports.module';
 
 @Module({
   imports: [
@@ -34,6 +37,9 @@ import { ApiKeysModule } from './modules/api-keys/api-keys.module';
     AnalyticsModule,
     FloodZonesModule,
     ApiKeysModule,
+    ImportsModule,
   ],
+  // Every route needs an API key unless it is a staff route or marked @Public().
+  providers: [{ provide: APP_GUARD, useClass: ApiKeyGuard }],
 })
 export class AppModule {}
